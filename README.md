@@ -1,2 +1,2 @@
-# dotfiles
-Custom configs in Linux
+# configs
+Various config files
