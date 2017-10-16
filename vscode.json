@@ -1,0 +1,13 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "Consolas",
+    "editor.fontSize" : 14,
+    "editor.cursorStyle": "line-thin",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.colorTheme": "Sunburst",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.fontFamily": "'Lucida Console'",
+    "terminal.integrated.fontSize": 14,
+    "python.linting.enabledWithoutWorkspace": false,
+    "window.zoomLevel": 0
+}
