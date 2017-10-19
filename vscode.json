@@ -12,3 +12,17 @@
     "python.linting.enabledWithoutWorkspace": false,
     "window.zoomLevel": 0
 }
+
+// linux
+{
+    "editor.fontFamily": "'Ubuntu Mono'",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontFamily": "'Ubuntu Mono'",
+    "terminal.integrated.fontSize": 14,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "One Dark Pro",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "python.linting.pylintArgs": ["--errors-only"]
+}
