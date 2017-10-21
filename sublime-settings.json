@@ -1,12 +1,10 @@
+// windows
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
+	"theme": "SoDaReloaded Dark.sublime-theme",
 	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
-	"ensure_single_trailing_newline": true,
 	"fade_fold_buttons": false,
-	"file_exclude_patterns":
-	[
-	],
 	"font_face": "Ubuntu Mono",
 	"font_size": 10,
 	"highlight_line": true,
@@ -17,9 +15,12 @@
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"remove_trailing_whitespace_on_save": true,
+	"ensure_single_trailing_newline": true,
+	"file_exclude_patterns":
+	[
+	],
 	"rulers":
 	[
 		80
-	],
-	"theme": "SoDaReloaded Dark.sublime-theme"
+	]
 }
