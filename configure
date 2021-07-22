@@ -221,6 +221,15 @@ config_terminator() {
     ln -s $(realpath terminals/terminator.settings) $cfg_dir/config
 }
 
+config_kitty() {
+    prompt $(func_name)
+
+    cfg_dir=~/.config/kitty
+
+    rm -rf $cfg_dir && mkdir -p $cfg_dir
+    ln -s $(realpath terminals/kitty.conf) $cfg_dir
+}
+
 config_i3() {
     prompt $(func_name)
 
