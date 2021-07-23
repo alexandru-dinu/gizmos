@@ -10,11 +10,11 @@ hi JobLine     ctermfg=255     ctermbg=234     cterm=none
 hi StatusLine  ctermfg=255     ctermbg=234     cterm=none
 hi Border      ctermfg=242     ctermbg=235     cterm=none
 hi CurrLine    ctermfg=16      ctermbg=231     cterm=none
-hi OtherLine   ctermfg=0       ctermbg=242     cterm=none
+hi OtherLine   ctermfg=0       ctermbg=249     cterm=none
 hi LineNr      ctermfg=102     ctermbg=none    cterm=none
-hi Selected    ctermfg=250     ctermbg=16      cterm=reverse
+hi Selected    ctermfg=237     ctermbg=249     cterm=none
 hi CmpMismatch ctermfg=66      ctermbg=225     cterm=reverse
-hi SuggestBox  ctermfg=188     ctermbg=14      cterm=none
+hi SuggestBox  ctermfg=7       ctermbg=none    cterm=none
 hi WildMenu    ctermfg=242     ctermbg=236     cterm=none
 hi CmdLine     ctermfg=188     ctermbg=none    cterm=none
 hi ErrorMsg    ctermfg=167     ctermbg=none    cterm=none
