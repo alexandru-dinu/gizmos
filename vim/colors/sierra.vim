@@ -1,9 +1,16 @@
 " Inspired from https://github.com/AlessandroYorba/Sierra
 
 hi clear
+
 if exists("syntax_on")
-	syntax reset
+    syntax reset
 endif
+
+" avoid fg == bg
+if &diff
+    syntax off
+endif
+
 set background=dark
 let g:colors_name="sierra"
 
@@ -71,16 +78,3 @@ hi SpellRare        guifg=#ff8700 guibg=NONE    gui=undercurl ctermfg=208  cterm
 hi DiffAdd          guifg=#87afaf guibg=NONE    gui=reverse   ctermfg=109  ctermbg=NONE cterm=reverse
 hi DiffChange       guifg=#5f8787 guibg=NONE    gui=reverse   ctermfg=66   ctermbg=NONE cterm=reverse
 hi DiffDelete       guifg=#af5f5f guibg=NONE    gui=reverse   ctermfg=131  ctermbg=NONE cterm=reverse
-
-hi link diffAdded     DiffAdd
-hi link diffBDiffer   WarningMsg
-hi link diffChanged   DiffChange
-hi link diffCommon    WarningMsg
-hi link diffDiffer    WarningMsg
-hi link diffFile      Directory
-hi link diffIdentical WarningMsg
-hi link diffIndexLine Number
-hi link diffIsA       WarningMsg
-hi link diffNoEOL     WarningMsg
-hi link diffOnly      WarningMsg
-hi link diffRemoved   DiffDelete
