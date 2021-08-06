@@ -21,7 +21,7 @@ realpath() {
 }
 
 func_name() {
-    echo ${FUNCNAME[1]} | cut -d'_' -f2
+    echo ${FUNCNAME[1]} | cut -d'_' -f2-
 }
 
 config_zsh() {
@@ -85,11 +85,13 @@ config_vifm() {
     ln -s $(realpath vifm) $cfg_dir
 }
 
-config_emacs() {
+config_doom_emacs() {
     prompt $(func_name)
 
-    rm -rf ~/.emacs.d
-    ln -s $(realpath emacs) ~/.emacs.d
+    cfg_dir=~/.doom.d
+
+    rm -rf $cfg_dir
+    ln -s $(realpath emacs/.doom.d) $cfg_dir
 }
 
 config_ghci() {
