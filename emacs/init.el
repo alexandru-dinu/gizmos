@@ -1,0 +1,42 @@
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
+
+(setq-default inhibit-splash-screen t
+              make-backup-files nil
+              tab-width 4
+              indent-tabs-mode nil
+              compilation-scroll-output t)
+
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+(column-number-mode 1)
+(show-paren-mode 1)
+
+(setq initial-frame-alist '((width . 120) (height . 48)))
+
+(global-display-line-numbers-mode)
+(setq-default display-line-numbers-type 'relative)
+
+(set-face-attribute 'default nil :font "Fira Code" :height 140)
+
+;; packages
+
+(unless (package-installed-p 'zenburn-theme)
+    (package-install 'zenburn-theme))
+(load-theme 'zenburn t)
+(eval-after-load 'zenburn
+    (set-face-attribute 'line-number nil :inherit 'default))
+
+(unless (package-installed-p 'evil)
+    (package-install 'evil))
+(require 'evil)
+(evil-mode 1)
+
+;; set leader key in all states
+(evil-set-leader nil (kbd "SPC"))
+
+(setq evil-want-minibuffer t)
