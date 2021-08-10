@@ -90,8 +90,8 @@ config_emacs() {
 
     cfg_dir=~/.emacs.d
 
-    rm -rf $cfg_dir
-    ln -s $(realpath emacs) $cfg_dir
+    rm -rf $cfg_dir && mkdir -p $cfg_dir
+    ln -s $(realpath emacs/init.el) $cfg_dir/
 }
 
 config_ghci() {

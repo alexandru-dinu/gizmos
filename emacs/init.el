@@ -21,7 +21,7 @@
 (global-display-line-numbers-mode)
 (setq-default display-line-numbers-type 'relative)
 
-(set-face-attribute 'default nil :font "Fira Code" :height 120)
+(set-face-attribute 'default nil :font "Fira Code" :height 130)
 
 ;; packages
 (defun rc/lazy-install (pkg)
@@ -33,7 +33,7 @@
 (rc/lazy-install 'zenburn-theme)
 (load-theme 'zenburn t)
 (eval-after-load 'zenburn
-    (set-face-attribute 'line-number nil :inherit 'default))
+  (set-face-attribute 'line-number nil :inherit 'default))
 
 (rc/lazy-install 'evil)
 (require 'evil)
