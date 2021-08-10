@@ -21,18 +21,21 @@
 (global-display-line-numbers-mode)
 (setq-default display-line-numbers-type 'relative)
 
-(set-face-attribute 'default nil :font "Fira Code" :height 140)
+(set-face-attribute 'default nil :font "Fira Code" :height 120)
 
 ;; packages
+(defun rc/lazy-install (pkg)
+  "Install package if it does not already exist."
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
 
-(unless (package-installed-p 'zenburn-theme)
-    (package-install 'zenburn-theme))
+
+(rc/lazy-install 'zenburn-theme)
 (load-theme 'zenburn t)
 (eval-after-load 'zenburn
     (set-face-attribute 'line-number nil :inherit 'default))
 
-(unless (package-installed-p 'evil)
-    (package-install 'evil))
+(rc/lazy-install 'evil)
 (require 'evil)
 (evil-mode 1)
 
