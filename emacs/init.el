@@ -23,6 +23,13 @@
 
 (set-face-attribute 'default nil :font "Fira Code" :height 130)
 
+
+;; key-bindings
+(global-set-key (kbd "M-=") 'text-scale-increase)
+(global-set-key (kbd "M--") 'text-scale-decrease)
+(global-set-key (kbd "M-0") '(lambda() (interactive) (text-scale-adjust 0)))
+
+
 ;; packages
 (defun rc/lazy-install (pkg)
   "Install package if it does not already exist."
