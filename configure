@@ -41,6 +41,12 @@ config_bash() {
     cp bash/.bashrc ~/
 }
 
+config_starship() {
+    prompt $(func_name)
+
+    ln -sf $(realpath starship/starship.toml) ~/.config/
+}
+
 config_vim() {
     prompt $(func_name)
 
