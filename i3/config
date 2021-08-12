@@ -7,11 +7,10 @@ font pango:Fira Code 10
 exec --no-startup-id compton --config ~/.config/compton/config
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/gizmos.git/wallpapers/groot.png
+exec --no-startup-id feh --bg-fill ~/gizmos.git/wallpapers/manjaro.png
 
 # keyboard layouts
 exec_always --no-startup-id setxkbmap -layout "us,ro" -variant ",std"
-bindsym Shift+space exec kbd_layout_switch && exec pkill -RTMIN+12 i3blocks
 
 hide_edge_borders none
 
@@ -115,18 +114,6 @@ bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 
 
-# function keys
-# volume
-set $volume_i3blocks pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute        exec amixer -qD pulse set Master 1+ toggle && exec $volume_i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute      && exec $volume_i3blocks
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute      && exec $volume_i3blocks
-
-# brightness
-set $backlight_i3blocks pkill -RTMIN+11 i3blocks
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 5 && exec $backlight_i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && exec $backlight_i3blocks
-
 # spotify
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
@@ -165,8 +152,7 @@ client.background          #ffffff
 
 
 bar {
-    # status_command i3status -c ~/.config/i3/i3status.conf
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command i3status -c ~/.config/i3/i3status.conf
     position top
 
     colors {

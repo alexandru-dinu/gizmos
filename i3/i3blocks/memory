@@ -1,7 +1,0 @@
-#!/bin/bash
-
-TYPE="${BLOCK_INSTANCE:-mem}"
-
-tail -n+2 /proc/meminfo | head -n4 |
-awk '{printf("%.2f\n", $2/1024/1024)}' | tr '\n' ' ' |
-awk '{printf("%.2fG %.2fG %.2fG", $1, $2, $3+$4)}'

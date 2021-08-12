@@ -1,7 +1,0 @@
-#!/bin/bash
-
-case "$(xkb-switch)" in
-    "us")       echo "EN" ;;
-    "ro(std)")  echo "RO" ;;
-    *)          echo "?"  ;;
-esac
