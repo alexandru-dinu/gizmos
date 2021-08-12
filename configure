@@ -289,6 +289,7 @@ config_ipython() {
     cfg_dir=~/.ipython/profile_default
     mkdir -p $cfg_dir
     ln -sf $(realpath python/ipython_config.py) $cfg_dir
+    ln -sf $(realpath python/startup) $cfg_dir
 }
 
 config_ptpython() {
