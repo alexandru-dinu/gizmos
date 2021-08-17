@@ -15,6 +15,7 @@ style = "cyan"
 truncate_to_repo = false
 truncation_length = 3
 truncation_symbol = "…/"
+read_only = " (ro) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
@@ -28,12 +29,12 @@ conflicted = "c "
 ahead = "${count}↑ "
 behind = "${count}↓ "
 diverged = "${ahead_count}:${behind_count}↕ "
-untracked = "? "
+untracked = "${count}u "
 stashed = "${count}↴ "
-modified = "${count}* "
+modified = "${count}m "
 staged = "${count}+ "
-renamed = "r "
-deleted = "x "
+renamed = "${count}r "
+deleted = "${count}d "
 
 [python]
 disabled = true
