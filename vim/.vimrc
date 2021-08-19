@@ -204,16 +204,19 @@ Plug 'scrooloose/nerdtree' "{{{
 
 Plug 'airblade/vim-gitgutter' "{{{
     let g:gitgutter_enabled  = 0
-    let g:gitgutter_map_keys = 0
     let is_git = system("cd $(dirname " . expand("%:p") . ") && git ls-files --error-unmatch " . expand("%:p") . " && cd -")
     if v:shell_error == 0
         let g:gitgutter_enabled = 1
     endif
-    nmap <silent> <leader>gg :GitGutterToggle<CR>
-    nmap <silent> <leader>gs <Plug>(GitGutterPreviewHunk)
-    nmap <silent> <leader>gu <Plug>(GitGutterUndoHunk)
+
+    let g:gitgutter_map_keys = 0
+
+    nmap ]h <Plug>(GitGutterNextHunk)
+    nmap [h <Plug>(GitGutterPrevHunk)
+    nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+    nmap <leader>hu <Plug>(GitGutterUndoHunk)
     if !has('nvim')
-        nmap <silent> <leader>gk :bdelete gitgutter://hunk-preview<CR>
+        nmap <silent> <leader>hd :bdelete gitgutter://hunk-preview<CR>
     endif
 "}}}
 
