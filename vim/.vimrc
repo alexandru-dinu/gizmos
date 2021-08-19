@@ -228,7 +228,7 @@ Plug 'itchyny/lightline.vim' "{{{
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
         \             [ 'readonly', 'filename', 'modified' ],
-        \             [ 'bufinfo' ] ],
+        \             [ 'bufinfo', 'gitinfo' ] ],
         \   'right': [ [ 'whitespace' ],
         \              [ 'lineinfo' ],
         \              [ 'filetype', 'fileformat', 'fileencoding' ] ],
@@ -237,6 +237,7 @@ Plug 'itchyny/lightline.vim' "{{{
         \   'fileencoding': 'LL_fileencoding',
         \   'lineinfo': 'LL_lineinfo',
         \   'bufinfo': 'LL_bufinfo',
+        \   'gitinfo': 'FugitiveStatusline',
         \ },
         \ 'component_expand': {
         \   'whitespace': 'lightline#whitespace#check',
