@@ -47,7 +47,7 @@ set splitright
 
 set lazyredraw
 set ttimeoutlen=0
-set updatetime=500
+set updatetime=100
 
 set cursorline
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
