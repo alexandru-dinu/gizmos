@@ -161,9 +161,11 @@ endif
 "    let g:tex_flavor = 'latex'
 ""}}}
 
-Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+
+Plug 'machakann/vim-sandwich'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 
