@@ -1,4 +1,4 @@
-:set prompt "\n\ESC[0;95m%s \ESC[1;95m\ESC[m\ESC[0;95m\n(%l) λ \ESC[m"
-:set prompt-cont "\ESC[0;95m ... \ESC[m"
+:set prompt "\n\ESC[1;37mλ %s\n%l> \ESC[m"
+:set prompt-cont "\ESC[1;37m ... \ESC[m"
 :set -XUnicodeSyntax
 :set +t
