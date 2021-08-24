@@ -235,6 +235,10 @@ Plug 'itchyny/lightline.vim' "{{{
         \              [ 'lineinfo' ],
         \              [ 'filetype', 'fileformat', 'fileencoding' ] ],
         \ },
+        \ 'inactive': {
+        \ 	'left': [ [ 'readonly', 'filename', 'modified' ] ],
+        \   'right': [ [ 'lineinfo' ] ],
+        \ },
         \ 'component_function': {
         \   'fileencoding': 'LL_fileencoding',
         \   'lineinfo': 'LL_lineinfo',
