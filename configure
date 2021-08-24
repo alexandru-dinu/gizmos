@@ -31,14 +31,14 @@ config_zsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/alexandru-dinu/simple-zsh/main/install.sh)"
 
     mkdir -p ~/.zsh/cache
-    cp zsh/.zshrc ~/
-    cp zsh/.zshenv ~/
+    cp sh/.zshrc ~/
+    cp sh/.zshenv ~/
 }
 
 config_bash() {
     prompt $(func_name)
 
-    cp bash/.bashrc ~/
+    cp sh/.bashrc ~/
 }
 
 config_starship() {

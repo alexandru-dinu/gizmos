@@ -14,4 +14,4 @@ ZSH_ENABLE_VI_MODE="true"
 plugins=(fzf zshmarks zsh-autosuggestions)
 
 source $ZSH_FRAMEWORK/simple-zsh.zsh
-source $HOME/gizmos.git/zsh/aliases.sh
+source $HOME/gizmos.git/sh/aliases.sh
