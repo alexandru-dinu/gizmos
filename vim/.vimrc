@@ -157,9 +157,11 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 
-"Plug 'lervag/vimtex' "{{{
+""" Language-specific
+"Plug 'lervag/vimtex', {'for': 'tex'} "{{{
 "    let g:tex_flavor = 'latex'
 ""}}}
+Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
