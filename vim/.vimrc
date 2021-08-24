@@ -239,7 +239,7 @@ Plug 'itchyny/lightline.vim' "{{{
         \   'fileencoding': 'LL_fileencoding',
         \   'lineinfo': 'LL_lineinfo',
         \   'bufinfo': 'LL_bufinfo',
-        \   'gitinfo': 'FugitiveStatusline',
+        \   'gitinfo': 'FugitiveHead',
         \ },
         \ 'component_expand': {
         \   'whitespace': 'lightline#whitespace#check',
