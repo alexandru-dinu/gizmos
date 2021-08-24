@@ -243,7 +243,7 @@ Plug 'itchyny/lightline.vim' "{{{
         \   'fileencoding': 'LL_fileencoding',
         \   'lineinfo': 'LL_lineinfo',
         \   'bufinfo': 'LL_bufinfo',
-        \   'gitinfo': 'FugitiveHead',
+        \   'gitinfo': 'LL_gitinfo',
         \ },
         \ 'component_expand': {
         \   'whitespace': 'lightline#whitespace#check',
@@ -272,7 +272,7 @@ Plug 'itchyny/lightline.vim' "{{{
 
     func! LL_bufinfo() abort
         let l:total = len(getbufinfo({'buflisted':1}))
-        return total . ' buf'
+        return printf('%d buf', total)
     endfunc
 
     func! LL_fileencoding() abort
@@ -283,7 +283,16 @@ Plug 'itchyny/lightline.vim' "{{{
     func! LL_lineinfo() abort
         let l:li = line('.') . ':' . col('.')
         let l:pc = string(100 * line('.') / line('$'))
-        return li . ' ' . pc . '%'
+        return printf('%s %s%%', li, pc)
+    endfunc
+
+    func! LL_gitinfo() abort
+        if FugitiveIsGitDir() == 0
+            return ''
+        endif
+
+        let [l:a, l:m, l:r] = GitGutterGetHunkSummary()
+        return printf('%s +%d ~%d -%d', FugitiveHead(), a, m, r)
     endfunc
 "}}}
 
