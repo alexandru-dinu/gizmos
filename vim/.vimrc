@@ -277,9 +277,9 @@ Plug 'itchyny/lightline.vim' "{{{
     endfunc
 
     func! LL_lineinfo() abort
-        let l:li = line('.') . ':' . col('.') . '/' . line('$')
+        let l:li = line('.') . ':' . col('.')
         let l:pc = string(100 * line('.') / line('$'))
-        return li . ' (' . pc . '%)'
+        return li . ' ' . pc . '%'
     endfunc
 "}}}
 
