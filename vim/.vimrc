@@ -65,6 +65,7 @@ autocmd BufWrite * exe "normal mz" | %s/\s\+$//ge | exe "normal `z"
 """ KEY-BINDINGS
 nnoremap <Space> <Nop>
 let g:mapleader = " "
+let g:maplocalleader = "\\"
 
 set pastetoggle=<F1>
 
