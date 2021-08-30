@@ -235,7 +235,7 @@ config_kitty() {
     cfg_dir=~/.config/kitty
 
     rm -rf $cfg_dir && mkdir -p $cfg_dir
-    ln -s $(realpath terminals/kitty.conf) $cfg_dir
+    ln -s $(realpath terminals/kitty/kitty.conf) $cfg_dir
 }
 
 config_i3() {
