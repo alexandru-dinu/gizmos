@@ -2,13 +2,18 @@
 @name           Jupyter
 @namespace      github.com/alexandru-dinu/gizmos
 @version        1.0.0
-@description    Unified Jupyter style
+@description    Custom Jupyter Style
 @author         Alexandru Dinu
 ==/UserStyle== */
-@-moz-document domain("zeta") {
+@-moz-document url-prefix("...") {
     :root {
-        --jp-widgets-font-size: 10pt !important;
-        --jp-ui-font-family: "DejaVu Sans" !important;
+        --jp-widgets-font-size: 10pt;
+        --jp-code-font-size: 10pt;
+        --jp-code-font-family: "Fira Code";
+    }
+
+    * {
+        font-variant-ligatures: none !important;
     }
 
     #ipython-main-app {
@@ -24,20 +29,18 @@
     .CodeMirror-dialog,
     .CodeMirror-search-field,
     .terminal-app .terminal {
-        font-family: "Fira Code Retina" !important;
-        font-size: 10pt !important;
-        font-variant-ligatures: none !important;
+        font-family: var(--jp-code-font-family) !important;
+        font-size: var(--jp-code-font-size) !important;
     }
 
     .jp-InputPrompt,
     .jp-OutputPrompt {
-        font-family: "Fira Code Retina" !important;
+        font-family: var(--jp-code-font-family) !important;
     }
 
     div.output_area pre {
-        font-family: "Fira Code Retina" !important;
-        font-size: 10pt !important;
-        font-variant-ligatures: none !important;
+        font-family: var(--jp-code-font-family) !important;
+        font-size: var(--jp-code-font-size) !important;
     }
 
     .container {
