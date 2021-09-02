@@ -10,5 +10,5 @@ to_delete=(
 
 for f in "${to_delete[@]}"; do
     echo "Cleaning $f"
-    find . -name "$f" | xargs rm -rf
+    find . -name "$f" | xargs rm -rvf
 done
