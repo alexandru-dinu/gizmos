@@ -163,6 +163,7 @@ endif
 "    let g:tex_flavor = 'latex'
 ""}}}
 Plug 'idris-hackers/idris-vim', {'for': 'idris'}
+Plug 'manicmaniac/coconut.vim', {'for': 'coconut'}
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
