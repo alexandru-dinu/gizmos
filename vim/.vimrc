@@ -163,7 +163,9 @@ endif
 "    let g:tex_flavor = 'latex'
 ""}}}
 Plug 'idris-hackers/idris-vim', {'for': 'idris'}
-Plug 'manicmaniac/coconut.vim', {'for': 'coconut'}
+Plug 'manicmaniac/coconut.vim', {'for': 'coconut'} "{{{
+    autocmd FileType coconut setlocal commentstring=#\ %s
+"}}}
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
