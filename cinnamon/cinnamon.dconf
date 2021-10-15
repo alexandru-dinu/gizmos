@@ -70,7 +70,7 @@ secondary-click-enabled=false
 secondary-click-time=1.2
 
 [desktop/applications/terminal]
-exec='terminator'
+exec='kitty'
 
 [desktop/background]
 picture-options='zoom'
@@ -91,6 +91,7 @@ gtk-theme='Mint-Y-Dark-Teal'
 icon-theme='Papirus-Adapta-Nokto-Maia'
 keyboard-layout-prefer-variant-names=true
 keyboard-layout-show-flags=false
+keyboard-layout-use-upper=true
 scaling-factor=uint32 1
 text-scaling-factor=1.0
 toolkit-accessibility=false
@@ -174,7 +175,7 @@ maximum-volume=100
 volume-sound-enabled=false
 
 [desktop/wm/preferences]
-button-layout=':minimize,maximize,close'
+button-layout='close,maximize,minimize:'
 min-window-opacity=30
 num-workspaces=3
 theme='Mint-Y-Dark'
@@ -186,9 +187,9 @@ resize-threshold=24
 tile-hud-threshold=25
 
 [settings-daemon/peripherals/keyboard]
-delay=uint32 500
-numlock-state='on'
-repeat-interval=uint32 30
+delay=uint32 380
+numlock-state='off'
+repeat-interval=uint32 19
 
 [settings-daemon/peripherals/mouse]
 double-click=400
@@ -212,8 +213,8 @@ orientation-lock=true
 
 [settings-daemon/plugins/power]
 critical-battery-action='hibernate'
-lid-close-ac-action='suspend'
-lid-close-battery-action='suspend'
+lid-close-ac-action='nothing'
+lid-close-battery-action='nothing'
 lid-close-suspend-with-external-monitor=true
 lock-on-suspend=true
 sleep-display-ac=1800

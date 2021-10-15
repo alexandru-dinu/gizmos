@@ -263,14 +263,9 @@ config_rofi() {
     prompt $(func_name)
 
     cfg_dir=~/.config/rofi
-    local_dir=~/.local/share/rofi/
 
     rm -rf ${cfg_dir} && mkdir -p ${cfg_dir}
-    ln -s $(realpath rofi/rofi.conf) ${cfg_dir}/config
-
-    sudo rm -rf /usr/share/rofi
-    sudo rm -rf ${local_dir} && mkdir -p ${local_dir}
-    ln -s $(realpath rofi/themes) ${local_dir}
+    ln -s $(realpath rofi/config.rasi) ${cfg_dir}
 }
 
 config_mxmaster() {
@@ -327,7 +322,7 @@ config_cinnamon() {
 
     js_dir="/usr/share/cinnamon/js/ui"
 
-    dconf load /org/cinnamon/ <./cinnamon/cinnamon.dconf
+    dconf load /org/cinnamon/ < ./cinnamon/cinnamon.dconf
 
     sudo vim ${js_dir}/workspacesView.js
     sudo vim ${js_dir}/windowManager.js
