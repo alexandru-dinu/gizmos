@@ -7,24 +7,24 @@ applet-cache-updated=1558137828
 command-history=['termite', 'terminator', 'code', 'guale', 'guake', 'r']
 desklet-snap-interval=25
 desktop-effects-close-effect='traditional'
-desktop-effects-close-time=0
+desktop-effects-close-time=120
 desktop-effects-close-transition='easeOutQuad'
 desktop-effects-map-effect='traditional'
-desktop-effects-map-time=0
+desktop-effects-map-time=100
 desktop-effects-map-transition='easeOutQuad'
 desktop-effects-maximize-effect='none'
-desktop-effects-maximize-time=0
+desktop-effects-maximize-time=100
 desktop-effects-maximize-transition='easeInExpo'
 desktop-effects-minimize-effect='traditional'
-desktop-effects-minimize-time=0
+desktop-effects-minimize-time=160
 desktop-effects-minimize-transition='easeInQuad'
 desktop-effects-on-dialogs=false
 desktop-effects-on-menus=false
 desktop-effects-tile-effect='none'
-desktop-effects-tile-time=0
+desktop-effects-tile-time=100
 desktop-effects-tile-transition='easeInQuad'
 desktop-effects-unmaximize-effect='none'
-desktop-effects-unmaximize-time=0
+desktop-effects-unmaximize-time=100
 desktop-effects-unmaximize-transition='easeNone'
 device-aliases=['/org/freedesktop/UPower/devices/mouse_hidpp_battery_0:= Wireless Mouse MX Master']
 enable-vfade=false
@@ -130,8 +130,8 @@ window-screenshot-clip=@as []
 
 [desktop/keybindings/wm]
 close=['<Alt>F4', '<Shift><Super>q']
-maximize=@as []
-minimize=['<Alt><Super>f']
+maximize=['<Shift><Super>m']
+minimize=['<Super>m']
 move-to-monitor-down=@as []
 move-to-monitor-up=@as []
 show-desktop=@as []
@@ -179,6 +179,7 @@ button-layout='close,maximize,minimize:'
 min-window-opacity=30
 num-workspaces=3
 theme='Mint-Y-Dark'
+titlebar-font='Cantarell 10'
 workspace-names=@as []
 
 [muffin]
@@ -200,7 +201,7 @@ natural-scroll=false
 [settings-daemon/peripherals/touchpad]
 clickpad-click=3
 custom-acceleration=false
-custom-threshold=true
+custom-threshold=false
 horizontal-scrolling=true
 motion-acceleration=6.2258064516129039
 motion-threshold=1
@@ -213,8 +214,8 @@ orientation-lock=true
 
 [settings-daemon/plugins/power]
 critical-battery-action='hibernate'
-lid-close-ac-action='nothing'
-lid-close-battery-action='nothing'
+lid-close-ac-action='suspend'
+lid-close-battery-action='suspend'
 lid-close-suspend-with-external-monitor=true
 lock-on-suspend=true
 sleep-display-ac=1800
@@ -223,7 +224,8 @@ sleep-inactive-ac-timeout=0
 sleep-inactive-battery-timeout=1800
 
 [settings-daemon/plugins/xsettings]
-hinting='full'
+antialiasing='rgba'
+hinting='slight'
 rgba-order='rgb'
 
 [sounds]
