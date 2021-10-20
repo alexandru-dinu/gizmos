@@ -16,12 +16,6 @@
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="shift ctrl k" />
   </action>
-  <action id="EditorLineEnd">
-    <keyboard-shortcut first-keystroke="alt right" />
-  </action>
-  <action id="EditorLineStart">
-    <keyboard-shortcut first-keystroke="alt left" />
-  </action>
   <action id="IncrementWindowHeight" />
   <action id="MethodDown" />
   <action id="MethodUp" />
