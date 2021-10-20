@@ -162,9 +162,9 @@ remove-old=true
 [desktop/screensaver]
 date-format='%A, %B %d'
 default-message=''
-font-date='Fira Code weight=453 20'
-font-message='Fira Code weight=453 12'
-font-time='Fira Code weight=453 64'
+font-date='Iosevka Fixed SS09 20'
+font-message='Iosevka Fixed SS09 12'
+font-time='Iosevka Fixed SS09 64'
 layout-group=0
 time-format='%H:%M'
 
