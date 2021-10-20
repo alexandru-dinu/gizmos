@@ -220,15 +220,6 @@ config_guake() {
     dconf load /apps/guake/ <terminals/guake.dconf
 }
 
-config_terminator() {
-    prompt $(func_name)
-
-    cfg_dir=~/.config/terminator
-
-    rm -rf $cfg_dir && mkdir -p $cfg_dir
-    ln -s $(realpath terminals/terminator.settings) $cfg_dir/config
-}
-
 config_kitty() {
     prompt $(func_name)
 
