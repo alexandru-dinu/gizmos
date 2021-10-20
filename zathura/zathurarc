@@ -1,14 +1,14 @@
 set font "Iosevka Fixed SS09 10"
 
-set default-bg              "#1e1e1e"
+set default-bg              "#181818"
 set default-fg              "#d0d0d0"
-set statusbar-bg            "#1e1e1e"
+set statusbar-bg            "#181818"
 set statusbar-fg            "#d0d0d0"
-set inputbar-bg             "#1e1e1e"
+set inputbar-bg             "#181818"
 set inputbar-fg             "#d0d0d0"
-set notification-bg         "#3e3e3e"
+set notification-bg         "#383838"
 set notification-fg         "#d0d0d0"
-set recolor-lightcolor      "#1e1e1e"
+set recolor-lightcolor      "#181818"
 set recolor-darkcolor       "#d0d0d0"
 set highlight-color         "#16a085"
 set highlight-active-color  "#a01631"
@@ -16,8 +16,8 @@ set completion-highlight-bg "#16a085"
 
 set recolor                 true
 set recolor-keephue         true
-set window-title-home-tilde true
-set statusbar-basename      true
+set window-title-basename   true
+set statusbar-basename      false
 set selection-clipboard     clipboard
 
 map <C-i> recolor
