@@ -214,19 +214,13 @@ config_jupyter() {
     ln -sf $(realpath jupyter/lab/user-settings) ~/.jupyter/lab
 }
 
-config_guake() {
-    prompt $(func_name)
-
-    dconf load /apps/guake/ <terminals/guake.dconf
-}
-
 config_kitty() {
     prompt $(func_name)
 
     cfg_dir=~/.config/kitty
 
     rm -rf $cfg_dir && mkdir -p $cfg_dir
-    ln -s $(realpath terminals/kitty/kitty.conf) $cfg_dir
+    ln -s $(realpath kitty/kitty.conf) $cfg_dir
 }
 
 config_i3() {
