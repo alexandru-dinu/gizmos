@@ -86,7 +86,7 @@ cursor-blink-time=1200
 cursor-size=24
 cursor-theme='xcursor-breeze'
 first-day-of-week=1
-font-name='Cantarell 10'
+font-name='Ubuntu 10'
 gtk-theme='Mint-Y-Dark-Teal'
 icon-theme='Papirus-Adapta-Nokto-Maia'
 keyboard-layout-prefer-variant-names=true
@@ -178,7 +178,7 @@ button-layout='close,maximize,minimize:'
 min-window-opacity=30
 num-workspaces=3
 theme='Mint-Y-Dark'
-titlebar-font='Cantarell 10'
+titlebar-font='Ubuntu Semi-Bold 10'
 workspace-names=@as []
 
 [muffin]
