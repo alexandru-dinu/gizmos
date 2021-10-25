@@ -87,8 +87,8 @@ cursor-size=24
 cursor-theme='xcursor-breeze'
 first-day-of-week=1
 font-name='Ubuntu 10'
-gtk-theme='Mint-Y-Dark-Teal'
-icon-theme='Papirus-Adapta-Nokto-Maia'
+gtk-theme='Mint-Y-Dark-Grey'
+icon-theme='Papirus-Dark'
 keyboard-layout-prefer-variant-names=true
 keyboard-layout-show-flags=false
 keyboard-layout-use-upper=true
@@ -165,7 +165,7 @@ default-message=''
 font-date='Iosevka Fixed SS09 20'
 font-message='Iosevka Fixed SS09 12'
 font-time='Iosevka Fixed SS09 64'
-layout-group=0
+layout-group=1
 time-format='%H:%M'
 
 [desktop/sound]
