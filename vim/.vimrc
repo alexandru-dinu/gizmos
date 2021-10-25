@@ -230,7 +230,7 @@ Plug 'airblade/vim-gitgutter' "{{{
 Plug 'deponian/vim-lightline-whitespace'
 Plug 'itchyny/lightline.vim' "{{{
     let g:lightline = {
-        \ 'colorscheme': 'powerline',
+        \ 'colorscheme': 'solarized',
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
         \             [ 'readonly', 'filename', 'modified' ],
@@ -270,10 +270,6 @@ Plug 'itchyny/lightline.vim' "{{{
         \   },
         \ }
 
-    if has('nvim')
-        let g:lightline.colorscheme = 'seoul256'
-    endif
-
     func! LL_bufinfo() abort
         let l:total = len(getbufinfo({'buflisted':1}))
         return printf('%d buf', total)
@@ -294,7 +290,7 @@ Plug 'itchyny/lightline.vim' "{{{
 call plug#end()
 
 try
-    colorscheme sierra
+    colorscheme solarized
 catch
     colorscheme elflord
 endtry

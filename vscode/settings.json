@@ -46,4 +46,5 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Solarized Dark",
 }

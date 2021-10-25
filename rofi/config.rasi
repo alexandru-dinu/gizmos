@@ -1,5 +1,5 @@
 configuration {
-    theme:      "Arc-Dark";
+    theme:      "solarized";
     modi:       "combi";
     font:       "Iosevka Fixed SS09 Medium 12";
     combi-modi: "window,drun";
