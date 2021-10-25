@@ -1,6 +1,6 @@
 configuration {
     theme:      "solarized";
     modi:       "combi";
-    font:       "Iosevka Fixed SS09 Medium 12";
+    font:       "Iosevka Fixed SS09 Medium 14";
     combi-modi: "window,drun";
 }
