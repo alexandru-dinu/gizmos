@@ -97,7 +97,7 @@ text-scaling-factor=1.0
 toolkit-accessibility=false
 
 [desktop/keybindings]
-custom-list=['custom0', 'custom1']
+custom-list=['custom2', 'custom1', 'custom0']
 looking-glass-keybinding=@as []
 show-desklets=@as []
 
@@ -110,6 +110,11 @@ name='rofi'
 binding=['Print']
 command='gnome-screenshot -a -c'
 name='screenshot'
+
+[desktop/keybindings/custom-keybindings/custom2]
+binding=['F12']
+command='tdrop -a -w 100% -h 75% -y 0 kitty'
+name='dropdown'
 
 [desktop/keybindings/media-keys]
 area-screenshot=@as []
@@ -165,7 +170,7 @@ default-message=''
 font-date='Iosevka Fixed SS09 20'
 font-message='Iosevka Fixed SS09 12'
 font-time='Iosevka Fixed SS09 64'
-layout-group=1
+layout-group=0
 time-format='%H:%M'
 
 [desktop/sound]

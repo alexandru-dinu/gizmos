@@ -194,7 +194,7 @@
         "description": "Common graph width",
         "units": "pixels",
         "tooltip": "If the applet is in a vertical panel, this sets the graph height. The graph width is then the panel width minus padding",
-        "value": 64.0
+        "value": 32.0
     },
     "graph_spacing": {
         "type": "spinbutton",
@@ -294,25 +294,25 @@
         "type": "colorchooser",
         "default": "rgb(252,233,79)",
         "description": "User color",
-        "value": "rgb(252,233,79)"
+        "value": "rgb(147,161,161)"
     },
     "cpu_color_1": {
         "type": "colorchooser",
         "default": "rgb(252,175,62)",
         "description": "Nice color",
-        "value": "rgb(252,175,62)"
+        "value": "rgb(101,123,131)"
     },
     "cpu_color_2": {
         "type": "colorchooser",
         "default": "rgb(239,41,41)",
         "description": "Kernel color",
-        "value": "rgb(239,41,41)"
+        "value": "rgb(101,123,131)"
     },
     "cpu_color_3": {
         "type": "colorchooser",
         "default": "rgb(94,0,0)",
         "description": "IOWait color",
-        "value": "rgb(94,0,0)"
+        "value": "rgb(101,123,131)"
     },
     "mem_enabled": {
         "type": "switch",
@@ -341,13 +341,13 @@
         "type": "colorchooser",
         "default": "rgb(118,210,255)",
         "description": "Used color",
-        "value": "rgb(136,138,133)"
+        "value": "rgb(147,161,161)"
     },
     "mem_color_1": {
         "type": "colorchooser",
         "default": "rgb(52,101,164)",
         "description": "Cached color",
-        "value": "rgb(85,87,83)"
+        "value": "rgb(101,123,131)"
     },
     "swap_enabled": {
         "type": "switch",
@@ -376,7 +376,7 @@
         "type": "colorchooser",
         "default": "rgb(114,159,207)",
         "description": "Used color",
-        "value": "rgb(173,127,168)"
+        "value": "rgb(101,123,131)"
     },
     "net_enabled": {
         "type": "switch",
@@ -405,13 +405,13 @@
         "type": "colorchooser",
         "default": "rgb(138,226,52)",
         "description": "Download color",
-        "value": "rgb(138,226,52)"
+        "value": "rgb(147,161,161)"
     },
     "net_color_1": {
         "type": "colorchooser",
         "default": "rgb(239,41,41)",
         "description": "Upload color",
-        "value": "rgb(239,41,41)"
+        "value": "rgb(101,123,131)"
     },
     "load_enabled": {
         "type": "switch",
@@ -440,7 +440,7 @@
         "type": "colorchooser",
         "default": "rgb(204,0,0)",
         "description": "Color",
-        "value": "rgb(204,0,0)"
+        "value": "rgb(101,123,131)"
     },
     "__md5__": "be10ea35f035a45c65a8219756992f5b"
 }
