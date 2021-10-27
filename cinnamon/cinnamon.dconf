@@ -114,7 +114,7 @@ name='screenshot'
 [desktop/keybindings/custom-keybindings/custom2]
 binding=['F12']
 command='tdrop -a -w 100% -h 75% -y 0 kitty'
-name='dropdown'
+name='dropdown-kitty'
 
 [desktop/keybindings/media-keys]
 area-screenshot=@as []
