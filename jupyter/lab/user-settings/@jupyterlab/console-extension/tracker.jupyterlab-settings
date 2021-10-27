@@ -7,5 +7,25 @@
     // Interaction mode
     // Whether the console interaction mimics the notebook
     // or terminal keyboard shortcuts.
-    "interactionMode": "terminal"
+    "interactionMode": "terminal",
+
+    // Prompt Cell Configuration
+    // The configuration for all prompt cells.
+    "promptCellConfig": {
+        "autoClosingBrackets": true,
+        "cursorBlinkRate": 530,
+        "fontFamily": null,
+        "fontSize": null,
+        "lineHeight": null,
+        "lineNumbers": false,
+        "lineWrap": "off",
+        "matchBrackets": true,
+        "readOnly": false,
+        "insertSpaces": true,
+        "tabSize": 4,
+        "wordWrapColumn": 80,
+        "rulers": [],
+        "codeFolding": false,
+        "lineWiseCopyCut": true
+    }
 }
