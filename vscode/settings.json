@@ -46,5 +46,10 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "window.menuBarVisibility": "toggle",
+    "extensions.ignoreRecommendations": true,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.inlineSuggest.enabled": true,
     "workbench.colorTheme": "Solarized Dark",
+    "window.titleBarStyle": "custom",
+    "window.dialogStyle": "custom",
 }
