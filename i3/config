@@ -1,7 +1,7 @@
 # super-key
 set $mod Mod4
 
-font pango:Fira Code 10
+font pango:Iosevka Fixed SS09 Medium 10
 
 # compton
 exec --no-startup-id compton --config ~/.config/compton/config
@@ -15,8 +15,6 @@ exec_always --no-startup-id setxkbmap -layout "us,ro" -variant ",std"
 hide_edge_borders none
 
 # custom borders
-for_window [class="^(?i)google-chrome"] border pixel 0
-for_window [class="^(?i)chromium"] border pixel 0
 for_window [class="^(?i)firefox"] border pixel 0
 
 # applets
@@ -26,7 +24,7 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec kitty
 
 # printscreen
 bindsym Print exec xfce4-screenshooter
@@ -74,8 +72,8 @@ bindsym $mod+a focus parent
 
 
 # workspaces
-set $ws1 "1: main"
-set $ws2 "2: browser"
+set $ws1 "1"
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -83,7 +81,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: misc"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -113,6 +111,15 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 
+
+# Fn keys
+# volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   0 toggle
+
+# brightness
+# TODO!!!
 
 # spotify
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
@@ -175,7 +182,7 @@ exec --no-startup-id xautolock -time 10 -locker i3locking
 
 bindsym $mod+Shift+l mode "$mode_system"
 # set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
-set $mode_system l | e | u | s | h | r | S-s
+set $mode_system (l)ock | (e)xit | switch (u)ser | (s)uspend | (h)ibernate | (r)boot | (S-s)hutdown
 mode "$mode_system" {
     bindsym l       exec --no-startup-id i3exit lock,        mode "default"
     bindsym s       exec --no-startup-id i3exit suspend,     mode "default"
