@@ -19,26 +19,26 @@
 " standout
 " none
 
-highlight clear
+hi clear
 
-highlight Win             cterm=none ctermfg=default    ctermbg=none
+hi Win        cterm=none              ctermfg=default ctermbg=none
 
-highlight TopLine         cterm=none ctermfg=blue       ctermbg=none
-highlight TopLineSel      cterm=none ctermfg=blue       ctermbg=none
-highlight StatusLine      cterm=none ctermfg=blue       ctermbg=none
-highlight Border          cterm=none ctermfg=blue       ctermbg=none
+hi TopLine    cterm=none              ctermfg=blue    ctermbg=none
+hi TopLineSel cterm=none              ctermfg=blue    ctermbg=none
+hi StatusLine cterm=none              ctermfg=blue    ctermbg=none
+hi Border     cterm=none              ctermfg=blue    ctermbg=none
 
-highlight Selected        cterm=bold ctermfg=green       ctermbg=none
-highlight CurrLine        cterm=bold,reverse ctermfg=default    ctermbg=default
+hi Selected   cterm=bold              ctermfg=green   ctermbg=none
+hi CurrLine   cterm=bold,reverse      ctermfg=default ctermbg=default
 
-highlight WildMenu        cterm=underline,reverse ctermfg=white ctermbg=black
-highlight CmdLine         cterm=none ctermfg=white ctermbg=black
-highlight ErrorMsg        cterm=none ctermfg=red ctermbg=black
+hi WildMenu   cterm=underline,reverse ctermfg=white   ctermbg=black
+hi CmdLine    cterm=none              ctermfg=white   ctermbg=black
+hi ErrorMsg   cterm=none              ctermfg=red     ctermbg=black
 
-highlight Directory       cterm=bold ctermfg=blue ctermbg=default
-highlight Link            cterm=none ctermfg=yellow ctermbg=default
-highlight BrokenLink      cterm=none ctermfg=red ctermbg=default
-highlight Socket          cterm=none ctermfg=magenta ctermbg=default
-highlight Device          cterm=none ctermfg=red ctermbg=default
-highlight Fifo            cterm=none ctermfg=cyan ctermbg=default
-highlight Executable      cterm=none ctermfg=green ctermbg=default
+hi Directory  cterm=bold              ctermfg=blue    ctermbg=default
+hi Link       cterm=none              ctermfg=yellow  ctermbg=default
+hi BrokenLink cterm=none              ctermfg=red     ctermbg=default
+hi Socket     cterm=none              ctermfg=magenta ctermbg=default
+hi Device     cterm=none              ctermfg=red     ctermbg=default
+hi Fifo       cterm=none              ctermfg=cyan    ctermbg=default
+hi Executable cterm=none              ctermfg=green   ctermbg=default
