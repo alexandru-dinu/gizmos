@@ -34,7 +34,6 @@
     "[python]": {
         "editor.semanticHighlighting.enabled": false
     },
-    "python.showStartPage": false,
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
 
     "terminal.integrated.tabs.enabled": true,
@@ -43,13 +42,12 @@
         "jupyter-notebook": "left"
     },
 
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "telemetry.telemetryLevel":"off",
     "window.menuBarVisibility": "toggle",
     "extensions.ignoreRecommendations": true,
     "latex-workshop.latex.autoBuild.run": "never",
     "editor.inlineSuggest.enabled": true,
-    "workbench.colorTheme": "Solarized Dark",
     "window.titleBarStyle": "custom",
     "window.dialogStyle": "custom",
+    "workbench.colorTheme": "Solarized Dark",
 }
