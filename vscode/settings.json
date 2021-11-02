@@ -37,14 +37,15 @@
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.tabs.enabled": true,
     "vim.useSystemClipboard": true,
-    "window.dialogStyle": "custom",
     "window.menuBarVisibility": "toggle",
-    "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Solarized Dark",
     "workbench.editor.untitled.hint": "hidden",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.tips.enabled": false
+    "workbench.tips.enabled": false,
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "window.autoDetectColorScheme": true
 }
