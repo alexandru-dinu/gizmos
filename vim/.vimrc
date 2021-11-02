@@ -174,6 +174,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-sandwich'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+Plug 'sirver/UltiSnips' "{{{
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"}}}
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "{{{

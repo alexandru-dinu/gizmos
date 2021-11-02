@@ -51,8 +51,8 @@ config_vim() {
     prompt $(func_name)
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
-    ln -s $(realpath vim/.vimrc) ~/
 
+    ln -s $(realpath vim/.vimrc) ~/
     for d in $(ls -d vim/*); do
         ln -s $(realpath $d) ~/.vim/
     done
@@ -73,8 +73,9 @@ config_nvim() {
     mkdir -p $cfg_dir $data_dir
 
     ln -s $(realpath vim/.vimrc) ~/.config/nvim/init.vim
-    ln -s $(realpath vim/colors) $cfg_dir/
-    ln -s $(realpath vim/ftplugin) $cfg_dir/
+    for d in $(ls -d vim/*); do
+        ln -s $(realpath $d) $cfg_dir/
+    done
 
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
