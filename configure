@@ -159,7 +159,7 @@ config_vscode() {
     rm -rf ~/.vscode ~/.config/Code
     mkdir -p $cfg_dir
 
-    declare -a configs=("keybindings.json" "settings.json")
+    declare -a configs=("keybindings.json" "settings.json" "snippets")
 
     for c in "${configs[@]}"; do
         ln -s $(realpath vscode/$c) $cfg_dir/
