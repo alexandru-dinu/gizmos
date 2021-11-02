@@ -1,53 +1,50 @@
 {
-    "editor.fontFamily": "Iosevka Fixed SS09 Medium",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": false,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "trailing",
-    "editor.tabSize": 4,
-    "editor.lineNumbers": "on",
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off",
-    "editor.autoClosingDelete": "always",
-    "editor.cursorBlinking": "solid",
-
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    },
-    "files.associations": {
-        "*.wppl": "javascript"
-    },
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.untitled.hint": "hidden",
-    "workbench.tips.enabled": false,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-
     "[haskell]": {
         "editor.fontLigatures": true
     },
     "[python]": {
         "editor.semanticHighlighting.enabled": false
     },
-    "python.defaultInterpreterPath": "/usr/local/bin/python3",
-
-    "terminal.integrated.tabs.enabled": true,
+    "editor.autoClosingDelete": "always",
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "Iosevka Fixed SS09 Medium",
+    "editor.fontLigatures": false,
+    "editor.fontSize": 14,
+    "editor.inlineSuggest.enabled": true,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.tabSize": 4,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.wppl": "javascript"
+    },
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "**/.ammonite": true,
+        "**/.bloop": true,
+        "**/.metals": true
+    },
+    "latex-workshop.latex.autoBuild.run": "never",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
-
-    "telemetry.telemetryLevel":"off",
-    "window.menuBarVisibility": "toggle",
-    "extensions.ignoreRecommendations": true,
-    "latex-workshop.latex.autoBuild.run": "never",
-    "editor.inlineSuggest.enabled": true,
-    "window.titleBarStyle": "custom",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.tabs.enabled": true,
+    "vim.useSystemClipboard": true,
     "window.dialogStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Solarized Dark",
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.tips.enabled": false
 }
