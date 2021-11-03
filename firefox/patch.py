@@ -2,10 +2,9 @@
 about:config patch (prefs.js)
 """
 
+import configparser
 import os
 import re
-import shutil
-import configparser
 from pathlib import Path
 
 home = Path(os.environ["HOME"])
