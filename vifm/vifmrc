@@ -2,7 +2,7 @@
 
 " Appearance "{{{
 colorscheme solarized-dark Default-256 Default
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+set statusline=" %A | %u:%g | %6E | %d "
 
 only
 "}}}
@@ -43,8 +43,8 @@ set undolevels=100
 " if you would rather use a plain text help file set novimhelp.
 set vimhelp
 
-" format for displaying time in file list. For example:
-set timefmt=%d/%m-%H:%M
+" format for displaying time in file list
+set timefmt=%Y-%m-%d\ %H:%M
 
 " show list of matches on tab completion in command-line mode
 set wildmenu
