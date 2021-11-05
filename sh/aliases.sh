@@ -1,23 +1,20 @@
-alias gdb="gdb -q"
-alias i="ipython"
-alias ta="tmux attach"
-alias td="tmux detach"
-
 alias :e="nvim"
 alias :q="exit"
+alias ta="tmux attach"
+alias td="tmux detach"
+alias exa="exa --classify --git --long"
 
-c()  {
+j() {
     cd "$1" && ls
 }
-rs()  {
+rs() {
     (redshift -x && ([ "$1" = "x" ] && return || redshift -O "$1" -g 0.9)) &>/dev/null
 }
-bgopen()  {
+bgopen() {
     xdg-open "$1" &>/dev/null & disown
 }
-
-# scratchpad
-sp()  {
+sp() {
+    # scratchpad
     local scratchpad="${HOME}/.scratchpad"
     local sep=$(perl -E 'say "=" x 32')
     local startup_text="${sep} $(date +'%Y-%m-%d %H:%M:%S') ${sep}"
@@ -25,9 +22,8 @@ sp()  {
 
     ${EDITOR:-vim} -c ${startup_cmd} ${scratchpad}
 }
-
-# git diff vs current branch
-gdc()  {
+gdc() {
+    # git diff vs current branch
     local branch=$(git branch --show-current)
     git diff origin/$branch "$1"
 }
