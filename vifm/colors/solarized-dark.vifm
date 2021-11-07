@@ -23,7 +23,7 @@ hi clear
 
 hi Win        cterm=none              ctermfg=default ctermbg=none
 
-hi TopLine    cterm=none              ctermfg=blue    ctermbg=none
+hi TopLine    cterm=none              ctermfg=blue    ctermbg=black
 hi TopLineSel cterm=none              ctermfg=blue    ctermbg=none
 hi StatusLine cterm=none              ctermfg=blue    ctermbg=none
 hi Border     cterm=none              ctermfg=blue    ctermbg=none
