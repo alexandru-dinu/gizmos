@@ -257,8 +257,8 @@ config_i3() {
 
     for b in $(ls i3/bin); do
         sudo cp --remove-destination i3/bin/$b /usr/bin/ &&
-            sudo chown $USER:$USER /usr/bin/$b &&
-            sudo chmod +x /usr/bin/$b
+        sudo chown $USER:$USER /usr/bin/$b &&
+        sudo chmod +x /usr/bin/$b
     done
 }
 

@@ -9,13 +9,15 @@ exec --no-startup-id compton --config ~/.config/compton/config
 # wallpaper
 exec --no-startup-id feh --bg-fill ~/gizmos.git/wallpapers/manjaro.png
 
-# keyboard layouts
-exec_always --no-startup-id setxkbmap -layout "us,ro" -variant ",std"
+# keyboard
+# rate & delay
+exec --no-startup-id xset r rate 200 25
+# layouts
+exec --no-startup-id setxkbmap -layout "gb,ro" -variant ",std" -option "grp:rctrl_rshift_toggle"
 
-hide_edge_borders none
-
-# custom borders
+# borders
 for_window [class="^(?i)firefox"] border pixel 0
+hide_edge_borders none
 
 # applets
 exec --no-startup-id nm-applet
@@ -27,7 +29,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # printscreen
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec gnome-screenshot
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -36,15 +38,15 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show combi
 
 # focus window
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
@@ -69,7 +71,6 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
 
 # workspaces
 set $ws1 "1"
@@ -111,15 +112,15 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 
-
 # Fn keys
 # volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   0 toggle
 
-# brightness
-# TODO!!!
+# brightness // TODO
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +50
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set -50
 
 # spotify
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
@@ -132,46 +133,41 @@ bindsym $mod+n exec nemo
 
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
-    bindsym Left  resize shrink width  5 px or 5 ppt
-    bindsym Down  resize grow   height 5 px or 5 ppt
-    bindsym Up    resize shrink height 5 px or 5 ppt
-    bindsym Right resize grow   width  5 px or 5 ppt
+    bindsym Left  resize shrink width  2 px or 2 ppt
+    bindsym Down  resize grow   height 2 px or 2 ppt
+    bindsym Up    resize shrink height 2 px or 2 ppt
+    bindsym Right resize grow   width  2 px or 2 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
-
 # client colors
-# class                    border     bg         text       indicator  child_border
-client.focused             #656e77    #656e77    #ffffff    #65737e    #343d46
-client.unfocused           #3c4043    #3c4043    #dddddd    #65737e    #343d46
-client.focused_inactive    #3c4043    #3c4043    #ffffff    #65737e    #343d46
-client.urgent              #d9534f    #900000    #ffffff    #900000    #900000
-client.placeholder         #000000    #0c0c0c    #ffffff    #000000    #0c0c0c
-
-client.background          #ffffff
-
+# class                 border  bg      text    indicator child_border
+client.focused          #586e75 #586e75 #eee8d5 #268bd2   #586e75
+client.focused_inactive #073642 #073642 #eee8d5 #268bd2   #073642
+client.unfocused        #073642 #073642 #eee8d5 #268bd2   #073642
+client.urgent           #073642 #dc322f #eee8d5 #268bd2   #073642
 
 bar {
     status_command i3status -c ~/.config/i3/i3status.conf
     position top
 
     colors {
-        background #1e2124
-        statusline #c0c5ce
-        separator  #65737e
+        background #002b36
+        statusline #eee8d5
+        separator  #93a1a1
 
         # class            border   bg      text
-        focused_workspace  #428bca  #428bca #ffffff
-        active_workspace   #65737e  #65737e #ffffff
-        inactive_workspace #3c4043	#3c4043	#ffffff
-        urgent_workspace   #d9534f  #d9534f #ffffff
+        focused_workspace  #268bd2  #268bd2 #eee8d5
+        active_workspace   #268bd2  #268bd2 #eee8d5
+        inactive_workspace #586e75	#586e75	#eee8d5
+        urgent_workspace   #dc322f  #dc322f #eee8d5
     }
 }
 
@@ -181,8 +177,7 @@ bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
 exec --no-startup-id xautolock -time 10 -locker i3locking
 
 bindsym $mod+Shift+l mode "$mode_system"
-# set $mode_system (l)ock | (e)xit | switch_(u)ser | (s)uspend | (h)ibernate | (r)eboot | (Shift+s)hutdown
-set $mode_system (l)ock | (e)xit | switch (u)ser | (s)uspend | (h)ibernate | (r)boot | (S-s)hutdown
+set $mode_system (l)ock | (e)xit | switch (u)ser | (s)uspend | (h)ibernate | (r)eboot | (S-s)hutdown
 mode "$mode_system" {
     bindsym l       exec --no-startup-id i3exit lock,        mode "default"
     bindsym s       exec --no-startup-id i3exit suspend,     mode "default"
