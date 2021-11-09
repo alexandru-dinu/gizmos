@@ -161,7 +161,7 @@ bar {
     position top
 
     colors {
-        background #002b36
+        background #1e1e1e
         statusline #eee8d5
         separator  #93a1a1
 
