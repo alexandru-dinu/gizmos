@@ -31,7 +31,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # printscreen
-bindsym Print exec gnome-screenshot
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # kill focused window
 bindsym $mod+Shift+q kill
