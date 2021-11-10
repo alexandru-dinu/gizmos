@@ -121,8 +121,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   0 toggle
 
 # brightness
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 100+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 100-
+bindsym XF86MonBrightnessUp   exec --no-startup-id sss-brightness 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id sss-brightness 5%-
 
 # spotify
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
