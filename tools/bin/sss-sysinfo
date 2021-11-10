@@ -7,11 +7,10 @@ case "$1" in
     echo $(whoami) @ $(hostname)
     ;;
 --ram)
-    echo $(free -mh | awk '(NR==2){print $7}' | tr -d 'i')
+    echo $(free -h | awk '(NR==2){print $7}' | tr -d 'i')
     ;;
 --storage)
-    echo $(df /dev/nvme0n1p4 /dev/sda1 --output=avail |
-        awk '(NR>1){t+=$1} END {printf "%dG", t/1024/1024}')
+    echo $(df / -h --output=avail | awk '(NR==2){printf "%s", $1}')
     ;;
 --load)
     echo $(cut -d' ' -f1-3 /proc/loadavg)
