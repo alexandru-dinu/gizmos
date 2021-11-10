@@ -1,0 +1,19 @@
+#!/bin/bash
+
+_volume_info() {
+    amixer -D pulse get Master
+}
+
+cmd_base="dunstify -a $(basename $0) -r 999002 -u low -t 1000"
+
+if [[ "$1" == "mute" ]]; then
+    amixer -D pulse set Master 1+ toggle
+
+    $(_volume_info | rg -qw "on") && `$cmd_base "Unmuted"` || `$cmd_base "Muted"`
+else
+    amixer -D pulse set Master "$1"
+
+    level=$(_volume_info | rg -o "(\d+%)" | head -n1)
+
+    `$cmd_base -h int:value:"$level" "Volume: ${level}"`
+fi
