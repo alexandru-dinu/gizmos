@@ -13,9 +13,7 @@ exec --no-startup-id feh --bg-fill ~/gizmos.git/wallpapers/manjaro.png
 # delay & rate
 exec --no-startup-id xset r rate 200 35
 # layouts
-exec --no-startup-id setxkbmap -layout "gb,ro" -variant ",std" -option "grp:rctrl_rshift_toggle"
-# remap capslock to ctrl
-exec --no-startup-id setxkbmap -option "ctrl:nocaps"
+exec --no-startup-id setxkbmap -layout "gb,ro" -variant ",std" -option "grp:rctrl_rshift_toggle,ctrl:nocaps"
 
 # borders
 for_window [class="^(?i)firefox"] border pixel 0
