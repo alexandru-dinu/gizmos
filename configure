@@ -253,7 +253,11 @@ config_i3() {
         ln -s $(realpath i3/$c) ~/.config/i3/
     done
 
+    mkdir -p ~/.config/compton
     ln -s $(realpath i3/compton.conf) ~/.config/compton/config
+
+    mkdir -p ~/.config/dunst
+    ln -sf $(realpath i3/dunstrc) ~/.config/dunst/
 
     for b in $(ls i3/bin); do
         sudo cp --remove-destination i3/bin/$b /usr/bin/ &&
