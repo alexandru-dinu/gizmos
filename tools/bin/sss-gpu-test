@@ -20,7 +20,7 @@ nvcc -V
 
 prompt 'cudnn'
 pacman -Qi cudnn | grep -i version
-cat $(whereis cudnn_version.h | awk '{print $2}') | grep CUDNN_MAJOR -C 2
+grep CUDNN_MAJOR -C 2 "$(whereis cudnn_version.h | awk '{print $2}')"
 
 prompt 'pytorch'
 python -c '

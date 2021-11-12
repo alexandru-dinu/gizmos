@@ -4,16 +4,16 @@
 
 case "$1" in
 --host)
-    echo $(whoami) @ $(hostname)
+    echo "$(whoami) @ $(hostname)"
     ;;
 --ram)
-    echo $(free -h | awk '(NR==2){print $7}' | tr -d 'i')
+    free -h | awk '(NR==2){print $7}' | tr -d 'i'
     ;;
 --storage)
-    echo $(df / -h --output=avail | awk '(NR==2){printf "%s", $1}')
+    df / -h --output=avail | awk '(NR==2){printf "%s", $1}'
     ;;
 --load)
-    echo $(cut -d' ' -f1-3 /proc/loadavg)
+    cut -d' ' -f1-3 /proc/loadavg
     ;;
 *) ;;
 

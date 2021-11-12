@@ -5,7 +5,7 @@ brightnessctl set "$1"
 level=$(brightnessctl | rg -o "(\d+)%")
 
 dunstify \
-    -a "$(basename $0)" \
+    -a "$(basename "$0")" \
     -r "999001" \
     -u low \
     -t 1000 \

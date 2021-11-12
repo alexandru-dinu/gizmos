@@ -4,16 +4,25 @@ _volume_info() {
     amixer -D pulse get Master
 }
 
-cmd_base="dunstify -a $(basename $0) -r 999002 -u low -t 1000"
+cmd_base="dunstify -a $(basename "$0") -r 999002 -u low -t 1000"
 
-if [[ "$1" == "mute" ]]; then
-    amixer -D pulse set Master 1+ toggle
+case "$1" in
+    --mute)
+        amixer -D pulse set Master 1+ toggle
+        if _volume_info | rg -qw "on"; then
+            $cmd_base "Unmuted"
+        else
+            $cmd_base "Muted"
+        fi
+        ;;
 
-    $(_volume_info | rg -qw "on") && `$cmd_base "Unmuted"` || `$cmd_base "Muted"`
-else
-    amixer -D pulse set Master "$1"
+    --set)
+        amixer -D pulse set Master "$2"
+        level=$(_volume_info | rg -o "(\d+%)" | head -n1)
+        $cmd_base -h int:value:"$level" "Volume: ${level}"
+        ;;
 
-    level=$(_volume_info | rg -o "(\d+%)" | head -n1)
-
-    `$cmd_base -h int:value:"$level" "Volume: ${level}"`
-fi
+    *)
+        echo "Unknown command '$1'." && exit 1
+        ;;
+esac
