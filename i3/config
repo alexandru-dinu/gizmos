@@ -21,6 +21,8 @@ hide_edge_borders none
 
 # applets
 exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id blueman-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
