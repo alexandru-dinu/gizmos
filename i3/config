@@ -30,8 +30,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
-# printscreen
-bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+# screenshot
+bindsym Print       exec --no-startup-id sss-screenshot --selection
+bindsym Shift+Print exec --no-startup-id sss-screenshot --full
 
 # kill focused window
 bindsym $mod+Shift+q kill
