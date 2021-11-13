@@ -10,16 +10,15 @@
 
 (setq doom-theme 'doom-one)
 
-;;(after! org
-(setq org-directory "~/workspace/org.git")
-(setq org-agenda-files (concat org-directory "/agenda.org"))
-(setq org-default-notes-file (concat org-directory "/capture.org"))
-;;)
-
-;;(after! org-roam
-(setq org-roam-directory "~/workspace/org.git")
-(setq org-roam-db-location (concat org-roam-directory "/org-roam.db"))
-;; )
+(after! org
+    (setq org-directory "~/workspace/org.git")
+    (setq org-agenda-files (concat org-directory "/agenda.org"))
+    (setq org-default-notes-file (concat org-directory "/capture.org"))
+)
+(after! org-roam
+    (setq org-roam-directory "~/workspace/org.git")
+    (setq org-roam-db-location (concat org-roam-directory "/org-roam.db"))
+)
 
 (setq +latex-viewers '(zathura))
 
