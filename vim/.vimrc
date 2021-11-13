@@ -171,7 +171,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 
-Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'sirver/UltiSnips' "{{{
