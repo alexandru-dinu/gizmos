@@ -12,7 +12,7 @@
 
 (after! org
     (setq org-directory "~/workspace/org.git")
-    (setq org-agenda-files (concat org-directory "/agenda.org"))
+    (setq org-agenda-files (list org-directory))
     (setq org-default-notes-file (concat org-directory "/capture.org"))
 )
 (after! org-roam
