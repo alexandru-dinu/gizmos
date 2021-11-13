@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# enable extended globbing
+# especially useful for !(pattern)
+shopt -s extglob
+
 green=$(tput setaf 2)
 red=$(tput setaf 1)
 reset=$(tput sgr0)
@@ -53,9 +57,7 @@ config_vim() {
     rm -rf ~/.vim* && mkdir -p ~/.vim
 
     ln -s $(realpath vim/.vimrc) ~/
-    for d in $(ls -d vim/*); do
-        ln -s $(realpath $d) ~/.vim/
-    done
+    find vim/* -type d -exec ln -s $(realpath {}) ~/.vim/ \;
 
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -72,12 +74,10 @@ config_nvim() {
     rm -rf $cfg_dir $data_dir
     mkdir -p $cfg_dir $data_dir
 
-    ln -s $(realpath vim/.vimrc) ~/.config/nvim/init.vim
-    for d in $(ls -d vim/*); do
-        ln -s $(realpath $d) $cfg_dir/
-    done
+    ln -s $(realpath vim/.vimrc) $cfg_dir/init.vim
+    find vim/* -type d -exec ln -s $(realpath {}) $cfg_dir \;
 
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    curl -fLo $data_dir/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     nvim +PlugInstall +qall
@@ -190,32 +190,16 @@ config_pycharm() {
 
     echo "Found $cfg_dir"
 
-    for d in $(ls jetbrains/pycharm | grep -v options); do
-        rm -rf $cfg_dir/$d
-        ln -s $(realpath jetbrains/pycharm/$d) $cfg_dir/$d
+    for d in jetbrains/pycharm/!(options); do
+        f="$(basename "$d")"
+        rm -rf "${cfg_dir:?}/$f"
+        ln -s "$(realpath "$d")" "${cfg_dir:?}/$f"
     done
 
-    for o in $(ls jetbrains/pycharm/options); do
-        rm -rf $cfg_dir/options/$o
-        ln -s $(realpath jetbrains/pycharm/options/$o) $cfg_dir/options/$o
-    done
-}
-
-config_idea() {
-    prompt $(func_name)
-
-    cfg_dir=$(find ~ -name ".Idea*" 2>/dev/null | head -n 1)
-
-    echo "Found $cfg_dir"
-
-    for d in $(ls jetbrains/idea | grep -v options); do
-        rm -rf $cfg_dir/config/$d
-        ln -s $(realpath jetbrains/pycharm/$d) $cfg_dir/config/$d
-    done
-
-    for o in $(ls jetbrains/pycharm/options); do
-        rm -rf $cfg_dir/config/options/$o
-        ln -s $(realpath jetbrains/pycharm/options/$o) $cfg_dir/config/options/$o
+    for o in jetbrains/pycharm/options/*; do
+        f="$(basename "$o")"
+        rm -rf "${cfg_dir:?}/options/$f"
+        ln -s "$(realpath "$o")" "${cfg_dir:?}/options/$f"
     done
 }
 
@@ -259,10 +243,10 @@ config_i3() {
     mkdir -p ~/.config/dunst
     ln -sf $(realpath i3/dunstrc) ~/.config/dunst/
 
-    for b in $(ls i3/bin); do
-        sudo cp --remove-destination i3/bin/$b /usr/bin/ &&
-        sudo chown $USER:$USER /usr/bin/$b &&
-        sudo chmod +x /usr/bin/$b
+    for f in i3/bin/*; do
+        sudo cp --remove-destination "$f" /usr/bin/ &&
+        sudo chown "$USER":"$USER" /usr/bin/"$(basename "$f")" &&
+        sudo chmod +x /usr/bin/"$(basename "$f")"
     done
 }
 
@@ -318,7 +302,7 @@ config_git() {
 config_firefox() {
     prompt $(func_name)
 
-    cd firefox && python patch.py && cd -
+    python firefox/patch.py
 }
 
 config_cinnamon() {
@@ -346,9 +330,9 @@ config_symlinks() {
 
     mkdir -p ~/.local/bin
 
-    for f in $(ls tools/bin/*); do
+    for f in tools/bin/*; do
         prompt "Adding symlink to ~/.local/bin/: $f"
-        ln -sf $(realpath ${f}) ~/.local/bin
+        ln -sf $(realpath "$f") ~/.local/bin
     done
 
     prompt "Adding symlink to ~/: .xbindkeysrc"
@@ -374,8 +358,11 @@ case "$1" in
     ;;
 *)
     for item in "$@"; do
-        echo $(get_configs) | grep -qw $item
-        if [ $? -eq 0 ]; then config_$item; else red_prompt "No config for $item"; fi
+        if get_configs | grep -qw "$item"; then
+            config_"$item"
+        else
+            red_prompt "No config for $item"
+        fi
     done
     ;;
 esac
