@@ -10,6 +10,12 @@
 
 (setq doom-theme 'doom-tomorrow-night)
 
+;; Separate system clipboard from registers.
+;; This also ensures consistency with vim.
+;; clip  -> emacs: "+p
+;; emacs -> clip:  "+y
+(setq x-select-enable-clipboard nil)
+
 (setq-default tab-width 4
               indent-tabs-mode nil)
 (setq-default c-basic-offset tab-width)
