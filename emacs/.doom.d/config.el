@@ -8,7 +8,11 @@
 (setq doom-font (font-spec :family "Iosevka Fixed SS09" :weight 'medium :size 16))
 (setq display-line-numbers-type 'relative)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tomorrow-night)
+
+(setq-default tab-width 4
+              indent-tabs-mode nil)
+(setq-default c-basic-offset tab-width)
 
 (after! org
     (setq org-directory "~/workspace/org.git")
@@ -25,5 +29,5 @@
 ;; Keybindings
 (map! :leader
     (:prefix ("d" . "dired")
-     :desc "Dired: open" "d" #'dired
-     :desc "Dired: jump to current" "j" #'dired-jump))
+     :desc "Dired: open"            "j" #'dired
+     :desc "Dired: jump to current" "d" #'dired-jump))
