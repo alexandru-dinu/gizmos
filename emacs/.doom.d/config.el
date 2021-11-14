@@ -15,13 +15,14 @@
 (setq-default c-basic-offset tab-width)
 
 (after! org
-    (setq org-directory "~/workspace/org.git")
+    (setq org-directory (file-truename "~/workspace/org.git"))
     (setq org-agenda-files (list org-directory))
     (setq org-default-notes-file (concat org-directory "/capture.org"))
 )
 (after! org-roam
-    (setq org-roam-directory "~/workspace/org.git")
+    (setq org-roam-directory (file-truename "~/workspace/org.git"))
     (setq org-roam-db-location (concat org-roam-directory "/org-roam.db"))
+    (org-roam-db-autosync-mode)
 )
 
 (setq +latex-viewers '(zathura))
