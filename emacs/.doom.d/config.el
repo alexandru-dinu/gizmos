@@ -8,6 +8,8 @@
 
 (setq display-line-numbers-type 'relative)
 
+(setq ispell-dictionary "en")
+
 (setq x-select-enable-clipboard nil)
 
 (setq-default tab-width 4

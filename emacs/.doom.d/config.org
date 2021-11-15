@@ -17,9 +17,17 @@ Enable the [[https://github.com/hlissner/doom-emacs/blob/develop/modules/config/
 (setq display-line-numbers-type 'relative)
 #+end_src
 
+* Spelling
++ Using =(spell +aspell)= for [[https://github.com/hlissner/doom-emacs/blob/develop/modules/checkers/spell/README.org][checkers/spell]].
++ Personal dictionary is located at =ispell-personal-dictionary=.
++ If [[https://github.com/hlissner/doom-emacs/issues/4009][Spell-Fu marks every word as incorrect]], then =rm -rv $HOME/.emacs.d/.local/etc/spell-fu/*=.
+#+begin_src elisp
+(setq ispell-dictionary "en")
+#+end_src
+
 * Clipboard
-Interact with system clipboard only through the =+= register to ensure consistency with vim.
-To insert text from clipboard into the command line use =C-r +=.
++ Interact with system clipboard only through the =+= register to ensure consistency with vim.
++ To insert text from clipboard into the command line use =C-r +=.
 #+begin_src elisp
 (setq x-select-enable-clipboard nil)
 #+end_src
