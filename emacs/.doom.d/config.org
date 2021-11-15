@@ -1,3 +1,11 @@
+#+TITLE: Doom Emacs Config
+#+STARTUP: overview
+
+Literate Doom Emacs config.
+Enable the [[https://github.com/hlissner/doom-emacs/blob/develop/modules/config/literate/README.org][config/literate]] module to allow =doom sync= to tangle code blocks to =config.el=.
+
+* Basics
+#+begin_src elisp
 (setq user-full-name "Alexandru Dinu"
       user-mail-address "alex.dinu07@gmail.com")
 
@@ -7,14 +15,26 @@
 (setq doom-font (font-spec :family "Iosevka Fixed SS09" :weight 'medium :size 16))
 
 (setq display-line-numbers-type 'relative)
+#+end_src
 
+* Clipboard
+Interact with system clipboard only through the =+= register to ensure consistency with vim.
+To insert text from clipboard into the command line use =C-r +=.
+#+begin_src elisp
 (setq x-select-enable-clipboard nil)
+#+end_src
 
+* Indentation
+#+begin_src elisp
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
 (setq-default c-basic-offset tab-width)
+#+end_src
 
+* Org
+Configs for org-mode and org-roam.
+#+begin_src elisp
 (after! org
     (setq org-directory (file-truename "~/workspace/org.git"))
     (setq org-agenda-files (list org-directory))
@@ -25,8 +45,15 @@
     (setq org-roam-db-location (concat org-roam-directory "/org-roam.db"))
     (org-roam-db-autosync-mode)
 )
+#+end_src
 
+* Key bindings
+| COMMAND      | KEYS      | DESCRIPTION |
+| =dired=      | =SPC d j= | Open        |
+| =dired-jump= | =SPC d d= | Jump to cwd |
+#+begin_src elisp
 (map! :leader
     (:prefix ("d" . "dired")
      :desc "Dired: open"        "j" #'dired
      :desc "Dired: jump to cwd" "d" #'dired-jump))
+#+end_src
