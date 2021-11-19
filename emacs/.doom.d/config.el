@@ -21,6 +21,8 @@
     (setq org-directory (file-truename "~/workspace/org.git"))
     (setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
     (setq org-log-done 'time)
+    (setq org-startup-with-latex-preview t)
+    (setq org-element-use-cache nil)
 )
 (after! org-roam
     (setq org-roam-directory (file-truename "~/workspace/org.git"))
