@@ -8,14 +8,14 @@
 
 (setq display-line-numbers-type 'relative)
 
-(setq ispell-dictionary "en")
-
-(setq x-select-enable-clipboard nil)
-
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
 (setq-default c-basic-offset tab-width)
+
+(setq ispell-dictionary "en")
+
+(setq x-select-enable-clipboard nil)
 
 (after! org
     (setq org-directory (file-truename "~/workspace/org.git"))
