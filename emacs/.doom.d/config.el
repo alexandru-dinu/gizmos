@@ -19,8 +19,7 @@
 
 (after! org
     (setq org-directory (file-truename "~/workspace/org.git"))
-    (setq org-agenda-files (list org-directory))
-    (setq org-default-notes-file (concat org-directory "/capture.org"))
+    (setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
     (setq org-log-done 'time)
 )
 (after! org-roam
