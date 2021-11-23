@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Bluetooth headphones
+
+set -ex
+
+sudo systemctl start bluetooth.service
+sleep 5
+mprix-proxy&

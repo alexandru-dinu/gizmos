@@ -172,8 +172,10 @@ config_tmux() {
 config_zathura() {
     prompt $(func_name)
 
-    rm -rf ~/.config/zathura
-    ln -s $(realpath zathura) ~/.config/
+    cfg_path=".config/zathura"
+
+    rm -rf $HOME/$cfg_path
+    ln -s $(realpath ./$cfg_path) $HOME/$cfg_path
 }
 
 config_sioyek() {
@@ -346,13 +348,13 @@ config_symlinks() {
 
     mkdir -p ~/.local/bin
 
-    for f in tools/bin/*; do
+    for f in ./.local/bin/*; do
         prompt "Adding symlink to ~/.local/bin/: $f"
         ln -sf $(realpath "$f") ~/.local/bin
     done
 
     prompt "Adding symlink to ~/: .xbindkeysrc"
-    ln -sf $(realpath tools/.xbindkeysrc) ~/
+    ln -sf $(realpath ./.config/.xbindkeysrc) ~/
     xbindkeys --poll-rc
 }
 
