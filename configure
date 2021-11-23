@@ -176,6 +176,13 @@ config_zathura() {
     ln -s $(realpath zathura) ~/.config/
 }
 
+config_sioyek() {
+    prompt $(func_name)
+
+    rm -rf ~/.config/sioyek
+    ln -s $(realpath sioyek) ~/.config/
+}
+
 config_vscode() {
     prompt $(func_name)
 
