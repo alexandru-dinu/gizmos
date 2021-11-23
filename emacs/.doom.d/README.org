@@ -37,7 +37,7 @@ using the provided =$HOME/.emacs.d/bin/org-tangle= utility.
 #+begin_src elisp :tangle init.el
 (doom! :completion
        company ; the ultimate code completion backend
-       vertico ; the search engine of the future
+       ivy
 )
 #+end_src
 * Editor
@@ -126,6 +126,10 @@ using the provided =$HOME/.emacs.d/bin/org-tangle= utility.
     (setq org-roam-directory (file-truename "~/workspace/org.git"))
     (setq org-roam-db-location (concat org-roam-directory "/org-roam.db"))
     (org-roam-db-autosync-mode)
+    (setq org-roam-mode-section-functions
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              #'org-roam-unlinked-references-section))
 )
 #+end_src
 
