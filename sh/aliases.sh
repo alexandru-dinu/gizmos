@@ -14,8 +14,8 @@ bgopen() {
     xdg-open "$1" &>/dev/null & disown
 }
 sp() {
-    # scratchpad
-    local scratchpad="${HOME}/.scratchpad"
+
+    local scratchpad="$HOME/.local/share/scratchpad"
     local sep=$(perl -E 'say "=" x 32')
     local startup_text="${sep} $(date +'%Y-%m-%d %H:%M:%S') ${sep}"
     local startup_cmd="execute \"normal Go${startup_text}\<esc>o\""

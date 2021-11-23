@@ -1,0 +1,5 @@
+require 'irb/completion'
+require 'irbtools'
+
+IRB.conf[:SAVE_HISTORY] ||= 10000
+IRB.conf[:HISTORY_FILE] ||= File.join(ENV["XDG_DATA_HOME"], "irb", "irb_history")

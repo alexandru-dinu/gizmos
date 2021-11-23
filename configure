@@ -1,19 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
 # enable extended globbing
 # especially useful for !(pattern)
 shopt -s extglob
 
-green=$(tput setaf 2)
-red=$(tput setaf 1)
-reset=$(tput sgr0)
-
-prompt() {
-    echo -e "${green}> $1${reset}"
-}
-
-red_prompt() {
-    echo -e "${red}> $1${reset}"
+# Utils {{{
+green() {
+    echo -e "$(tput setaf 2)> $1$(tput sgr0)"
 }
 
 realpath() {
@@ -28,54 +21,26 @@ func_name() {
     echo ${FUNCNAME[1]} | cut -d'_' -f2-
 }
 
-config_zsh() {
-    prompt $(func_name)
-
-    cfg_dir=$HOME/.zsh/simple-zsh
-
-    rm -rf ~/.zshrc ~/.zshenv ~/.fzf*
-
-    for f in $cfg_dir ~/.zsh/cache; do
-        rm -rf $f && mkdir -p $f
-    done
-
-    git clone --depth=1 --recurse-submodules --remote-submodules \
-        https://github.com/alexandru-dinu/simple-zsh.git $cfg_dir
-
-    cp sh/.zshrc ~/
-    cp sh/.zshenv ~/
-
-    exec zsh -i -c "echo Done!; exit"
+get_configs() {
+    grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
 }
 
-config_bash() {
-    prompt $(func_name)
-
-    cp sh/.bashrc ~/
+help() {
+    echo -e "Usage: $0 <foo>\n"
+    echo "Can configure the following:" && get_configs
 }
+# }}}
+
+# XDG-compliant {{{
 
 config_starship() {
-    prompt $(func_name)
+    green $(func_name)
 
-    ln -sf $(realpath starship/starship.toml) ~/.config/
-}
-
-config_vim() {
-    prompt $(func_name)
-
-    rm -rf ~/.vim* && mkdir -p ~/.vim
-
-    ln -s $(realpath vim/.vimrc) ~/
-    find vim/* -type d -exec ln -s $(realpath {}) ~/.vim/ \;
-
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-    vim +PlugInstall +qall
+    ln -sf $(realpath ./.config/starship) ~/.config/
 }
 
 config_nvim() {
-    prompt $(func_name)
+    green $(func_name)
 
     cfg_dir=~/.config/nvim
     data_dir=~/.local/share/nvim
@@ -92,101 +57,208 @@ config_nvim() {
     nvim +PlugInstall +qall
 }
 
-config_vifm() {
-    prompt $(func_name)
-
-    cfg_dir=~/.config/vifm
-
-    rm -rf $cfg_dir
-    ln -s $(realpath vifm) $cfg_dir
-}
-
 config_gnu_emacs() {
-    prompt $(func_name)
+    green $(func_name)
 
-    cfg_dir=~/.emacs.d
-
-    rm -rf $cfg_dir && mkdir -p $cfg_dir
-    ln -s $(realpath emacs/gnu/init.el) $cfg_dir/
+    rm -rf ~/.config/emacs
+    ln -s $(realpath ./.config/emacs) ~/.config
 }
 
 config_doom_emacs() {
-    prompt $(func_name)
+    green $(func_name)
 
-    cfg_dir=~/.emacs.d
+    rm -rf ~/.config/emacs
+    rm -rf ~/.config/doom
 
-    rm -rf $cfg_dir ~/.doom.d
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.config/emacs
+    ~/.config/emacs/bin/doom install
 
-    git clone --depth 1 https://github.com/hlissner/doom-emacs $cfg_dir
-    $cfg_dir/bin/doom install
+    rm -rf ~/.config/doom
+    ln -s $(realpath .config/doom) ~/.config
 
-    rm -rf ~/.doom.d
-    ln -sf $(realpath emacs/.doom.d) ~/
-    $cfg_dir/bin/doom sync
+    ~/.config/emacs/bin/doom sync
+}
 
-    $cfg_dir/bin/doom doctor
+config_irb() {
+    green $(func_name)
+
+    rm -rf ~/.config/irb
+    ln -s $(realpath ./.config/irb) ~/.config
+    mkdir -p ~/.local/share/irb
+
+    gem install irbtools
+}
+
+config_rlang() {
+    green $(func_name)
+
+    rm -rf ~/.config/R
+    ln -s $(realpath ./.config/R) ~/.config
+    mkdir -p ~/.local/share/R
+}
+
+config_gdb() {
+    green $(func_name)
+
+    rm -rf ~/.config/gdb
+    ln -s $(realpath ./.config/gdb) ~/.config
+}
+
+config_npm() {
+    green $(func_name)
+
+    rm -rf ~/.config/npm
+    ln -s $(realpath ./.config/npm) ~/.config
+}
+
+config_tmux() {
+    green $(func_name)
+
+    rm -rf ~/.config/tmux
+    ln -s $(realpath ./.config/tmux) ~/.config
+}
+
+config_zathura() {
+    green $(func_name)
+
+    rm -rf ~/.config/zathura
+    ln -s $(realpath ./.config/zathura) ~/.config/
+}
+
+config_sioyek() {
+    green $(func_name)
+
+    rm -rf ~/.config/sioyek
+    ln -s $(realpath ./.config/sioyek) ~/.config/
+}
+
+config_conda() {
+    green $(func_name)
+
+    rm -rf ~/.config/conda
+    ln -s $(realpath ./.config/conda) ~/.config
+}
+
+config_kitty() {
+    green $(func_name)
+
+    rm -rf ~/.config/kitty
+    ln -s $(realpath ./.config/kitty) ~/.config
+}
+
+config_i3() {
+    green $(func_name)
+
+    for f in i3 compton dunst; do
+        rm -rf ~/.config/$f
+        ln -s $(realpath ./.config/$f) ~/.config
+    done
+}
+
+config_rofi() {
+    green $(func_name)
+
+    rm -rf ~/.config/rofi
+    ln -s $(realpath ./.config/rofi) ~/.config
+}
+
+config_htop() {
+    green $(func_name)
+
+    rm -rf ~/.config/htop
+    ln -s $(realpath ./.config/htop) ~/.config/
+}
+
+config_git() {
+    green $(func_name)
+
+    git config --global init.defaultBranch main
+    git config --global core.fileMode false
+    git config --global core.editor vim
+    git config --global core.eol lf
+}
+
+config_symlinks() {
+    green $(func_name)
+
+    mkdir -p ~/.local/bin
+
+    for f in ./.local/bin/*; do
+        green "Adding symlink to ~/.local/bin/: $f"
+        ln -sf $(realpath "$f") ~/.local/bin
+    done
+
+    for f in ./.local/share/*; do
+        green "Adding symlink to ~/.local/share/: $f"
+        ln -s $(realpath "$f") ~/.local/share
+    done
+
+    green "Adding symlink to ~/: .xbindkeysrc"
+    ln -sf $(realpath ./.config/.xbindkeysrc) ~/
+    xbindkeys --poll-rc
+}
+# }}}
+
+# Others {{{
+
+config_zsh() {
+    green $(func_name)
+
+    cfg_dir=$HOME/.zsh/simple-zsh
+
+    rm ~/.zshrc ~/.zshenv
+    rm -rf ~/.config/fzf
+
+    for f in $cfg_dir ~/.zsh/cache; do
+        rm -rf $f && mkdir -p $f
+    done
+
+    git clone --depth=1 --recurse-submodules --remote-submodules \
+        https://github.com/alexandru-dinu/simple-zsh.git $cfg_dir
+
+    cp sh/.zshrc ~/
+    cp sh/.zshenv ~/
+
+    exec zsh -i -c "echo Done!; exit"
+}
+
+config_bash() {
+    green $(func_name)
+
+    cp sh/.bashrc ~/
+}
+
+config_vim() {
+    green $(func_name)
+
+    rm -rf ~/.vim* && mkdir -p ~/.vim
+
+    ln -s $(realpath vim/.vimrc) ~/
+    find vim/* -type d -exec ln -s $(realpath {}) ~/.vim/ \;
+
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    vim +PlugInstall +qall
+}
+
+config_vifm() {
+    green $(func_name)
+
+    rm -rf ~/.config/vifm
+    ln -s $(realpath ./.config/vifm) ~/.config
 }
 
 config_ghci() {
-    prompt $(func_name)
+    green $(func_name)
 
     rm -f ~/.ghci
     ln -s $(realpath ghci/.ghci) ~/.ghci
     chmod go-w ~/.ghci
 }
 
-config_ruby() {
-    prompt $(func_name)
-
-    gem install irbtools
-
-    rm -f ~/.irbrc
-    ln -s $(realpath ruby/.irbrc) ~/.irbrc
-    chmod go-w ~/.irbrc
-}
-
-config_rlang() {
-    prompt $(func_name)
-
-    declare -a configs=(".Renviron" ".Rprofile")
-    for f in "${configs[@]}"; do
-        rm -f ~/$f && ln -s $(realpath r-lang/$f) ~/
-    done
-}
-
-config_gdb() {
-    prompt $(func_name)
-
-    rm -rf ~/peda.git ~/.gdbinit
-    git clone --depth=1 https://github.com/longld/peda.git ~/peda.git
-    ln -s $(realpath gdb/.gdbinit) ~/.gdbinit
-}
-
-config_tmux() {
-    prompt $(func_name)
-
-    rm -f ~/.tmux.conf
-    ln -s $(realpath tmux/.tmux.conf) ~/.tmux.conf
-}
-
-config_zathura() {
-    prompt $(func_name)
-
-    cfg_path=".config/zathura"
-
-    rm -rf $HOME/$cfg_path
-    ln -s $(realpath ./$cfg_path) $HOME/$cfg_path
-}
-
-config_sioyek() {
-    prompt $(func_name)
-
-    rm -rf ~/.config/sioyek
-    ln -s $(realpath sioyek) ~/.config/
-}
-
 config_vscode() {
-    prompt $(func_name)
+    green $(func_name)
 
     cfg_dir=~/.config/Code/User
     ext_dir=~/.vscode/extensions
@@ -202,90 +274,41 @@ config_vscode() {
 }
 
 config_pycharm() {
-    prompt $(func_name)
+    green $(func_name)
 
-    cfg_dir=$(find ~/.config/JetBrains -name "PyCharm*" 2>/dev/null | head -n 1)
+    select cfg_dir in $(find ~/.config/JetBrains -name "PyCharm*"); do
+        echo "Selected $cfg_dir"; break;
+    done
 
-    echo "Found $cfg_dir"
-
-    for d in jetbrains/pycharm/!(options); do
+    for d in ./.config/pycharm/!(options); do
         f="$(basename "$d")"
         rm -rf "${cfg_dir:?}/$f"
         ln -s "$(realpath "$d")" "${cfg_dir:?}/$f"
     done
 
-    for o in jetbrains/pycharm/options/*; do
+    for o in ./.config/pycharm/options/*; do
         f="$(basename "$o")"
         rm -rf "${cfg_dir:?}/options/$f"
         ln -s "$(realpath "$o")" "${cfg_dir:?}/options/$f"
     done
 }
 
-config_conda() {
-    prompt $(func_name)
+config_mxmaster() {
+    green $(func_name)
 
-    ln -sf $(realpath conda/.condarc) ~/.condarc
+    sudo ln -sf $(realpath ./extra/mxmaster/logid.cfg) /etc/
+    sudo systemctl restart logid.service
 }
 
 config_jupyter() {
-    prompt $(func_name)
+    green $(func_name)
 
     ln -sf $(realpath jupyter/custom) ~/.jupyter
     ln -sf $(realpath jupyter/lab/user-settings) ~/.jupyter/lab
 }
 
-config_kitty() {
-    prompt $(func_name)
-
-    cfg_dir=~/.config/kitty
-
-    rm -rf $cfg_dir && mkdir -p $cfg_dir
-    ln -s $(realpath kitty/kitty.conf) $cfg_dir
-}
-
-config_i3() {
-    prompt $(func_name)
-
-    rm -rf ~/.config/i3 ~/.config/compton
-    mkdir -p ~/.config/i3 ~/.config/compton
-
-    declare -a configs=("config" "i3status.conf")
-
-    for c in "${configs[@]}"; do
-        ln -s $(realpath i3/$c) ~/.config/i3/
-    done
-
-    mkdir -p ~/.config/compton
-    ln -s $(realpath i3/compton.conf) ~/.config/compton/config
-
-    mkdir -p ~/.config/dunst
-    ln -sf $(realpath i3/dunstrc) ~/.config/dunst/
-
-    for f in i3/bin/*; do
-        sudo cp --remove-destination "$f" /usr/bin/ &&
-        sudo chown "$USER":"$USER" /usr/bin/"$(basename "$f")" &&
-        sudo chmod +x /usr/bin/"$(basename "$f")"
-    done
-}
-
-config_rofi() {
-    prompt $(func_name)
-
-    cfg_dir=~/.config/rofi
-
-    rm -rf ${cfg_dir} && mkdir -p ${cfg_dir}
-    ln -s $(realpath rofi/config.rasi) ${cfg_dir}
-}
-
-config_mxmaster() {
-    prompt $(func_name)
-
-    sudo ln -sf $(realpath mx-master/logid.cfg) /etc/
-    sudo systemctl restart logid.service
-}
-
 config_ipython() {
-    prompt $(func_name)
+    green $(func_name)
 
     cfg_dir=~/.ipython/profile_default
     mkdir -p $cfg_dir
@@ -294,78 +317,24 @@ config_ipython() {
 }
 
 config_ptpython() {
-    prompt $(func_name)
+    green $(func_name)
 
     cfg_dir=~/.config/ptpython
     mkdir -p $cfg_dir
     ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
 }
 
-config_htop() {
-    prompt $(func_name)
-
-    cfg_dir=~/.config/htop
-    rm -rf $cfg_dir && ln -s $(realpath htop) $cfg_dir
-}
-
-config_git() {
-    prompt $(func_name)
-
-    git config --global init.defaultBranch main
-    git config --global core.fileMode false
-    git config --global core.editor vim
-    git config --global core.eol lf
-}
-
-config_firefox() {
-    prompt $(func_name)
-
-    python firefox/patch.py
-}
-
 config_cinnamon() {
-    prompt $(func_name)
+    green $(func_name)
 
     js_dir="/usr/share/cinnamon/js/ui"
 
-    dconf load /org/cinnamon/ < ./cinnamon/cinnamon.dconf
+    dconf load /org/cinnamon/ < ./extra/cinnamon/cinnamon.dconf
 
     sudo vim ${js_dir}/workspacesView.js
     sudo vim ${js_dir}/windowManager.js
 }
-
-config_gestures() {
-    prompt $(func_name)
-
-    conf="libinput-gestures.conf"
-
-    sudo ln -s $(realpath gestures/${conf}) /etc/${conf}
-    ln -s $(realpath gestures/${conf}.home) ~/.config/${conf}
-}
-
-config_symlinks() {
-    prompt $(func_name)
-
-    mkdir -p ~/.local/bin
-
-    for f in ./.local/bin/*; do
-        prompt "Adding symlink to ~/.local/bin/: $f"
-        ln -sf $(realpath "$f") ~/.local/bin
-    done
-
-    prompt "Adding symlink to ~/: .xbindkeysrc"
-    ln -sf $(realpath ./.config/.xbindkeysrc) ~/
-    xbindkeys --poll-rc
-}
-
-get_configs() {
-    grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
-}
-
-help() {
-    echo -e "Usage: $0 <foo>\n"
-    echo "Can configure the following:" && get_configs
-}
+# }}}
 
 case "$1" in
 "" | --help | -h)
@@ -379,8 +348,10 @@ case "$1" in
         if get_configs | grep -qw "$item"; then
             config_"$item"
         else
-            red_prompt "No config for $item"
+            echo "No config for $item"
         fi
     done
     ;;
 esac
+
+# vim:foldmethod=marker:foldlevel=0

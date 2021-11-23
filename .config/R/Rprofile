@@ -1,0 +1,9 @@
+if (interactive()) {
+    .First <- function() try(utils::loadhistory(Sys.getenv("R_HISTFILE")))
+    .Last  <- function() try(utils::savehistory(Sys.getenv("R_HISTFILE")))
+}
+
+options(repos=structure(c(CRAN="https://cran.rapporter.net/")))
+
+options(prompt="> ")
+options(continue="+ ")
