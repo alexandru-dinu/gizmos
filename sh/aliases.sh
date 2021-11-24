@@ -2,6 +2,7 @@ alias :e="nvim"
 alias :q="exit"
 alias ta="tmux attach"
 alias td="tmux detach"
+alias la="ls -a"
 alias exa="exa --classify --git --long"
 
 j() {
