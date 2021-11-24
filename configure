@@ -321,7 +321,7 @@ config_pycharm() {
 config_mxmaster() {
     green $(func_name)
 
-    sudo ln -sf $(realpath ./extra/mxmaster/logid.cfg) /etc/
+    sudo ln -sf $(realpath mxmaster/logid.cfg) /etc/
     sudo systemctl restart logid.service
 }
 
