@@ -14,6 +14,7 @@ if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
 fi
 
 # ~/.config
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export CONDARC="$XDG_CONFIG_HOME"/conda/condarc
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export R_ENVIRON_USER="$XDG_CONFIG_HOME"/R/Renviron

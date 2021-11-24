@@ -326,8 +326,7 @@ config_mxmaster() {
 config_jupyter() {
     green $(func_name)
 
-    ln -sf $(realpath jupyter/custom) ~/.jupyter
-    ln -sf $(realpath jupyter/lab/user-settings) ~/.jupyter/lab
+    ln -sf $(realpath ./.config/jupyter/lab/user-settings) $XDG_CONFIG_HOME/jupyter/lab
 }
 
 config_ipython() {
