@@ -70,7 +70,7 @@ let g:maplocalleader = "\\"
 set pastetoggle=<F1>
 
 " disable highlight
-map <silent> <leader><CR> :noh<CR>
+map <silent> <C-l> :noh<CR>
 
 " toggle whitespace listing
 noremap  <silent> <F3> :set list!<CR>
