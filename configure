@@ -200,24 +200,22 @@ config_git() {
 }
 
 config_symlinks() {
-    green $(func_name)
-
     mkdir -p ~/.local/bin
 
     for f in ./.local/bin/*; do
-        green "Adding symlink to ~/.local/bin/: $f"
+        green "symlink ~/.local/bin/$(basename $f)"
         ln -sf $(realpath "$f") ~/.local/bin
     done
 
     for f in ./.local/share/*; do
-        green "Adding symlink to $XDG_DATA_HOME/: $f"
+        green "symlink $XDG_DATA_HOME/$(basename $f)"
         ln -sf $(realpath "$f") $XDG_DATA_HOME
     done
 
-    green "Adding symling to ~/.config/mimeapps.list"
+    green "symlink $XDG_CONFIG_HOME/mimeapps.list"
     ln -sf $(realpath ./.config/mimeapps.list) $XDG_CONFIG_HOME
 
-    green "Adding symlink to ~/: .xbindkeysrc"
+    green "symlink ~/.xbindkeysrc"
     ln -sf $(realpath ./.config/.xbindkeysrc) ~/
     xbindkeys --poll-rc
 }
