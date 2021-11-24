@@ -24,3 +24,6 @@ export IRBRC="$XDG_CONFIG_HOME"/irb/irbrc
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export OCTAVE_HISTFILE="$XDG_CACHE_HOME"/octave_hist
+
+# misc
+export LESSHISTFILE="-"
