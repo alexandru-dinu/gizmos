@@ -9,7 +9,7 @@ case "$1" in
         ;;
 
     --full)
-        imgpath="$HOME/screenshots/$(date +%s).png"
+        imgpath="$HOME/.local/share/screenshots/$(date +%s).png"
         maim "$imgpath"
         $cmd_base "Saved screenshot to $imgpath."
         ;;
