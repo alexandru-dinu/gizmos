@@ -20,6 +20,7 @@ export R_ENVIRON_USER="$XDG_CONFIG_HOME"/R/Renviron
 export R_PROFILE_USER="$XDG_CONFIG_HOME"/R/Rprofile
 export IRBRC="$XDG_CONFIG_HOME"/irb/irbrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 
 # ~/.cache
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv

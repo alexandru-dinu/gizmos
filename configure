@@ -184,6 +184,13 @@ config_htop() {
     ln -s $(realpath ./.config/htop) $XDG_CONFIG_HOME/
 }
 
+config_wget() {
+    green $(func_name)
+
+    rm -rf $XDG_CONFIG_HOME/wget
+    ln -s $(realpath ./.config/wget) $XDG_CONFIG_HOME/
+}
+
 config_git() {
     green $(func_name)
 
