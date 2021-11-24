@@ -205,8 +205,11 @@ config_symlinks() {
 
     for f in ./.local/share/*; do
         green "Adding symlink to $XDG_DATA_HOME/: $f"
-        ln -s $(realpath "$f") $XDG_DATA_HOME
+        ln -sf $(realpath "$f") $XDG_DATA_HOME
     done
+
+    green "Adding symling to ~/.config/mimeapps.list"
+    ln -sf $(realpath ./.config/mimeapps.list) $XDG_CONFIG_HOME
 
     green "Adding symlink to ~/: .xbindkeysrc"
     ln -sf $(realpath ./.config/.xbindkeysrc) ~/
