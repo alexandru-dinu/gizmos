@@ -47,7 +47,6 @@ help() {
 # }}}
 
 # Config: XDG-compliant {{{
-
 config_starship() {
     green $(func_name)
 
@@ -225,7 +224,6 @@ config_symlinks() {
 # }}}
 
 # Config: others {{{
-
 config_zsh() {
     green $(func_name)
 
@@ -350,6 +348,7 @@ config_ptpython() {
 }
 # }}}
 
+# Entrypoint {{{
 case "$1" in
 "" | --help | -h)
     help
@@ -367,5 +366,6 @@ case "$1" in
     done
     ;;
 esac
+# }}}
 
 # vim:foldmethod=marker:foldlevel=0
