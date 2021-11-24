@@ -32,29 +32,29 @@ realpath() {
     fi
 }
 
-func_name() {
-    echo ${FUNCNAME[1]} | cut -d'_' -f2-
-}
+show_func_info() {
+    green $(echo ${FUNCNAME[1]} | cut -d'_' -f2-)
+    type ${FUNCNAME[1]} | tail -n+3
 
-get_configs() {
-    grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
-}
+    read -n 1 -r -p "Accept? [y/n] " yn; echo
 
-help() {
-    echo -e "Usage: $0 <foo>\n"
-    echo "Can configure the following:" && get_configs
+    if [[ ! "$yn" =~ ^[Yy]$ ]]; then
+        echo "Exiting..." && exit 1
+    else
+        echo "Configuring..."
+    fi
 }
 # }}}
 
 # Config: XDG-compliant {{{
 config_starship() {
-    green $(func_name)
+    show_func_info;
 
     ln -sf $(realpath ./.config/starship) $XDG_CONFIG_HOME/
 }
 
 config_nvim() {
-    green $(func_name)
+    show_func_info;
 
     cfg_dir=$XDG_CONFIG_HOME/nvim
     data_dir=$XDG_DATA_HOME/nvim
@@ -72,14 +72,14 @@ config_nvim() {
 }
 
 config_gnu_emacs() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/emacs
     ln -s $(realpath ./.config/emacs) $XDG_CONFIG_HOME
 }
 
 config_doom_emacs() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/emacs
     rm -rf $XDG_CONFIG_HOME/doom
@@ -94,7 +94,7 @@ config_doom_emacs() {
 }
 
 config_irb() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/irb
     ln -s $(realpath ./.config/irb) $XDG_CONFIG_HOME
@@ -104,7 +104,7 @@ config_irb() {
 }
 
 config_rlang() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/R
     ln -s $(realpath ./.config/R) $XDG_CONFIG_HOME
@@ -112,56 +112,56 @@ config_rlang() {
 }
 
 config_gdb() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/gdb
     ln -s $(realpath ./.config/gdb) $XDG_CONFIG_HOME
 }
 
 config_npm() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/npm
     ln -s $(realpath ./.config/npm) $XDG_CONFIG_HOME
 }
 
 config_tmux() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/tmux
     ln -s $(realpath ./.config/tmux) $XDG_CONFIG_HOME
 }
 
 config_zathura() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/zathura
     ln -s $(realpath ./.config/zathura) $XDG_CONFIG_HOME/
 }
 
 config_sioyek() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/sioyek
     ln -s $(realpath ./.config/sioyek) $XDG_CONFIG_HOME/
 }
 
 config_conda() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/conda
     ln -s $(realpath ./.config/conda) $XDG_CONFIG_HOME
 }
 
 config_kitty() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/kitty
     ln -s $(realpath ./.config/kitty) $XDG_CONFIG_HOME
 }
 
 config_i3() {
-    green $(func_name)
+    show_func_info;
 
     for f in i3 compton dunst; do
         rm -rf $XDG_CONFIG_HOME/$f
@@ -170,28 +170,28 @@ config_i3() {
 }
 
 config_rofi() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/rofi
     ln -s $(realpath ./.config/rofi) $XDG_CONFIG_HOME
 }
 
 config_htop() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/htop
     ln -s $(realpath ./.config/htop) $XDG_CONFIG_HOME/
 }
 
 config_wget() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/wget
     ln -s $(realpath ./.config/wget) $XDG_CONFIG_HOME/
 }
 
 config_git() {
-    green $(func_name)
+    show_func_info;
 
     git config --global init.defaultBranch main
     git config --global core.fileMode false
@@ -200,22 +200,20 @@ config_git() {
 }
 
 config_symlinks() {
+    show_func_info;
+
     mkdir -p ~/.local/bin
 
     for f in ./.local/bin/*; do
-        green "symlink ~/.local/bin/$(basename $f)"
         ln -sf $(realpath "$f") ~/.local/bin
     done
 
     for f in ./.local/share/*; do
-        green "symlink $XDG_DATA_HOME/$(basename $f)"
         ln -sf $(realpath "$f") $XDG_DATA_HOME
     done
 
-    green "symlink $XDG_CONFIG_HOME/mimeapps.list"
     ln -sf $(realpath ./.config/mimeapps.list) $XDG_CONFIG_HOME
 
-    green "symlink ~/.xbindkeysrc"
     ln -sf $(realpath ./.config/.xbindkeysrc) ~/
     xbindkeys --poll-rc
 }
@@ -223,7 +221,7 @@ config_symlinks() {
 
 # Config: others {{{
 config_zsh() {
-    green $(func_name)
+    show_func_info;
 
     cfg_dir=$HOME/.zsh/simple-zsh
 
@@ -244,13 +242,13 @@ config_zsh() {
 }
 
 config_bash() {
-    green $(func_name)
+    show_func_info;
 
     cp sh/.bashrc ~/
 }
 
 config_vim() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
 
@@ -264,14 +262,14 @@ config_vim() {
 }
 
 config_vifm() {
-    green $(func_name)
+    show_func_info;
 
     rm -rf $XDG_CONFIG_HOME/vifm
     ln -s $(realpath ./.config/vifm) $XDG_CONFIG_HOME
 }
 
 config_ghci() {
-    green $(func_name)
+    show_func_info;
 
     rm -f ~/.ghci
     ln -s $(realpath ghci/.ghci) ~/.ghci
@@ -279,7 +277,7 @@ config_ghci() {
 }
 
 config_vscode() {
-    green $(func_name)
+    show_func_info;
 
     cfg_dir=$XDG_CONFIG_HOME/Code
     ext_dir=~/.vscode/extensions
@@ -297,7 +295,7 @@ config_vscode() {
 }
 
 config_pycharm() {
-    green $(func_name)
+    show_func_info;
 
     select cfg_dir in $(find $XDG_CONFIG_HOME/JetBrains -name "PyCharm*"); do
         echo "Selected $cfg_dir"; break;
@@ -317,20 +315,20 @@ config_pycharm() {
 }
 
 config_mxmaster() {
-    green $(func_name)
+    show_func_info;
 
     sudo ln -sf $(realpath mxmaster/logid.cfg) /etc/
     sudo systemctl restart logid.service
 }
 
 config_jupyter() {
-    green $(func_name)
+    show_func_info;
 
     ln -sf $(realpath ./.config/jupyter/lab/user-settings) $XDG_CONFIG_HOME/jupyter/lab
 }
 
 config_ipython() {
-    green $(func_name)
+    show_func_info;
 
     cfg_dir=~/.ipython/profile_default
     mkdir -p $cfg_dir
@@ -339,7 +337,7 @@ config_ipython() {
 }
 
 config_ptpython() {
-    green $(func_name)
+    show_func_info;
 
     cfg_dir=$XDG_CONFIG_HOME/ptpython
     mkdir -p $cfg_dir
@@ -348,21 +346,30 @@ config_ptpython() {
 # }}}
 
 # Entrypoint {{{
+get_configs() {
+    grep -oE "^config_[a-z0-9_]+" $0 | sed 's/config_//g' | sort
+}
+
+help() {
+    echo -e "Usage: $0 <foo>\n"
+    echo "Can configure the following:" && get_configs | column
+}
+
+if [ "$#" -gt 1 ]; then
+    echo "At most one argument must be provided (what to config)."
+    help && exit 1
+fi
+
 case "$1" in
 "" | --help | -h)
     help
     ;;
---list | -l)
-    get_configs
-    ;;
 *)
-    for item in "$@"; do
-        if get_configs | grep -qw "$item"; then
-            config_"$item"
-        else
-            echo "No config for $item"
-        fi
-    done
+    if get_configs | grep -qw "$1"; then
+        config_"$1"
+    else
+        echo "No config for $1!" && exit 1
+    fi
     ;;
 esac
 # }}}
