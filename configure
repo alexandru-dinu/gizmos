@@ -348,17 +348,6 @@ config_ptpython() {
     mkdir -p $cfg_dir
     ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
 }
-
-config_cinnamon() {
-    green $(func_name)
-
-    js_dir="/usr/share/cinnamon/js/ui"
-
-    dconf load /org/cinnamon/ < ./extra/cinnamon/cinnamon.dconf
-
-    sudo vim ${js_dir}/workspacesView.js
-    sudo vim ${js_dir}/windowManager.js
-}
 # }}}
 
 case "$1" in
