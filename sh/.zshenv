@@ -19,6 +19,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export R_ENVIRON_USER="$XDG_CONFIG_HOME"/R/Renviron
 export R_PROFILE_USER="$XDG_CONFIG_HOME"/R/Rprofile
 export IRBRC="$XDG_CONFIG_HOME"/irb/irbrc
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 # ~/.cache
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
