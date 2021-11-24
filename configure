@@ -4,6 +4,21 @@
 # especially useful for !(pattern)
 shopt -s extglob
 
+# Ensure XDG_* vars {{{
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    echo "Need to define \$XDG_CONFIG_HOME"
+    exit 1
+fi
+if [ -z "$XDG_DATA_HOME" ]; then
+    echo "Need to define \$XDG_DATA_HOME"
+    exit 1
+fi
+if [ -z "$XDG_CACHE_HOME" ]; then
+    echo "Need to define \$XDG_CACHE_HOME"
+    exit 1
+fi
+# }}}
+
 # Utils {{{
 green() {
     echo -e "$(tput setaf 2)> $1$(tput sgr0)"
@@ -31,19 +46,19 @@ help() {
 }
 # }}}
 
-# XDG-compliant {{{
+# Config: XDG-compliant {{{
 
 config_starship() {
     green $(func_name)
 
-    ln -sf $(realpath ./.config/starship) ~/.config/
+    ln -sf $(realpath ./.config/starship) $XDG_CONFIG_HOME/
 }
 
 config_nvim() {
     green $(func_name)
 
-    cfg_dir=~/.config/nvim
-    data_dir=~/.local/share/nvim
+    cfg_dir=$XDG_CONFIG_HOME/nvim
+    data_dir=$XDG_DATA_HOME/nvim
 
     rm -rf $cfg_dir $data_dir
     mkdir -p $cfg_dir $data_dir
@@ -60,31 +75,31 @@ config_nvim() {
 config_gnu_emacs() {
     green $(func_name)
 
-    rm -rf ~/.config/emacs
-    ln -s $(realpath ./.config/emacs) ~/.config
+    rm -rf $XDG_CONFIG_HOME/emacs
+    ln -s $(realpath ./.config/emacs) $XDG_CONFIG_HOME
 }
 
 config_doom_emacs() {
     green $(func_name)
 
-    rm -rf ~/.config/emacs
-    rm -rf ~/.config/doom
+    rm -rf $XDG_CONFIG_HOME/emacs
+    rm -rf $XDG_CONFIG_HOME/doom
 
-    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.config/emacs
-    ~/.config/emacs/bin/doom install
+    git clone --depth 1 https://github.com/hlissner/doom-emacs $XDG_CONFIG_HOME/emacs
+    $XDG_CONFIG_HOME/emacs/bin/doom install
 
-    rm -rf ~/.config/doom
-    ln -s $(realpath .config/doom) ~/.config
+    rm -rf $XDG_CONFIG_HOME/doom
+    ln -s $(realpath .config/doom) $XDG_CONFIG_HOME
 
-    ~/.config/emacs/bin/doom sync
+    $XDG_CONFIG_HOME/emacs/bin/doom sync
 }
 
 config_irb() {
     green $(func_name)
 
-    rm -rf ~/.config/irb
-    ln -s $(realpath ./.config/irb) ~/.config
-    mkdir -p ~/.local/share/irb
+    rm -rf $XDG_CONFIG_HOME/irb
+    ln -s $(realpath ./.config/irb) $XDG_CONFIG_HOME
+    mkdir -p $XDG_DATA_HOME/irb
 
     gem install irbtools
 }
@@ -92,81 +107,81 @@ config_irb() {
 config_rlang() {
     green $(func_name)
 
-    rm -rf ~/.config/R
-    ln -s $(realpath ./.config/R) ~/.config
-    mkdir -p ~/.local/share/R
+    rm -rf $XDG_CONFIG_HOME/R
+    ln -s $(realpath ./.config/R) $XDG_CONFIG_HOME
+    mkdir -p $XDG_DATA_HOME/R
 }
 
 config_gdb() {
     green $(func_name)
 
-    rm -rf ~/.config/gdb
-    ln -s $(realpath ./.config/gdb) ~/.config
+    rm -rf $XDG_CONFIG_HOME/gdb
+    ln -s $(realpath ./.config/gdb) $XDG_CONFIG_HOME
 }
 
 config_npm() {
     green $(func_name)
 
-    rm -rf ~/.config/npm
-    ln -s $(realpath ./.config/npm) ~/.config
+    rm -rf $XDG_CONFIG_HOME/npm
+    ln -s $(realpath ./.config/npm) $XDG_CONFIG_HOME
 }
 
 config_tmux() {
     green $(func_name)
 
-    rm -rf ~/.config/tmux
-    ln -s $(realpath ./.config/tmux) ~/.config
+    rm -rf $XDG_CONFIG_HOME/tmux
+    ln -s $(realpath ./.config/tmux) $XDG_CONFIG_HOME
 }
 
 config_zathura() {
     green $(func_name)
 
-    rm -rf ~/.config/zathura
-    ln -s $(realpath ./.config/zathura) ~/.config/
+    rm -rf $XDG_CONFIG_HOME/zathura
+    ln -s $(realpath ./.config/zathura) $XDG_CONFIG_HOME/
 }
 
 config_sioyek() {
     green $(func_name)
 
-    rm -rf ~/.config/sioyek
-    ln -s $(realpath ./.config/sioyek) ~/.config/
+    rm -rf $XDG_CONFIG_HOME/sioyek
+    ln -s $(realpath ./.config/sioyek) $XDG_CONFIG_HOME/
 }
 
 config_conda() {
     green $(func_name)
 
-    rm -rf ~/.config/conda
-    ln -s $(realpath ./.config/conda) ~/.config
+    rm -rf $XDG_CONFIG_HOME/conda
+    ln -s $(realpath ./.config/conda) $XDG_CONFIG_HOME
 }
 
 config_kitty() {
     green $(func_name)
 
-    rm -rf ~/.config/kitty
-    ln -s $(realpath ./.config/kitty) ~/.config
+    rm -rf $XDG_CONFIG_HOME/kitty
+    ln -s $(realpath ./.config/kitty) $XDG_CONFIG_HOME
 }
 
 config_i3() {
     green $(func_name)
 
     for f in i3 compton dunst; do
-        rm -rf ~/.config/$f
-        ln -s $(realpath ./.config/$f) ~/.config
+        rm -rf $XDG_CONFIG_HOME/$f
+        ln -s $(realpath ./.config/$f) $XDG_CONFIG_HOME
     done
 }
 
 config_rofi() {
     green $(func_name)
 
-    rm -rf ~/.config/rofi
-    ln -s $(realpath ./.config/rofi) ~/.config
+    rm -rf $XDG_CONFIG_HOME/rofi
+    ln -s $(realpath ./.config/rofi) $XDG_CONFIG_HOME
 }
 
 config_htop() {
     green $(func_name)
 
-    rm -rf ~/.config/htop
-    ln -s $(realpath ./.config/htop) ~/.config/
+    rm -rf $XDG_CONFIG_HOME/htop
+    ln -s $(realpath ./.config/htop) $XDG_CONFIG_HOME/
 }
 
 config_git() {
@@ -189,8 +204,8 @@ config_symlinks() {
     done
 
     for f in ./.local/share/*; do
-        green "Adding symlink to ~/.local/share/: $f"
-        ln -s $(realpath "$f") ~/.local/share
+        green "Adding symlink to $XDG_DATA_HOME/: $f"
+        ln -s $(realpath "$f") $XDG_DATA_HOME
     done
 
     green "Adding symlink to ~/: .xbindkeysrc"
@@ -199,7 +214,7 @@ config_symlinks() {
 }
 # }}}
 
-# Others {{{
+# Config: others {{{
 
 config_zsh() {
     green $(func_name)
@@ -207,7 +222,7 @@ config_zsh() {
     cfg_dir=$HOME/.zsh/simple-zsh
 
     rm ~/.zshrc ~/.zshenv
-    rm -rf ~/.config/fzf
+    rm -rf $XDG_CONFIG_HOME/fzf
 
     for f in $cfg_dir ~/.zsh/cache; do
         rm -rf $f && mkdir -p $f
@@ -245,8 +260,8 @@ config_vim() {
 config_vifm() {
     green $(func_name)
 
-    rm -rf ~/.config/vifm
-    ln -s $(realpath ./.config/vifm) ~/.config
+    rm -rf $XDG_CONFIG_HOME/vifm
+    ln -s $(realpath ./.config/vifm) $XDG_CONFIG_HOME
 }
 
 config_ghci() {
@@ -260,10 +275,10 @@ config_ghci() {
 config_vscode() {
     green $(func_name)
 
-    cfg_dir=~/.config/Code/User
+    cfg_dir=$XDG_CONFIG_HOME/Code/User
     ext_dir=~/.vscode/extensions
 
-    rm -rf ~/.vscode ~/.config/Code
+    rm -rf ~/.vscode $XDG_CONFIG_HOME/Code
     mkdir -p $cfg_dir
 
     declare -a configs=("keybindings.json" "settings.json" "snippets")
@@ -276,7 +291,7 @@ config_vscode() {
 config_pycharm() {
     green $(func_name)
 
-    select cfg_dir in $(find ~/.config/JetBrains -name "PyCharm*"); do
+    select cfg_dir in $(find $XDG_CONFIG_HOME/JetBrains -name "PyCharm*"); do
         echo "Selected $cfg_dir"; break;
     done
 
@@ -319,7 +334,7 @@ config_ipython() {
 config_ptpython() {
     green $(func_name)
 
-    cfg_dir=~/.config/ptpython
+    cfg_dir=$XDG_CONFIG_HOME/ptpython
     mkdir -p $cfg_dir
     ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
 }
