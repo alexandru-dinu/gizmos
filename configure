@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # enable extended globbing
 # especially useful for !(pattern)
@@ -199,6 +199,65 @@ config_git() {
     git config --global core.eol lf
 }
 
+config_vifm() {
+    show_func_info;
+
+    rm -rf $XDG_CONFIG_HOME/vifm
+    ln -s $(realpath ./.config/vifm) $XDG_CONFIG_HOME
+}
+
+config_vscode() {
+    show_func_info;
+
+    cfg_dir=$XDG_CONFIG_HOME/Code
+    ext_dir=~/.vscode/extensions
+
+    rm -rf ~/.vscode
+    rm -rf $cfg_dir
+
+    mkdir -p $cfg_dir/User
+
+    declare -a configs=("keybindings.json" "settings.json" "snippets")
+
+    for c in "${configs[@]}"; do
+        ln -s $(realpath ./.config/vscode/$c) $cfg_dir/User/
+    done
+}
+
+config_pycharm() {
+    show_func_info;
+
+    select cfg_dir in $(find $XDG_CONFIG_HOME/JetBrains -name "PyCharm*"); do
+        echo "Selected $cfg_dir"; break;
+    done
+
+    for d in ./.config/pycharm/!(options); do
+        f="$(basename "$d")"
+        rm -rf "${cfg_dir:?}/$f"
+        ln -s "$(realpath "$d")" "${cfg_dir:?}/$f"
+    done
+
+    for o in ./.config/pycharm/options/*; do
+        f="$(basename "$o")"
+        rm -rf "${cfg_dir:?}/options/$f"
+        ln -s "$(realpath "$o")" "${cfg_dir:?}/options/$f"
+    done
+}
+
+config_jupyter() {
+    show_func_info;
+
+    ln -sf $(realpath ./.config/jupyter/lab/user-settings) $XDG_CONFIG_HOME/jupyter/lab
+}
+
+config_ptpython() {
+    show_func_info;
+
+    cfg_dir=$XDG_CONFIG_HOME/ptpython
+    mkdir -p $cfg_dir
+    ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
+}
+
 config_symlinks() {
     show_func_info;
 
@@ -261,57 +320,12 @@ config_vim() {
     vim +PlugInstall +qall
 }
 
-config_vifm() {
-    show_func_info;
-
-    rm -rf $XDG_CONFIG_HOME/vifm
-    ln -s $(realpath ./.config/vifm) $XDG_CONFIG_HOME
-}
-
 config_ghci() {
     show_func_info;
 
     rm -f ~/.ghci
     ln -s $(realpath ghci/.ghci) ~/.ghci
     chmod go-w ~/.ghci
-}
-
-config_vscode() {
-    show_func_info;
-
-    cfg_dir=$XDG_CONFIG_HOME/Code
-    ext_dir=~/.vscode/extensions
-
-    rm -rf ~/.vscode
-    rm -rf $cfg_dir
-
-    mkdir -p $cfg_dir/User
-
-    declare -a configs=("keybindings.json" "settings.json" "snippets")
-
-    for c in "${configs[@]}"; do
-        ln -s $(realpath ./.config/vscode/$c) $cfg_dir/User/
-    done
-}
-
-config_pycharm() {
-    show_func_info;
-
-    select cfg_dir in $(find $XDG_CONFIG_HOME/JetBrains -name "PyCharm*"); do
-        echo "Selected $cfg_dir"; break;
-    done
-
-    for d in ./.config/pycharm/!(options); do
-        f="$(basename "$d")"
-        rm -rf "${cfg_dir:?}/$f"
-        ln -s "$(realpath "$d")" "${cfg_dir:?}/$f"
-    done
-
-    for o in ./.config/pycharm/options/*; do
-        f="$(basename "$o")"
-        rm -rf "${cfg_dir:?}/options/$f"
-        ln -s "$(realpath "$o")" "${cfg_dir:?}/options/$f"
-    done
 }
 
 config_mxmaster() {
@@ -321,12 +335,6 @@ config_mxmaster() {
     sudo systemctl restart logid.service
 }
 
-config_jupyter() {
-    show_func_info;
-
-    ln -sf $(realpath ./.config/jupyter/lab/user-settings) $XDG_CONFIG_HOME/jupyter/lab
-}
-
 config_ipython() {
     show_func_info;
 
@@ -334,14 +342,6 @@ config_ipython() {
     mkdir -p $cfg_dir
     ln -sf $(realpath python/ipython_config.py) $cfg_dir
     ln -sf $(realpath python/startup) $cfg_dir
-}
-
-config_ptpython() {
-    show_func_info;
-
-    cfg_dir=$XDG_CONFIG_HOME/ptpython
-    mkdir -p $cfg_dir
-    ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
 }
 # }}}
 
