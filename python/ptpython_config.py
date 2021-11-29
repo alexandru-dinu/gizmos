@@ -20,7 +20,7 @@ def configure(repl):
 
     repl.vi_mode = True
     repl.prompt_style = "ipython"
-    repl.enable_mouse_support = True
+    repl.enable_mouse_support = False
 
     repl.complete_while_typing = False
     # complete while typing must be disabled
