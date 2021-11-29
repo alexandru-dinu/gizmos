@@ -1,0 +1,21 @@
+#!/bin/bash
+
+page="1"
+per_page="100"
+urls=""
+
+while true; do
+    cur_page=$(gh api -X GET user/starred -f "per_page=$per_page" -f "page=$page" | \
+        jq -n 'inputs[] | .html_url')
+
+    if [ -z "$cur_page" ]; then
+        break
+    else
+        urls="${urls} ${cur_page}"
+        page=$((page+1))
+    fi;
+done
+
+for url in $urls; do
+    echo "${url//\"/}"
+done
