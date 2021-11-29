@@ -1,0 +1,26 @@
+auto-reload yes
+
+browser "firefox %u"
+
+# key bindings
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+bind-key g home
+bind-key G end
+bind-key U show-urls
+
+# colors
+color background        default default
+color listnormal        yellow  default
+color listnormal_unread default default
+color listfocus         black   blue
+color listfocus_unread  black   blue
+color info              blue    default bold
+color article           default default
+
+# highlights
+highlight article "^(Title):.*$"         blue  default
+highlight article "https?://[^ ]+"       red   default
+highlight article "\\[image\\ [0-9]+\\]" green default

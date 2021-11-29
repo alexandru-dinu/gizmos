@@ -258,6 +258,13 @@ config_ptpython() {
     ln -sf $(realpath python/ptpython_config.py) $cfg_dir/config.py
 }
 
+config_newsboat() {
+    show_func_info;
+
+    rm -rf $XDG_CONFIG_HOME/newsboat
+    ln -s $(realpath ./.config/newsboat) $XDG_CONFIG_HOME
+}
+
 config_symlinks() {
     show_func_info;
 
