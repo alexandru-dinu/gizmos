@@ -3,7 +3,7 @@ super + Return
     kitty
 super + d
     rofi -show combi
-super + n
+super + e
     nemo
 
 # volume
@@ -54,7 +54,7 @@ super + {h, v}
     i3-msg split {h, v}
 
 # layouts
-super + {s, w, e}
+super + {s, t, w}
     i3-msg layout {stacking, tabbed, toggle split}
 
 # focus window
