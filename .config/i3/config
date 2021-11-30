@@ -9,7 +9,7 @@ font pango:Iosevka Fixed SS09 Medium 10
 exec --no-startup-id compton --config ~/.config/compton/config
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/.local/share/wallpapers/manjaro.png
+exec --no-startup-id feh --bg-fill --no-fehbg ~/.local/share/wallpapers/manjaro.png
 
 # simple X hotkey daemon
 exec_always sxhkd
