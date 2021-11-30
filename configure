@@ -265,6 +265,13 @@ config_newsboat() {
     ln -s $(realpath ./.config/newsboat) $XDG_CONFIG_HOME
 }
 
+config_sxhkd() {
+    show_func_info;
+
+    rm -rf $XDG_CONFIG_HOME/sxhkd
+    ln -s $(realpath ./.config/sxhkd) $XDG_CONFIG_HOME
+}
+
 config_symlinks() {
     show_func_info;
 

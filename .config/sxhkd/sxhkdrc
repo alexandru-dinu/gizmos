@@ -1,0 +1,77 @@
+# wm-agnostic {{{
+super + Return
+    kitty
+super + d
+    rofi -show combi
+super + n
+    nemo
+
+# volume
+{XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
+    sss-volume {--set 5%+, --set 5%-, --mute}
+
+# brightness
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+    sss-brightness {5%+, 5%-}
+
+# screenshot
+{Print, shift + Print}
+    sss-screenshot {--selection, --full}
+
+# spotify
+{XF86AudioPlay, XF86AudioStop, XF86AudioPrev, XF86AudioNext}
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
+        /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.{PlayPause, Stop, Previous, Next}
+#}}}
+
+# i3-specific {{{
+super + shift + c
+    i3-msg reload
+super + shift + r
+    i3-msg restart && pkill -USR1 -x sxhkd
+
+# kill focused window
+super + shift + q
+    i3-msg kill
+
+# focus the parent container
+super + a
+    i3-msg focus parent
+
+# fullscreen
+super + f
+    i3-msg fullscreen toggle
+
+# floating
+super + space
+    i3-msg focus mode_toggle
+
+super + shift + space
+    i3-msg floating toggle
+
+# splits
+super + {h, v}
+    i3-msg split {h, v}
+
+# layouts
+super + {s, w, e}
+    i3-msg layout {stacking, tabbed, toggle split}
+
+# focus window
+super + {Left, Down, Up, Right}
+    i3-msg focus {left, down, up, right}
+
+# move window
+super + shift + {Left, Down, Up, Right}
+    i3-msg move {left, down, up, right}
+
+# workspace switch
+super + {1-9,0}
+    i3-msg workspace {1-9,10}
+
+# workspace move
+super + shift + {1-9,0}
+    i3-msg move container to workspace {1-9,10}
+#}}}
+
+# vim:foldmethod=marker:foldlevel=0
