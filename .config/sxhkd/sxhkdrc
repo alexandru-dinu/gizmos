@@ -7,21 +7,21 @@ super + e
     nemo
 
 # volume
-{XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
-    sss-volume {--set 5%+, --set 5%-, --mute}
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    sss-volume {--set 5%+,--set 5%-,--mute}
 
 # brightness
-{XF86MonBrightnessUp, XF86MonBrightnessDown}
-    sss-brightness {5%+, 5%-}
+XF86MonBrightness{Up,Down}
+    sss-brightness {5%+,5%-}
 
 # screenshot
-{Print, shift + Print}
-    sss-screenshot {--selection, --full}
+{Print,shift + Print}
+    sss-screenshot {--selection,--full}
 
 # spotify
-{XF86AudioPlay, XF86AudioStop, XF86AudioPrev, XF86AudioNext}
+XF86Audio{Play,Stop,Prev,Next}
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
-        /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.{PlayPause, Stop, Previous, Next}
+        /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.{PlayPause,Stop,Previous,Next}
 #}}}
 
 # i3-specific {{{
@@ -50,20 +50,20 @@ super + shift + space
     i3-msg floating toggle
 
 # splits
-super + {h, v}
-    i3-msg split {h, v}
+super + {h,v}
+    i3-msg split {h,v}
 
 # layouts
-super + {s, t, w}
-    i3-msg layout {stacking, tabbed, toggle split}
+super + {s,t,w}
+    i3-msg layout {stacking,tabbed,toggle split}
 
 # focus window
-super + {Left, Down, Up, Right}
-    i3-msg focus {left, down, up, right}
+super + {Left,Down,Up,Right}
+    i3-msg focus {left,down,up,right}
 
 # move window
-super + shift + {Left, Down, Up, Right}
-    i3-msg move {left, down, up, right}
+super + shift + {Left,Down,Up,Right}
+    i3-msg move {left,down,up,right}
 
 # workspace switch
 super + {1-9,0}
