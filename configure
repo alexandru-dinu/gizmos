@@ -309,12 +309,6 @@ config_zsh() {
     exec zsh -i -c "echo Done!; exit"
 }
 
-config_bash() {
-    show_func_info;
-
-    cp sh/.bashrc ~/
-}
-
 config_vim() {
     show_func_info;
 
