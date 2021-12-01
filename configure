@@ -284,9 +284,6 @@ config_symlinks() {
     done
 
     ln -sf $(realpath ./.config/mimeapps.list) $XDG_CONFIG_HOME
-
-    ln -sf $(realpath ./.config/.xbindkeysrc) ~/
-    xbindkeys --poll-rc
 }
 # }}}
 
