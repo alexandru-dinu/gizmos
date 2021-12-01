@@ -210,7 +210,7 @@ config_vscode() {
     cfg_dir=$XDG_CONFIG_HOME/Code
     ext_dir=~/.vscode/extensions
 
-    rm -rf ~/.vscode
+    rm -rf ~/.vscode*
     rm -rf $cfg_dir
 
     mkdir -p $cfg_dir/User
