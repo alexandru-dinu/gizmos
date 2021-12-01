@@ -2,58 +2,54 @@ if has('nvim')
     set inccommand=nosplit
 else
     set nocompatible
-    set encoding=utf-8
-    set fileformats=unix,dos
-    set history=10000
-    set laststatus=2
-
-    set autoread
-    set autoindent
-    set smarttab
-    set wildmenu
-
-    set hlsearch
-    set incsearch
-
-    set virtualedit=all
-
     set t_Co=256
-    set background=dark
-    syntax enable
-
     filetype plugin indent on
-
     runtime! ftplugin/man.vim
 endif
 
+set history=10000
+set encoding=utf-8
+set fileformats=unix,dos
 set shortmess+=I
 set shortmess-=S
 set noshowmode
-
+set laststatus=2
 set number
 set relativenumber
 set scrolloff=10
-
+set autoindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
-
+set smarttab
 set ignorecase
 set smartcase
-
+set nowrap
+set autoread
+set nohlsearch
+set incsearch
 set hidden
 set splitbelow
 set splitright
-
+set wildmenu
 set lazyredraw
 set ttimeoutlen=0
-set updatetime=100
-
+set updatetime=50
 set cursorline
+set backspace=indent,eol,start
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " enable mouse in all modes (e.g. for easier selection)
 set mouse=a
+
+" colorscheme
+syntax enable
+set background=dark
+try
+    colorscheme solarized
+catch
+    colorscheme elflord
+endtry
 
 " return to last edit position when opening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -135,6 +131,12 @@ nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 11/10)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 10/11)<CR>
 nnoremap <silent> <Leader>0 :exe "vertical resize " . (winwidth(0) * 11/10)<CR>
 nnoremap <silent> <Leader>9 :exe "vertical resize " . (winwidth(0) * 10/11)<CR>
+
+" easier split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " spell checking
 map <leader>ss :setlocal spell!<CR>
@@ -293,9 +295,3 @@ Plug 'itchyny/lightline.vim' "{{{
 "}}}
 
 call plug#end()
-
-try
-    colorscheme solarized
-catch
-    colorscheme elflord
-endtry
