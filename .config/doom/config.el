@@ -17,21 +17,17 @@
 
 (setq x-select-enable-clipboard nil)
 
+(add-hook 'org-mode-hook #'org-element-cache-reset 'append)
 (after! org
     (setq org-directory (file-truename "~/workspace/org.git"))
     (setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
     (setq org-log-done 'time)
     (setq org-startup-with-latex-preview t)
-    (setq org-element-use-cache nil)
 )
 (after! org-roam
     (setq org-roam-directory (file-truename "~/workspace/org.git"))
     (setq org-roam-db-location (concat org-roam-directory "/org-roam.db"))
     (org-roam-db-autosync-mode)
-    (setq org-roam-mode-section-functions
-        (list #'org-roam-backlinks-section
-              #'org-roam-reflinks-section
-              #'org-roam-unlinked-references-section))
 )
 
 (map! :leader
