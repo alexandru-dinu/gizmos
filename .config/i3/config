@@ -29,6 +29,8 @@ exec --no-startup-id setxkbmap -layout "gb,ro" -variant ",std" -option "grp:rctr
 for_window [class="^(?i)firefox"] border pixel 0
 hide_edge_borders none
 
+focus_follows_mouse no
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
