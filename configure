@@ -295,10 +295,7 @@ config_zsh() {
 
     rm ~/.zshrc ~/.zshenv
     rm -rf $XDG_CONFIG_HOME/fzf
-
-    for f in $cfg_dir ~/.zsh/cache; do
-        rm -rf $f && mkdir -p $f
-    done
+    rm -rf $cfg_dir && mkdir -p $cfg_dir
 
     git clone --depth=1 --recurse-submodules --remote-submodules \
         https://github.com/alexandru-dinu/simple-zsh.git $cfg_dir
