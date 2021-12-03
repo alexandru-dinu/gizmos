@@ -1,3 +1,5 @@
+#!/bin/sh
+
 alias :e="nvim"
 alias :q="exit"
 alias ta="tmux attach"
