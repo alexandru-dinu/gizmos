@@ -5,5 +5,15 @@
 set -ex
 
 sudo systemctl start bluetooth.service
-sleep 5
+
+blueman-applet 2> /dev/null & disown
+
+read -p "Press enter after successful connection"
+
+pacmd list-sinks | grep 'index' -A 1
+
+read sink
+
+pacmd set-default-sink $sink
+
 mpris-proxy&
