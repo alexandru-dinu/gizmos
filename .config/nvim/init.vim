@@ -164,6 +164,7 @@ endif
 "Plug 'lervag/vimtex', {'for': 'tex'} "{{{
 "    let g:tex_flavor = 'latex'
 ""}}}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 Plug 'manicmaniac/coconut.vim', {'for': 'coconut'} "{{{
     autocmd FileType coconut setlocal commentstring=#\ %s
