@@ -291,17 +291,27 @@ config_symlinks() {
 config_zsh() {
     show_func_info;
 
-    cfg_dir=$HOME/.zsh/simple-zsh
+    cfg_dir=$XDG_CONFIG_HOME/zsh
+    data_dir=$XDG_DATA_HOME/zsh # bookmarks and history
 
-    rm ~/.zshrc ~/.zshenv
+    if [ "$cfg_dir" != "$ZDOTDIR" ]; then
+        echo "Define in ~/.zshenv:"
+        echo "    export ZDOTDIR=\$XDG_CONFIG_HOME/zsh"
+        echo "Aborting!"
+        exit 1
+    fi
+
+    rm -f ~/.zshrc ~/.zshenv
+    rm -rf $ZDOTDIR
     rm -rf $XDG_CONFIG_HOME/fzf
-    rm -rf $cfg_dir && mkdir -p $cfg_dir
+
+    mkdir -p $data_dir
 
     git clone --depth=1 --recurse-submodules --remote-submodules \
-        https://github.com/alexandru-dinu/simple-zsh.git $cfg_dir
+        https://github.com/alexandru-dinu/simple-zsh.git $ZDOTDIR
 
-    cp sh/.zshrc ~/
-    cp sh/.zshenv ~/
+    ln -s $(realpath .config/zsh/.zshrc) $ZDOTDIR
+    ln -s $(realpath .config/zsh/.zshenv) ~/
 
     exec zsh -i -c "echo Done!; exit"
 }

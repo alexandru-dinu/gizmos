@@ -14,6 +14,9 @@ if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
 fi
 
 # ~/.config
+export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
+export HISTFILE="$XDG_DATA_HOME"/zsh/history
+
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export CONDARC="$XDG_CONFIG_HOME"/conda/condarc
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
