@@ -26,3 +26,5 @@ def magic_import_common(line):
     _global_import("torch", "T")
     _global_import("torch.nn", "nn")
     _global_import("pandas", "pd")
+    _global_import("matplotlib.pyplot", "plt")
+    _global_import("seaborn", "sns")
