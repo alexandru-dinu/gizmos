@@ -1118,6 +1118,9 @@ autocmd ColorScheme * if g:colors_name != "solarized" | silent! aunmenu Solarize
 " Own changes "{{{
 hi SignColumn ctermbg=none
 hi LineNr     ctermbg=none
+hi DiffAdd    ctermbg=none
+hi DiffDelete ctermbg=none
+hi DiffChange ctermbg=none
 "
 " vim:foldmethod=marker:foldlevel=0
 "}}}

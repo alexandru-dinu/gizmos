@@ -42,15 +42,6 @@ set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 " enable mouse in all modes (e.g. for easier selection)
 set mouse=a
 
-" colorscheme
-syntax enable
-set background=dark
-try
-    colorscheme solarized
-catch
-    colorscheme elflord
-endtry
-
 " return to last edit position when opening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -173,9 +164,23 @@ Plug 'manicmaniac/coconut.vim', {'for': 'coconut'} "{{{
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mhinz/vim-signify'
+
+Plug 'junegunn/vim-easy-align' "{{{
+    xmap ea <Plug>(EasyAlign)
+"}}}
+
+Plug 'ojroques/vim-oscyank' "{{{
+    " copy last yanked text to clipboard
+    vmap <C-c> y:OSCYank<CR>
+"}}}
+
+Plug 'scrooloose/nerdtree' "{{{
+    let NERDTreeShowHidden = 1
+    map <silent> <F2> :NERDTreeToggle<CR>
+"}}}
 
 Plug 'sirver/UltiSnips' "{{{
     let g:UltiSnipsExpandTrigger="<tab>"
@@ -189,7 +194,6 @@ Plug 'junegunn/fzf.vim' "{{{
     map <leader>bs :Buffers<CR>
 "}}}
 
-
 Plug 'vifm/vifm.vim' "{{{
     map <leader>vo :Vifm<CR>
     map <leader>vv :VsplitVifm<CR>
@@ -197,43 +201,6 @@ Plug 'vifm/vifm.vim' "{{{
     map <leader>vt :TabVifm<CR>
     map <leader>vd :DiffVifm<CR>
 "}}}
-
-
-Plug 'junegunn/vim-easy-align' "{{{
-    xmap ea <Plug>(EasyAlign)
-"}}}
-
-
-Plug 'ojroques/vim-oscyank' "{{{
-    " copy last yanked text to clipboard
-    vmap <C-c> y:OSCYank<CR>
-"}}}
-
-
-Plug 'scrooloose/nerdtree' "{{{
-    let NERDTreeShowHidden = 1
-    map <silent> <F2> :NERDTreeToggle<CR>
-"}}}
-
-
-Plug 'airblade/vim-gitgutter' "{{{
-    let g:gitgutter_enabled  = 0
-    let is_git = system("cd $(dirname " . expand("%:p") . ") && git ls-files --error-unmatch " . expand("%:p") . " && cd -")
-    if v:shell_error == 0
-        let g:gitgutter_enabled = 1
-    endif
-
-    let g:gitgutter_map_keys = 0
-
-    nmap ]h <Plug>(GitGutterNextHunk)
-    nmap [h <Plug>(GitGutterPrevHunk)
-    nmap <leader>hp <Plug>(GitGutterPreviewHunk)
-    nmap <leader>hu <Plug>(GitGutterUndoHunk)
-    if !has('nvim')
-        nmap <silent> <leader>hd :bdelete gitgutter://hunk-preview<CR>
-    endif
-"}}}
-
 
 Plug 'deponian/vim-lightline-whitespace'
 Plug 'itchyny/lightline.vim' "{{{
@@ -296,3 +263,12 @@ Plug 'itchyny/lightline.vim' "{{{
 "}}}
 
 call plug#end()
+
+" colorscheme
+if &diff | syntax off | else | syntax enable | endif
+set background=dark
+try
+    colorscheme solarized
+catch
+    colorscheme elflord
+endtry
