@@ -35,7 +35,6 @@ set wildmenu
 set lazyredraw
 set ttimeoutlen=0
 set updatetime=50
-set cursorline
 set backspace=indent,eol,start
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
