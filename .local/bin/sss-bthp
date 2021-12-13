@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Bluetooth headphones
 
@@ -15,5 +15,7 @@ pacmd list-sinks | grep 'index' -A 1
 read sink
 
 pacmd set-default-sink $sink
+
+kill -9 "$(pidof volumeicon)" && volumeicon & disown
 
 mpris-proxy&
