@@ -1,6 +1,7 @@
 configuration {
-    theme:      "solarized";
     font:       "Iosevka Fixed SS09 Medium 14";
     modi:       "combi";
     combi-modi: "window,drun,run";
 }
+
+@theme "solarized"
