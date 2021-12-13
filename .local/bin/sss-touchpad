@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Unified touchpad options
+# To be used with e.g. i3
+
+touchpad="SynPS/2 Synaptics TouchPad"
+
+declare -a options=(
+    "libinput Tapping Enabled"
+    "libinput Natural Scrolling Enabled"
+)
+
+for opt in "${options[@]}"
+do
+    echo "set $opt"
+    xinput set-prop "$touchpad" "$opt" 1
+done
