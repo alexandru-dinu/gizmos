@@ -88,15 +88,6 @@ endfunc
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
-" open-line maintaining indentation; hacky, but works
-if has('nvim')
-    nnoremap <A-j> ox<BS><ESC>
-    nnoremap <A-k> Ox<BS><ESC>
-else
-    nnoremap j ox<BS><ESC>
-    nnoremap k Ox<BS><ESC>
-endif
-
 " buffers
 map <leader>bl :ls<CR>
 map <leader>bd :bd<CR>
@@ -116,12 +107,6 @@ let g:lasttab = 1
 nmap <leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
-" resize splits
-nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 11/10)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 10/11)<CR>
-nnoremap <silent> <Leader>0 :exe "vertical resize " . (winwidth(0) * 11/10)<CR>
-nnoremap <silent> <Leader>9 :exe "vertical resize " . (winwidth(0) * 10/11)<CR>
-
 " easier split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -137,10 +122,6 @@ map <leader>sc z=
 " separate configs for specific extensions
 autocmd BufNewFile,BufRead *.tex  setfiletype tex
 autocmd BufNewFile,BufRead *.wppl setfiletype javascript
-
-" run selection in interpreter
-xnoremap <leader>py :w !python<CR>
-xnoremap <leader>hs :w !ghci<CR>
 
 
 """ PLUGINS
