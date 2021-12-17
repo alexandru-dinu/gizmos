@@ -149,7 +149,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mhinz/vim-signify'
 
 Plug 'junegunn/vim-easy-align' "{{{
-    xmap ea <Plug>(EasyAlign)
+    xmap ga <Plug>(EasyAlign)<C-x>
 "}}}
 
 Plug 'ojroques/vim-oscyank' "{{{
