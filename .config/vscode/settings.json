@@ -47,7 +47,9 @@
         "*": false,
         "yaml": false,
         "plaintext": true,
-        "markdown": false
+        "markdown": false,
+        "rust": true,
+        "haskell": true
     },
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
