@@ -42,7 +42,6 @@
        emacs-lisp
        latex
        markdown
-       python
        sh
 )
 

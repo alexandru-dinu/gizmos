@@ -96,7 +96,6 @@ Disable =doom-dashboard= for a cleaner look and to immediately get a scratch buf
        emacs-lisp
        latex
        markdown
-       python
        sh
 )
 #+end_src
