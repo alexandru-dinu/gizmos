@@ -161,7 +161,7 @@ config_kitty() {
 config_i3() {
     show_func_info;
 
-    for f in i3 compton dunst; do
+    for f in i3 picom dunst; do
         rm -rf $XDG_CONFIG_HOME/$f
         ln -s $(realpath ./.config/$f) $XDG_CONFIG_HOME
     done

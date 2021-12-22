@@ -5,8 +5,8 @@ set $mod Mod4
 
 font pango:Iosevka Fixed SS09 Medium 10
 
-# compton
-exec --no-startup-id compton --config ~/.config/compton/config
+# picom
+exec --no-startup-id picom -b --config ~/.config/picom/config
 
 # wallpaper
 exec --no-startup-id feh --bg-fill --no-fehbg ~/.local/share/wallpapers/manjaro.png
