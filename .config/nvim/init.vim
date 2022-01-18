@@ -174,14 +174,6 @@ Plug 'junegunn/fzf.vim' "{{{
     map <leader>bs :Buffers<CR>
 "}}}
 
-Plug 'vifm/vifm.vim' "{{{
-    map <leader>vo :Vifm<CR>
-    map <leader>vv :VsplitVifm<CR>
-    map <leader>vh :SplitVifm<CR>
-    map <leader>vt :TabVifm<CR>
-    map <leader>vd :DiffVifm<CR>
-"}}}
-
 Plug 'deponian/vim-lightline-whitespace'
 Plug 'itchyny/lightline.vim' "{{{
     let g:lightline = {

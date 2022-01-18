@@ -197,13 +197,6 @@ config_git() {
     git config --global core.eol lf
 }
 
-config_vifm() {
-    show_func_info;
-
-    rm -rf $XDG_CONFIG_HOME/vifm
-    ln -s $(realpath ./.config/vifm) $XDG_CONFIG_HOME
-}
-
 config_vscode() {
     show_func_info;
 

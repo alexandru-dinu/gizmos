@@ -6,8 +6,6 @@ emacs/elpa/
 emacs/transient/
 
 .netrwhist
-vifminfo*
-vifm-help.txt
 
 .gdb_history
 *.py[cod]
