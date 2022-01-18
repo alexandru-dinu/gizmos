@@ -185,7 +185,7 @@ Plug 'vifm/vifm.vim' "{{{
 Plug 'deponian/vim-lightline-whitespace'
 Plug 'itchyny/lightline.vim' "{{{
     let g:lightline = {
-        \ 'colorscheme': 'solarized',
+        \ 'colorscheme': 'powerline',
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
         \             [ 'readonly', 'filename', 'modified' ],
@@ -247,8 +247,12 @@ call plug#end()
 " colorscheme
 if &diff | syntax off | else | syntax enable | endif
 set background=dark
-try
-    colorscheme solarized
-catch
-    colorscheme elflord
-endtry
+colorscheme desert
+
+hi Comment    ctermfg=8 ctermbg=none cterm=none
+hi Visual     ctermfg=8 ctermbg=7    cterm=reverse
+hi LineNr     ctermfg=8 ctermbg=none cterm=none
+hi SignColumn ctermbg=none
+hi DiffAdd    ctermbg=none
+hi DiffDelete ctermbg=none
+hi DiffChange ctermbg=none

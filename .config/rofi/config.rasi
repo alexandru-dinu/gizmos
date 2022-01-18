@@ -4,4 +4,4 @@ configuration {
     combi-modi: "window,drun,run";
 }
 
-@theme "solarized"
+@theme "Arc-Dark"
