@@ -368,11 +368,7 @@ case "$1" in
     help
     ;;
 *)
-    if get_configs | grep -qw "$1"; then
-        config_"$1"
-    else
-        echo "No config for $1!" && exit 1
-    fi
+    config_"$1"
     ;;
 esac
 # }}}
