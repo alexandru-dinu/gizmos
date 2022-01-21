@@ -12,25 +12,19 @@ set encoding=utf-8
 set fileformats=unix,dos
 set shortmess+=I
 set shortmess-=S
-set noshowmode
 set laststatus=2
-set number
-set relativenumber
+set noshowmode
+set nu rnu
 set scrolloff=10
 set autoindent
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=4 shiftwidth=4
 set smarttab
-set ignorecase
-set smartcase
-set nowrap
+set ignorecase smartcase
+set incsearch hlsearch
 set autoread
-set nohlsearch
-set incsearch
 set hidden
-set splitbelow
-set splitright
+set splitbelow splitright
 set wildmenu
 set lazyredraw
 set ttimeoutlen=0
@@ -62,31 +56,6 @@ map <silent> <C-l> :noh<CR>
 noremap  <silent> <F3> :set list!<CR>
 inoremap <silent> <F3> <C-o>:set list!<CR>
 cnoremap <silent> <F3> <C-c>:set list!<CR>
-
-" substitute all occurrences of the word under the cursor
-func! GetVisual() range
-    normal! ""gvy
-    let l:sel = getreg('"')
-    let l:sel = escape(sel, '^$.*\/~[]')
-    let l:sel = substitute(sel, '\n', '\\n', 'g')
-    return sel
-endfunc
-nnoremap <leader>r :%s/\<<C-r><C-w>\>/
-vnoremap <leader>r <Esc>:%s/<c-r>=GetVisual()<CR>/
-
-" visual mode pressing * or # searches for the current selection
-func! VisualSelection() range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunc
-vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
 " buffers
 map <leader>bl :ls<CR>
@@ -181,19 +150,12 @@ Plug 'itchyny/lightline.vim' "{{{
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
         \             [ 'readonly', 'filename', 'modified' ],
-        \             [ 'bufinfo', 'gitinfo' ] ],
-        \   'right': [ [ 'whitespace' ],
-        \              [ 'lineinfo' ],
-        \              [ 'filetype', 'fileformat', 'fileencoding' ] ],
-        \ },
-        \ 'inactive': {
-        \ 	'left': [ [ 'readonly', 'filename', 'modified' ] ],
-        \   'right': [ [ 'lineinfo' ] ],
+        \             [ 'gitinfo' ] ],
+        \   'right': [ [ 'whitespace', 'lineinfo' ],
+        \              [ 'percent' ],
+        \              [ 'filetype', 'fileformat' ] ],
         \ },
         \ 'component_function': {
-        \   'fileencoding': 'LL_fileencoding',
-        \   'lineinfo': 'LL_lineinfo',
-        \   'bufinfo': 'LL_bufinfo',
         \   'gitinfo': 'FugitiveHead',
         \ },
         \ 'component_expand': {
@@ -216,22 +178,7 @@ Plug 'itchyny/lightline.vim' "{{{
         \     't': 'T',
         \   },
         \ }
-
-    func! LL_bufinfo() abort
-        let l:total = len(getbufinfo({'buflisted':1}))
-        return printf('%d buf', total)
-    endfunc
-
-    func! LL_fileencoding() abort
-        let l:enc = (&fenc !=# '' ? &fenc : &enc)
-        return (enc == 'utf-8' ? '' : enc)
-    endfunc
-
-    func! LL_lineinfo() abort
-        let l:li = line('.') . ':' . col('.')
-        let l:pc = string(100 * line('.') / line('$'))
-        return printf('%s %s%%', li, pc)
-    endfunc
+    let g:lightline.inactive = g:lightline.active
 "}}}
 
 call plug#end()
