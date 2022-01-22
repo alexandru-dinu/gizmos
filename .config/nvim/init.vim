@@ -115,7 +115,9 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify' "{{{
+    map <silent> <leader>st :SignifyToggle<CR>
+"}}}
 
 Plug 'junegunn/vim-easy-align' "{{{
     xmap ga <Plug>(EasyAlign)<C-x>
@@ -181,17 +183,13 @@ Plug 'itchyny/lightline.vim' "{{{
     let g:lightline.inactive = g:lightline.active
 "}}}
 
+Plug 'jeffkreeftmeijer/vim-dim'
+
 call plug#end()
 
 " colorscheme
 if &diff | syntax off | else | syntax enable | endif
 set background=dark
-colorscheme desert
+colorscheme dim
 
-hi Comment    ctermfg=8 ctermbg=none cterm=none
-hi Visual     ctermfg=8 ctermbg=7    cterm=reverse
-hi LineNr     ctermfg=8 ctermbg=none cterm=none
-hi SignColumn ctermbg=none
-hi DiffAdd    ctermbg=none
-hi DiffDelete ctermbg=none
-hi DiffChange ctermbg=none
+hi Visual ctermfg=8 ctermbg=7 cterm=reverse
