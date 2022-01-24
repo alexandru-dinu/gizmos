@@ -33,6 +33,7 @@ set backspace=indent,eol,start
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " enable mouse in all modes (e.g. for easier selection)
+if ! has('nvim') | set ttymouse=xterm2 | endif
 set mouse=a
 
 " return to last edit position when opening files
