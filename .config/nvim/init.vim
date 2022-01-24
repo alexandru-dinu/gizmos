@@ -120,7 +120,7 @@ Plug 'mhinz/vim-signify' "{{{
 "}}}
 
 Plug 'junegunn/vim-easy-align' "{{{
-    xmap ga <Plug>(EasyAlign)<C-x>
+    xmap ga <Plug>(EasyAlign)
 "}}}
 
 Plug 'ojroques/vim-oscyank' "{{{
@@ -192,4 +192,4 @@ if &diff | syntax off | else | syntax enable | endif
 set background=dark
 colorscheme dim
 
-hi Visual ctermfg=8 ctermbg=7 cterm=reverse
+hi Visual ctermfg=7 ctermbg=8 cterm=none
