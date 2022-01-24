@@ -1,41 +1,41 @@
 /* ==UserStyle==
-@name           HackerNews Solarized Dark
-@namespace      github.com/openstyles/stylus
+@name           HackerNews Nord
+@namespace      https://github.com/alexandru-dinu/gizmos
 @version        1.0.0
-@author         https://github.com/UserStyles/hacker-news-solarized-dark
+@author         https://www.nordtheme.com/
 ==/UserStyle== */
 @-moz-document domain("news.ycombinator.com") {
     * {
-        color: #93A1A1 !important;
-        background-color: #002b36 !important;
+        color: #d8dee9 !important;
+        background-color: #2e3440 !important;
         font-family: "Iosevka Fixed SS09" !important;
         font-size: 10pt;
     }
     body > center > table > tbody > tr:first-child * {
-        background-color: #073642 !important;
+        background-color: #2e3440 !important;
     }
     body > center > table > tbody > tr:first-child * a:hover {
-        background: #002b36 !important;
+        background: #2e3440 !important;
     }
     code,
     pre,
     input,
     textarea {
-        background: #073642 !important;
+        background: #2e3440 !important;
     }
     a {
-        color: #2aa198 !important;
+        color: #81a1c1 !important;
     }
     .subtext a {
-        color: #93A1A1 !important;
+        color: #d8dee9 !important;
     }
     a:visited,
     a:visited span {
-        color: #b58900 !important;
+        color: #ebcb8b !important;
     }
     a:hover,
     a:hover span {
-        background: #073642 !important;
+        background: #2e3440 !important;
     }
     .comment,
     .fatitem {
