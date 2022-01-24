@@ -53,10 +53,10 @@ mode "resize" {
 
 # client colors
 # class                 border  bground text    indicator child_border
-client.focused          #4c7899 #285577 #d0d0d0 #2e9ef4   #285577
-client.focused_inactive #333333 #222222 #888888 #292d2e   #222222
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #d0d0d0 #900000   #900000
+client.focused          #4c566a #4c566a #d0d0d0 #81a1c1   #4c566a
+client.focused_inactive #333333 #2e3440 #888888 #292d2e   #2e3440
+client.unfocused        #333333 #2e3440 #888888 #292d2e   #2e3440
+client.urgent           #bf616a #bf616a #d0d0d0 #bf616a   #bf616a
 client.placeholder      #000000 #0c0c0c #d0d0d0 #000000   #0c0c0c
 
 client.background       #d0d0d0
@@ -71,11 +71,11 @@ bar {
         separator  #93a1a1
 
         # class            border  bg      text
-        focused_workspace  #4c7899 #285577 #d0d0d0
-        active_workspace   #333333 #222222 #d0d0d0
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #d0d0d0
-        binding_mode       #2f343a #900000 #d0d0d0
+        focused_workspace  #4c566a #4c566a #d0d0d0
+        active_workspace   #333333 #2e3440 #d0d0d0
+        inactive_workspace #333333 #2e3440 #888888
+        urgent_workspace   #bf616a #bf616a #d0d0d0
+        binding_mode       #bf616a #bf616a #d0d0d0
     }
 }
 

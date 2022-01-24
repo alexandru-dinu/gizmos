@@ -148,7 +148,7 @@ Plug 'junegunn/fzf.vim' "{{{
 Plug 'deponian/vim-lightline-whitespace'
 Plug 'itchyny/lightline.vim' "{{{
     let g:lightline = {
-        \ 'colorscheme': 'powerline',
+        \ 'colorscheme': 'nord',
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
         \             [ 'readonly', 'filename', 'modified' ],
@@ -180,7 +180,6 @@ Plug 'itchyny/lightline.vim' "{{{
         \     't': 'T',
         \   },
         \ }
-    let g:lightline.inactive = g:lightline.active
 "}}}
 
 Plug 'jeffkreeftmeijer/vim-dim'
@@ -192,4 +191,5 @@ if &diff | syntax off | else | syntax enable | endif
 set background=dark
 colorscheme dim
 
-hi Visual ctermfg=7 ctermbg=8 cterm=none
+hi Visual     ctermfg=7 ctermbg=8 cterm=none
+hi MatchParen ctermfg=8 ctermbg=7 cterm=none
