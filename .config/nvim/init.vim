@@ -194,3 +194,5 @@ colorscheme dim
 
 hi Visual     ctermfg=7 ctermbg=8 cterm=none
 hi MatchParen ctermfg=8 ctermbg=7 cterm=none
+hi SpellBad   ctermfg=7 ctermbg=1 cterm=none
+hi SpellCap   ctermfg=0 ctermbg=3 cterm=none
