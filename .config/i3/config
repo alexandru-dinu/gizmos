@@ -15,18 +15,18 @@ exec --no-startup-id feh --bg-fill --no-fehbg ~/.local/share/wallpapers/manjaro.
 exec_always sxhkd
 
 # touchpad
-exec --no-startup-id sss-touchpad
+exec_always --no-startup-id sss-touchpad
+
+# keyboard delay & rate
+exec_always --no-startup-id xset r rate 200 35
+
+# keyboard layouts
+exec_always --no-startup-id setxkbmap -layout "gb,ro" -variant ",std" -option "grp:rctrl_rshift_toggle,ctrl:nocaps"
 
 # applets
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id blueman-applet
-
-# keyboard delay & rate
-exec --no-startup-id xset r rate 200 35
-
-# keyboard layouts
-exec --no-startup-id setxkbmap -layout "gb,ro" -variant ",std" -option "grp:rctrl_rshift_toggle,ctrl:nocaps"
 
 # borders
 for_window [class="^(?i)firefox"] border pixel 0

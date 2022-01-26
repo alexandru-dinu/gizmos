@@ -3,15 +3,11 @@
 # Unified touchpad options
 # To be used with e.g. i3
 
-touchpad="SynPS/2 Synaptics TouchPad"
+set -ex
 
-declare -a options=(
-    "libinput Tapping Enabled"
-    "libinput Natural Scrolling Enabled"
-)
-
-for opt in "${options[@]}"
-do
-    echo "set $opt"
-    xinput set-prop "$touchpad" "$opt" 1
-done
+xinput set-prop \
+    "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+xinput set-prop \
+    "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+xinput set-prop \
+    "pointer:Logitech K400 Plus" "libinput Natural Scrolling Enabled" 1
