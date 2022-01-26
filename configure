@@ -47,12 +47,6 @@ show_func_info() {
 # }}}
 
 # Config: XDG-compliant {{{
-config_starship() {
-    show_func_info;
-
-    ln -sf $(realpath ./.config/starship) $XDG_CONFIG_HOME/
-}
-
 config_nvim() {
     show_func_info;
 
