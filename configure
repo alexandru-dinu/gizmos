@@ -301,7 +301,7 @@ config_zsh() {
     mkdir -p $data_dir
 
     git clone --depth=1 --recurse-submodules --remote-submodules \
-        https://github.com/alexandru-dinu/simple-zsh.git $ZDOTDIR
+        https://github.com/alexandru-dinu/zsh-config.git $ZDOTDIR
 
     ln -s $(realpath .config/zsh/.zshrc) $ZDOTDIR
     ln -s $(realpath .config/zsh/.zshenv) ~/
