@@ -269,8 +269,6 @@ config_symlinks() {
     for f in ./.local/share/*; do
         ln -sf $(realpath "$f") $XDG_DATA_HOME
     done
-
-    ln -sf $(realpath ./.config/mimeapps.list) $XDG_CONFIG_HOME
 }
 # }}}
 
