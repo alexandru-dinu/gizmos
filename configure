@@ -47,6 +47,13 @@ show_func_info() {
 # }}}
 
 # Config: XDG-compliant {{{
+config_fonts() {
+    show_func_info;
+
+    rm -rf $XDG_CONFIG_HOME/fontconfig
+    ln -s $(realpath ./.config/fontconfig) $XDG_CONFIG_HOME
+}
+
 config_nvim() {
     show_func_info;
 
