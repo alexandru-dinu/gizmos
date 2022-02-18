@@ -185,6 +185,10 @@ config_wget() {
 config_git() {
     show_func_info;
 
+    rm -rf $XDG_CONFIG_HOME/git
+    mkdir -p $XDG_CONFIG_HOME/git
+    touch $XDG_CONFIG_HOME/git/config
+
     git config --global init.defaultBranch main
     git config --global core.fileMode false
     git config --global core.editor ${EDITOR:-nvim}
