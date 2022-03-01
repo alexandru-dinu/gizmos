@@ -7,9 +7,8 @@
     },
     "editor.autoClosingDelete": "always",
     "editor.cursorBlinking": "solid",
-    "editor.fontFamily": "Iosevka Fixed SS09 Medium",
+    "editor.fontFamily": "Iosevka Fixed SS09",
     "editor.fontLigatures": false,
-    "editor.fontSize": 16,
     "editor.inlineSuggest.enabled": true,
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
@@ -51,5 +50,6 @@
         "language-julia.interrupt"
     ],
     "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": false
+    "julia.enableTelemetry": false,
+    "workbench.colorTheme": "Visual Studio Dark"
 }
