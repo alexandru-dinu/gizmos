@@ -146,7 +146,7 @@ Plug 'junegunn/fzf.vim' "{{{
 Plug 'deponian/vim-lightline-whitespace'
 Plug 'itchyny/lightline.vim' "{{{
     let g:lightline = {
-        \ 'colorscheme': 'nord',
+        \ 'colorscheme': 'powerline',
         \ 'active': {
         \ 	'left': [ [ 'mode', 'paste', 'spell' ],
         \             [ 'readonly', 'filename', 'modified' ],
