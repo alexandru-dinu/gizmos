@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# mostly used for the status-bar in tmux
-
 case "$1" in
 --host)
     echo "$(whoami) @ $(hostname)"
