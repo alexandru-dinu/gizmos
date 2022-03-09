@@ -1,27 +1,26 @@
 /* ==UserStyle==
-@name           HackerNews Nord
+@name           HackerNews Dark
 @namespace      https://github.com/alexandru-dinu/gizmos
 @version        1.0.0
-@author         https://www.nordtheme.com/
 ==/UserStyle== */
 @-moz-document domain("news.ycombinator.com") {
     * {
         color: #d8dee9 !important;
-        background-color: #2e3440 !important;
+        background-color: #181818 !important;
         font-family: "Iosevka Fixed SS09" !important;
         font-size: 10pt;
     }
     body > center > table > tbody > tr:first-child * {
-        background-color: #2e3440 !important;
+        background-color: #181818 !important;
     }
     body > center > table > tbody > tr:first-child * a:hover {
-        background: #2e3440 !important;
+        background: #181818 !important;
     }
     code,
     pre,
     input,
     textarea {
-        background: #2e3440 !important;
+        background: #181818 !important;
     }
     a {
         color: #81a1c1 !important;
@@ -31,11 +30,11 @@
     }
     a:visited,
     a:visited span {
-        color: #ebcb8b !important;
+        color: #d08770 !important;
     }
     a:hover,
     a:hover span {
-        background: #2e3440 !important;
+        background: #181818 !important;
     }
     .comment,
     .fatitem {
