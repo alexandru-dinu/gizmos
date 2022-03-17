@@ -202,6 +202,18 @@ config_git() {
     git config --global core.eol lf
 }
 
+config_tig() {
+    show_func_info;
+
+    # ~/.local/share/tig directory must exist,
+    # writes to ~/.tig_history otherwise.
+    rm -rf ~/.tig_history
+    mkdir -p $XDG_DATA_HOME/tig
+
+    rm -rf $XDG_CONFIG_HOME/tig
+    ln -s $(realpath ./.config/tig) $XDG_CONFIG_HOME/
+}
+
 config_vscode() {
     show_func_info;
 
