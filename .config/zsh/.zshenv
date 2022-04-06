@@ -9,6 +9,8 @@ export npm_config_prefix="$HOME/.node_modules"
 # PATH
 export PATH=$HOME/miniconda3/bin:$PATH
 export PATH=$HOME/.node_modules/bin:$PATH
+# rust
+source "$XDG_DATA_HOME/cargo/env"
 
 # doom emacs
 if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
