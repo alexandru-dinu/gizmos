@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias :e="nvim"
+alias :e="${EDITOR}"
 alias :q="exit"
 alias ta="tmux attach"
 alias td="tmux detach"
