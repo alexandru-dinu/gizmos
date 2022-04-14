@@ -141,6 +141,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "{{{
     map <leader>f  :Files<CR>
     map <leader>bs :Buffers<CR>
+    inoremap <expr> <C-x><C-f> fzf#vim#complete#path('rg --files')
 "}}}
 
 Plug 'deponian/vim-lightline-whitespace'
