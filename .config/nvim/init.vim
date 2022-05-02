@@ -46,7 +46,7 @@ autocmd BufWrite * exe "normal mz" | %s/\s\+$//ge | exe "normal `z"
 """ KEY-BINDINGS
 nnoremap <Space> <Nop>
 let g:mapleader = " "
-let g:maplocalleader = "\\"
+let g:maplocalleader = ","
 
 set pastetoggle=<F1>
 
@@ -98,90 +98,78 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 
-""" Language-specific
-"Plug 'lervag/vimtex', {'for': 'tex'} "{{{
-"    let g:tex_flavor = 'latex'
-""}}}
-Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-Plug 'idris-hackers/idris-vim', {'for': 'idris'}
-Plug 'manicmaniac/coconut.vim', {'for': 'coconut'} "{{{
-    autocmd FileType coconut setlocal commentstring=#\ %s
-"}}}
+
+" differentiate between active plugins when using vscode-neovim integration
+if !exists('g:vscode')
+    Plug 'jeffkreeftmeijer/vim-dim' " colorscheme
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-fugitive'
+    Plug 'mhinz/vim-signify' "{{{
+        map <silent> <leader>st :SignifyToggle<CR>
+    "}}}
+    Plug 'ojroques/vim-oscyank' "{{{
+        " copy last yanked text to clipboard
+        vmap <C-c> y:OSCYank<CR>
+    "}}}
+    Plug 'sirver/UltiSnips' "{{{
+        let g:UltiSnipsExpandTrigger="<tab>"
+        let g:UltiSnipsJumpForwardTrigger="<tab>"
+        let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+    "}}}
+    Plug 'scrooloose/nerdtree' "{{{
+        let NERDTreeShowHidden = 1
+        map <silent> <F2> :NERDTreeToggle<CR>
+    "}}}
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim' "{{{
+        map <leader>f  :Files<CR>
+        map <leader>bs :Buffers<CR>
+        inoremap <expr> <C-x><C-f> fzf#vim#complete#path('rg --files')
+    "}}}
+    Plug 'deponian/vim-lightline-whitespace'
+    Plug 'itchyny/lightline.vim' "{{{
+        let g:lightline = {
+            \ 'colorscheme': 'powerline',
+            \ 'active': {
+            \ 	'left': [ [ 'mode', 'paste', 'spell' ],
+            \             [ 'readonly', 'filename', 'modified' ],
+            \             [ 'gitinfo' ] ],
+            \   'right': [ [ 'whitespace', 'lineinfo' ],
+            \              [ 'percent' ],
+            \              [ 'filetype', 'fileformat' ] ],
+            \ },
+            \ 'component_function': {
+            \   'gitinfo': 'FugitiveHead',
+            \ },
+            \ 'component_expand': {
+            \   'whitespace': 'lightline#whitespace#check',
+            \ },
+            \ 'component_type': {
+            \   'whitespace': 'warning',
+            \ },
+            \ 'mode_map': {
+            \     'n' : 'N',
+            \     'i' : 'I',
+            \     'R' : 'R',
+            \     'v' : 'V',
+            \     'V' : 'VL',
+            \     '': 'VB',
+            \     'c' : 'C',
+            \     's' : 'S',
+            \     'S' : 'SL',
+            \     '': 'SB',
+            \     't': 'T',
+            \   },
+            \ }
+    "}}}
+endif
 
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'mhinz/vim-signify' "{{{
-    map <silent> <leader>st :SignifyToggle<CR>
-"}}}
-
 Plug 'junegunn/vim-easy-align' "{{{
     xmap ga <Plug>(EasyAlign)
 "}}}
-
-Plug 'ojroques/vim-oscyank' "{{{
-    " copy last yanked text to clipboard
-    vmap <C-c> y:OSCYank<CR>
-"}}}
-
-Plug 'scrooloose/nerdtree' "{{{
-    let NERDTreeShowHidden = 1
-    map <silent> <F2> :NERDTreeToggle<CR>
-"}}}
-
-Plug 'sirver/UltiSnips' "{{{
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-"}}}
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim' "{{{
-    map <leader>f  :Files<CR>
-    map <leader>bs :Buffers<CR>
-    inoremap <expr> <C-x><C-f> fzf#vim#complete#path('rg --files')
-"}}}
-
-Plug 'deponian/vim-lightline-whitespace'
-Plug 'itchyny/lightline.vim' "{{{
-    let g:lightline = {
-        \ 'colorscheme': 'powerline',
-        \ 'active': {
-        \ 	'left': [ [ 'mode', 'paste', 'spell' ],
-        \             [ 'readonly', 'filename', 'modified' ],
-        \             [ 'gitinfo' ] ],
-        \   'right': [ [ 'whitespace', 'lineinfo' ],
-        \              [ 'percent' ],
-        \              [ 'filetype', 'fileformat' ] ],
-        \ },
-        \ 'component_function': {
-        \   'gitinfo': 'FugitiveHead',
-        \ },
-        \ 'component_expand': {
-        \   'whitespace': 'lightline#whitespace#check',
-        \ },
-        \ 'component_type': {
-        \   'whitespace': 'warning',
-        \ },
-        \ 'mode_map': {
-        \     'n' : 'N',
-        \     'i' : 'I',
-        \     'R' : 'R',
-        \     'v' : 'V',
-        \     'V' : 'VL',
-        \     '': 'VB',
-        \     'c' : 'C',
-        \     's' : 'S',
-        \     'S' : 'SL',
-        \     '': 'SB',
-        \     't': 'T',
-        \   },
-        \ }
-"}}}
-
-Plug 'jeffkreeftmeijer/vim-dim'
 
 call plug#end()
 

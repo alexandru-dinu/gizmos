@@ -10,7 +10,7 @@
     "editor.fontFamily": "Iosevka Fixed SS09",
     "editor.fontLigatures": false,
     "editor.inlineSuggest.enabled": true,
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "trailing",
     "editor.tabSize": 4,
@@ -44,12 +44,17 @@
         "plaintext": true,
         "markdown": false,
         "rust": true,
-        "haskell": true
+        "haskell": true,
+        "latex": true
     },
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "GitHub Dark",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "editor.fontSize": 15,
+    "editor.scrollBeyondLastLine": false,
+    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim"
 }
