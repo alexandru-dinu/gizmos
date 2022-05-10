@@ -4,7 +4,7 @@
 (setq confirm-kill-emacs nil)
 
 (setq doom-theme 'doom-tomorrow-night)
-(setq doom-font (font-spec :family "Iosevka Fixed SS09" :weight 'medium :size 16))
+(setq doom-font (font-spec :family "Iosevka Fixed SS09" :weight 'medium :size 28))
 
 (setq display-line-numbers-type 'relative)
 
