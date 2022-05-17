@@ -106,6 +106,8 @@ if !exists('g:vscode')
     Plug 'tpope/vim-fugitive'
     Plug 'mhinz/vim-signify' "{{{
         map <silent> <leader>st :SignifyToggle<CR>
+        map <silent> <leader>sd :SignifyDiff<CR>
+        map <silent> <leader>shd :SignifyHunkDiff<CR>
     "}}}
     Plug 'ojroques/vim-oscyank' "{{{
         " copy last yanked text to clipboard
