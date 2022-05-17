@@ -3,6 +3,7 @@ export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 export npm_config_prefix="$HOME/.node_modules"
 
@@ -38,6 +39,7 @@ export OCTAVE_HISTFILE="$XDG_CACHE_HOME"/octave_hist
 # ~/.local/share
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 # misc
 export LESSHISTFILE=-
