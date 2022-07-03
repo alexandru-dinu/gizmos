@@ -361,6 +361,12 @@ config_ipython() {
     ln -sf $(realpath python/ipython_config.py) $cfg_dir
     ln -sf $(realpath python/startup) $cfg_dir
 }
+
+config_gnome() {
+    show_func_info;
+
+    cat ./gnome/org_gnome.dconf | dconf load /org/gnome/
+}
 # }}}
 
 # Entrypoint {{{
