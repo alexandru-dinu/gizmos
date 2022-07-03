@@ -54,7 +54,7 @@
     "julia.enableTelemetry": false,
     "workbench.colorTheme": "GitHub Dark",
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "editor.fontSize": 15,
     "editor.scrollBeyondLastLine": false,
-    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim"
+    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+    "editor.fontSize": 15
 }
