@@ -25,7 +25,7 @@ size=(870, 690)
 state=87168
 
 [control-center]
-last-panel='background'
+last-panel='keyboard'
 window-state=(1445, 965, false)
 
 [deja-dup]
@@ -99,7 +99,7 @@ toolkit-accessibility=false
 
 [desktop/notifications]
 application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo']
-show-banners=true
+show-banners=false
 
 [desktop/notifications/application/discord]
 application-id='discord.desktop'
@@ -206,11 +206,11 @@ switch-group=@as []
 switch-group-backward=@as []
 switch-input-source=['<Super>space']
 switch-input-source-backward=['<Shift><Super>space']
-switch-to-workspace-1=['<Alt>1']
+switch-to-workspace-1=['<Control><Alt>1']
 switch-to-workspace-10=['']
-switch-to-workspace-2=['<Alt>2']
-switch-to-workspace-3=['<Alt>3']
-switch-to-workspace-4=['<Alt>4']
+switch-to-workspace-2=['<Control><Alt>2']
+switch-to-workspace-3=['<Control><Alt>3']
+switch-to-workspace-4=['<Control><Alt>4']
 switch-to-workspace-5=['']
 switch-to-workspace-6=['']
 switch-to-workspace-7=['']
