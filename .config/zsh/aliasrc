@@ -29,3 +29,7 @@ gdc() {
     local branch=$(git branch --show-current)
     git diff origin/$branch "$1"
 }
+ccat() {
+    # syntax highlighting
+    $(which python3) -m rich.syntax "$@"
+}
