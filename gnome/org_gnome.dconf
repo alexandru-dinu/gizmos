@@ -26,7 +26,7 @@ state=87168
 
 [control-center]
 last-panel='keyboard'
-window-state=(1445, 965, false)
+window-state=(1230, 883, false)
 
 [deja-dup]
 backend='google'
@@ -98,8 +98,11 @@ text-scaling-factor=1.0
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo']
+application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code']
 show-banners=false
+
+[desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
 
 [desktop/notifications/application/discord]
 application-id='discord.desktop'
@@ -137,6 +140,9 @@ enable=false
 
 [desktop/notifications/application/skypeforlinux]
 application-id='skypeforlinux.desktop'
+
+[desktop/notifications/application/visual-studio-code]
+application-id='visual-studio-code.desktop'
 
 [desktop/notifications/application/zotero]
 application-id='zotero.desktop'
@@ -200,8 +206,8 @@ move-to-workspace-last=@as []
 move-to-workspace-left=@as []
 move-to-workspace-right=@as []
 move-to-workspace-up=['<Super><Alt><Shift>Up', '<Control><Alt><Shift>Up', '<Super><Shift>w']
-switch-applications=['<Alt>Tab']
-switch-applications-backward=['<Shift><Alt>Tab']
+switch-applications=@as []
+switch-applications-backward=@as []
 switch-group=@as []
 switch-group-backward=@as []
 switch-input-source=['<Super>space']
@@ -220,6 +226,8 @@ switch-to-workspace-down=['<Super><Alt>Down', '<Control><Alt>Down', '<Super>s']
 switch-to-workspace-left=@as []
 switch-to-workspace-right=@as []
 switch-to-workspace-up=['<Super><Alt>Up', '<Control><Alt>Up', '<Super>w']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
 toggle-fullscreen=['<Super>f']
 toggle-maximized=['<Super>Up']
 unmaximize=@as []
@@ -233,7 +241,7 @@ titlebar-font='Noto Sans Bold 11'
 workspace-names=@as []
 
 [evince/default]
-window-ratio=(2.034313725490196, 1.1414141414141414)
+window-ratio=(1.5688836104513064, 1.3277310924369747)
 
 [evolution-data-server]
 migrated=true
@@ -281,15 +289,21 @@ include-pointer=false
 last-save-directory='file:///home/alex'
 
 [gnome-system-monitor]
+current-tab='processes'
 maximized=false
 network-total-in-bits=false
 show-dependencies=false
 show-whose-processes='user'
-window-state=(700, 500, 50, 50)
+window-state=(849, 500, 563, 425)
 
 [gnome-system-monitor/disktreenew]
 col-6-visible=true
 col-6-width=0
+
+[gnome-system-monitor/proctree]
+columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+sort-col=23
+sort-order=0
 
 [gthumb/browser]
 browser-sidebar-width=285
@@ -333,6 +347,9 @@ toggle-tiled-right=['<Super>Right']
 [mutter/wayland/keybindings]
 restore-shortcuts=@as []
 
+[nautilus/compression]
+default-compression-format='zip'
+
 [nautilus/list-view]
 default-zoom-level='small'
 use-tree-view=true
@@ -344,7 +361,7 @@ search-view='list-view'
 show-delete-permanently=true
 
 [nautilus/window-state]
-initial-size=(1282, 778)
+initial-size=(1282, 777)
 maximized=false
 
 [nm-applet/eap/a0a99cd6-0363-4a6e-b896-8c77393ca4b9]
@@ -387,7 +404,7 @@ sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=1800
 
 [shell]
-app-picker-layout=[{'accessories': <{'position': <0>}>, 'f5559f37-677f-4211-8c54-fc0d9cd99b9c': <{'position': <1>}>, 'org.gnome.Maps.desktop': <{'position': <2>}>, 'org.gnome.gThumb.desktop': <{'position': <3>}>, 'electron17.desktop': <{'position': <4>}>, 'gnome-layouts.desktop': <{'position': <5>}>, 'manjaro-documentation.desktop': <{'position': <6>}>, 'office': <{'position': <7>}>, 'signal-desktop.desktop': <{'position': <8>}>, 'emacs.desktop': <{'position': <9>}>, 'spotify.desktop': <{'position': <10>}>, 'system-tools': <{'position': <11>}>, 'vlc.desktop': <{'position': <12>}>, 'gimp.desktop': <{'position': <13>}>, 'webapp-manager.desktop': <{'position': <14>}>, 'emacsclient.desktop': <{'position': <15>}>, 'org.gnome.Nautilus.desktop': <{'position': <16>}>, 'firefox.desktop': <{'position': <17>}>, 'assistant.desktop': <{'position': <18>}>, 'designer.desktop': <{'position': <19>}>, 'linguist.desktop': <{'position': <20>}>, 'qdbusviewer.desktop': <{'position': <21>}>, 'r.desktop': <{'position': <22>}>, 'skypeforlinux.desktop': <{'position': <23>}>}, {'visual-studio-code.desktop': <{'position': <0>}>, 'xdvi.desktop': <{'position': <1>}>}]
+app-picker-layout=[{'accessories': <{'position': <0>}>, 'f5559f37-677f-4211-8c54-fc0d9cd99b9c': <{'position': <1>}>, 'org.gnome.Maps.desktop': <{'position': <2>}>, 'org.gnome.gThumb.desktop': <{'position': <3>}>, 'gnome-layouts.desktop': <{'position': <4>}>, 'manjaro-documentation.desktop': <{'position': <5>}>, 'office': <{'position': <6>}>, 'signal-desktop.desktop': <{'position': <7>}>, 'emacs.desktop': <{'position': <8>}>, 'spotify.desktop': <{'position': <9>}>, 'system-tools': <{'position': <10>}>, 'vlc.desktop': <{'position': <11>}>, 'gimp.desktop': <{'position': <12>}>, 'webapp-manager.desktop': <{'position': <13>}>, 'emacsclient.desktop': <{'position': <14>}>, 'org.gnome.Nautilus.desktop': <{'position': <15>}>, 'firefox.desktop': <{'position': <16>}>, 'assistant.desktop': <{'position': <17>}>, 'designer.desktop': <{'position': <18>}>, 'linguist.desktop': <{'position': <19>}>, 'qdbusviewer.desktop': <{'position': <20>}>, 'r.desktop': <{'position': <21>}>, 'skypeforlinux.desktop': <{'position': <22>}>}, {'visual-studio-code.desktop': <{'position': <0>}>, 'xdvi.desktop': <{'position': <1>}>, 'electron18.desktop': <{'position': <2>}>, 'wolfram-mathematica11.desktop': <{'position': <3>}>, 'jetbrains-pycharm.desktop': <{'position': <4>}>, 'org.qutebrowser.qutebrowser.desktop': <{'position': <5>}>}]
 command-history=['r']
 disable-user-extensions=false
 disabled-extensions=['pamac-updates@manjaro.org', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'material-shell@papyelgringo', 'window-list@gnome-shell-extensions.gcampax.github.com', 'nightthemeswitcher@romainvigier.fr', 'dash-to-dock@micxgx.gmail.com']
@@ -424,7 +441,7 @@ override-menu-theme=false
 pinned-app-list=['Firefox', '', 'firefox.desktop', 'Files', '', 'org.gnome.Nautilus.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop']
 position-in-panel='Left'
 prefs-visible-page=0
-recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop']
+recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop']
 runner-menu-height=400
 runner-menu-width=500
 runner-position='Centered'
