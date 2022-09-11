@@ -101,7 +101,7 @@ endif
 
 " differentiate between active plugins when using vscode-neovim integration
 if !exists('g:vscode')
-    Plug 'jeffkreeftmeijer/vim-dim' " colorscheme
+    Plug 'alexandru-dinu/vim-dim' " colorscheme
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-fugitive'
     Plug 'mhinz/vim-signify' "{{{
@@ -179,8 +179,3 @@ call plug#end()
 if &diff | syntax off | else | syntax enable | endif
 set background=dark
 colorscheme dim
-
-hi Visual     ctermfg=7 ctermbg=8 cterm=none
-hi MatchParen ctermfg=8 ctermbg=7 cterm=none
-hi SpellBad   ctermfg=7 ctermbg=1 cterm=none
-hi SpellCap   ctermfg=0 ctermbg=3 cterm=none
