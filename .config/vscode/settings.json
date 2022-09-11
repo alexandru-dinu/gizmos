@@ -27,7 +27,7 @@
         "**/.bloop": true,
         "**/.metals": true
     },
-    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "python.defaultInterpreterPath": "/home/alex/miniconda3/bin/python",
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.tabs.enabled": true,
     "window.menuBarVisibility": "toggle",
@@ -38,23 +38,12 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.tips.enabled": false,
     "python.pythonPath": "/home/alex/miniconda3/bin/python",
-    "github.copilot.enable": {
-        "*": false,
-        "yaml": false,
-        "plaintext": true,
-        "markdown": false,
-        "rust": true,
-        "haskell": true,
-        "latex": true
-    },
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
-    "workbench.colorTheme": "GitHub Dark",
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "editor.scrollBeyondLastLine": false,
-    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
-    "editor.fontSize": 15
+    "editor.fontSize": 15,
+    "workbench.colorTheme": "Visual Studio Dark"
 }
