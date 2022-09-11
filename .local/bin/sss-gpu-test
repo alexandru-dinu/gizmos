@@ -24,8 +24,11 @@ grep CUDNN_MAJOR -C 2 "$(whereis cudnn_version.h | awk '{print $2}')"
 
 prompt 'pytorch'
 python -c '
-import torch;
-assert torch.cuda.is_available();
+import sys
+print(sys.version)
+print(sys.executable)
+import torch
+assert torch.cuda.is_available()
 print(f"{torch.__version__=}")
 print(f"{torch.version.cuda=}")
 '
