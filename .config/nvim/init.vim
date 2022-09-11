@@ -98,73 +98,69 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 
-
-" differentiate between active plugins when using vscode-neovim integration
-if !exists('g:vscode')
-    Plug 'alexandru-dinu/vim-dim' " colorscheme
-    Plug 'tpope/vim-eunuch'
-    Plug 'tpope/vim-fugitive'
-    Plug 'mhinz/vim-signify' "{{{
-        map <silent> <leader>st :SignifyToggle<CR>
-        map <silent> <leader>sd :SignifyDiff<CR>
-        map <silent> <leader>shd :SignifyHunkDiff<CR>
-    "}}}
-    Plug 'ojroques/vim-oscyank' "{{{
-        " copy last yanked text to clipboard
-        vmap <C-c> y:OSCYank<CR>
-    "}}}
-    Plug 'sirver/UltiSnips' "{{{
-        let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsJumpForwardTrigger="<tab>"
-        let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-    "}}}
-    Plug 'scrooloose/nerdtree' "{{{
-        let NERDTreeShowHidden = 1
-        map <silent> <F2> :NERDTreeToggle<CR>
-    "}}}
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim' "{{{
-        map <leader>f  :Files<CR>
-        map <leader>bs :Buffers<CR>
-        inoremap <expr> <C-x><C-f> fzf#vim#complete#path('rg --files')
-    "}}}
-    Plug 'deponian/vim-lightline-whitespace'
-    Plug 'itchyny/lightline.vim' "{{{
-        let g:lightline = {
-            \ 'colorscheme': 'powerline',
-            \ 'active': {
-            \ 	'left': [ [ 'mode', 'paste', 'spell' ],
-            \             [ 'readonly', 'filename', 'modified' ],
-            \             [ 'gitinfo' ] ],
-            \   'right': [ [ 'whitespace', 'lineinfo' ],
-            \              [ 'percent' ],
-            \              [ 'filetype', 'fileformat' ] ],
-            \ },
-            \ 'component_function': {
-            \   'gitinfo': 'FugitiveHead',
-            \ },
-            \ 'component_expand': {
-            \   'whitespace': 'lightline#whitespace#check',
-            \ },
-            \ 'component_type': {
-            \   'whitespace': 'warning',
-            \ },
-            \ 'mode_map': {
-            \     'n' : 'N',
-            \     'i' : 'I',
-            \     'R' : 'R',
-            \     'v' : 'V',
-            \     'V' : 'VL',
-            \     '': 'VB',
-            \     'c' : 'C',
-            \     's' : 'S',
-            \     'S' : 'SL',
-            \     '': 'SB',
-            \     't': 'T',
-            \   },
-            \ }
-    "}}}
-endif
+Plug 'alexandru-dinu/vim-dim' " colorscheme
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify' "{{{
+    map <silent> <leader>st :SignifyToggle<CR>
+    map <silent> <leader>sd :SignifyDiff<CR>
+    map <silent> <leader>shd :SignifyHunkDiff<CR>
+"}}}
+Plug 'ojroques/vim-oscyank' "{{{
+    " copy last yanked text to clipboard
+    vmap <C-c> y:OSCYank<CR>
+"}}}
+Plug 'sirver/UltiSnips' "{{{
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"}}}
+Plug 'scrooloose/nerdtree' "{{{
+    let NERDTreeShowHidden = 1
+    map <silent> <F2> :NERDTreeToggle<CR>
+"}}}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' "{{{
+    map <leader>f  :Files<CR>
+    map <leader>bs :Buffers<CR>
+    inoremap <expr> <C-x><C-f> fzf#vim#complete#path('rg --files')
+"}}}
+Plug 'deponian/vim-lightline-whitespace'
+Plug 'itchyny/lightline.vim' "{{{
+    let g:lightline = {
+        \ 'colorscheme': 'powerline',
+        \ 'active': {
+        \ 	'left': [ [ 'mode', 'paste', 'spell' ],
+        \             [ 'readonly', 'filename', 'modified' ],
+        \             [ 'gitinfo' ] ],
+        \   'right': [ [ 'whitespace', 'lineinfo' ],
+        \              [ 'percent' ],
+        \              [ 'filetype', 'fileformat' ] ],
+        \ },
+        \ 'component_function': {
+        \   'gitinfo': 'FugitiveHead',
+        \ },
+        \ 'component_expand': {
+        \   'whitespace': 'lightline#whitespace#check',
+        \ },
+        \ 'component_type': {
+        \   'whitespace': 'warning',
+        \ },
+        \ 'mode_map': {
+        \     'n' : 'N',
+        \     'i' : 'I',
+        \     'R' : 'R',
+        \     'v' : 'V',
+        \     'V' : 'VL',
+        \     '': 'VB',
+        \     'c' : 'C',
+        \     's' : 'S',
+        \     'S' : 'SL',
+        \     '': 'SB',
+        \     't': 'T',
+        \   },
+        \ }
+"}}}
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
