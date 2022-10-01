@@ -1,11 +1,7 @@
-if has('nvim')
-    set inccommand=nosplit
-else
-    set nocompatible
-    set t_Co=256
-    filetype plugin indent on
-    runtime! ftplugin/man.vim
-endif
+set nocompatible
+set t_Co=256
+filetype plugin indent on
+runtime! ftplugin/man.vim
 
 set history=10000
 set encoding=utf-8
@@ -33,7 +29,7 @@ set backspace=indent,eol,start
 set listchars=space:·,eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " enable mouse in all modes (e.g. for easier selection)
-if ! has('nvim') | set ttymouse=xterm2 | endif
+set ttymouse=xterm2
 set mouse=a
 
 " return to last edit position when opening files
@@ -92,11 +88,7 @@ autocmd BufNewFile,BufRead *.wppl setfiletype javascript
 
 
 """ PLUGINS
-if has('nvim')
-    call plug#begin(stdpath('data') . '/plugged')
-else
-    call plug#begin('~/.vim/plugged')
-endif
+call plug#begin('~/.vim/plugged')
 
 Plug 'alexandru-dinu/vim-dim' " colorscheme
 Plug 'tpope/vim-eunuch'

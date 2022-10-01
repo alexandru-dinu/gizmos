@@ -54,22 +54,6 @@ config_fonts() {
     ln -s $(realpath ./.config/fontconfig) $XDG_CONFIG_HOME
 }
 
-config_nvim() {
-    show_func_info;
-
-    cfg_dir=$XDG_CONFIG_HOME/nvim
-    data_dir=$XDG_DATA_HOME/nvim
-
-    rm -rf $cfg_dir $data_dir
-
-    ln -s $(realpath .config/nvim) $cfg_dir
-
-    curl -fLo $data_dir/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-    nvim +PlugInstall +qall
-}
-
 config_gnu_emacs() {
     show_func_info;
 
@@ -329,8 +313,8 @@ config_vim() {
 
     rm -rf ~/.vim* && mkdir -p ~/.vim
 
-    ln -s $(realpath ./.config/nvim/init.vim) ~/.vimrc
-    find ./.config/nvim/* -type d -exec ln -s $(realpath {}) ~/.vim/ \;
+    ln -s $(realpath ./vim/.vimrc) ~/.vim/vimrc
+    find ./vim/* -type d -exec ln -s $(realpath {}) ~/.vim/ \;
 
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
