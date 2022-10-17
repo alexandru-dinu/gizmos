@@ -98,10 +98,6 @@ Plug 'mhinz/vim-signify' "{{{
     map <silent> <leader>sd :SignifyDiff<CR>
     map <silent> <leader>shd :SignifyHunkDiff<CR>
 "}}}
-Plug 'ojroques/vim-oscyank' "{{{
-    " copy last yanked text to clipboard
-    vmap <C-c> y:OSCYank<CR>
-"}}}
 Plug 'sirver/UltiSnips' "{{{
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
