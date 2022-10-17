@@ -54,6 +54,13 @@ config_fonts() {
     ln -s $(realpath ./.config/fontconfig) $XDG_CONFIG_HOME
 }
 
+config_nvim() {
+    show_func_info;
+
+    rm -rf $XDG_CONFIG_HOME/nvim
+    ln -s $(realpath ./.config/nvim) $XDG_CONFIG_HOME
+}
+
 config_gnu_emacs() {
     show_func_info;
 
