@@ -47,11 +47,32 @@ show_func_info() {
 # }}}
 
 # Config: XDG-compliant {{{
-config_fonts() {
+config_zsh() {
     show_func_info;
 
-    rm -rf $XDG_CONFIG_HOME/fontconfig
-    ln -s $(realpath ./.config/fontconfig) $XDG_CONFIG_HOME
+    cfg_dir=$XDG_CONFIG_HOME/zsh
+    data_dir=$XDG_DATA_HOME/zsh # bookmarks and history
+
+    if [ "$cfg_dir" != "$ZDOTDIR" ]; then
+        echo "Define in ~/.zshenv:"
+        echo "    export ZDOTDIR=\$XDG_CONFIG_HOME/zsh"
+        echo "Aborting!"
+        exit 1
+    fi
+
+    rm -f ~/.zshrc ~/.zshenv
+    rm -rf $ZDOTDIR
+    rm -rf $XDG_CONFIG_HOME/fzf
+
+    mkdir -p $data_dir
+
+    git clone --depth=1 --recurse-submodules --remote-submodules \
+        https://github.com/alexandru-dinu/zsh-config.git $ZDOTDIR
+
+    ln -s $(realpath .config/zsh/.zshrc) $ZDOTDIR
+    ln -s $(realpath .config/zsh/.zshenv) ~/
+
+    exec zsh -i -c "echo Done!; exit"
 }
 
 config_nvim() {
@@ -271,6 +292,13 @@ config_sxhkd() {
     ln -s $(realpath ./.config/sxhkd) $XDG_CONFIG_HOME
 }
 
+config_fonts() {
+    show_func_info;
+
+    rm -rf $XDG_CONFIG_HOME/fontconfig
+    ln -s $(realpath ./.config/fontconfig) $XDG_CONFIG_HOME
+}
+
 config_symlinks() {
     show_func_info;
 
@@ -287,34 +315,6 @@ config_symlinks() {
 # }}}
 
 # Config: others {{{
-config_zsh() {
-    show_func_info;
-
-    cfg_dir=$XDG_CONFIG_HOME/zsh
-    data_dir=$XDG_DATA_HOME/zsh # bookmarks and history
-
-    if [ "$cfg_dir" != "$ZDOTDIR" ]; then
-        echo "Define in ~/.zshenv:"
-        echo "    export ZDOTDIR=\$XDG_CONFIG_HOME/zsh"
-        echo "Aborting!"
-        exit 1
-    fi
-
-    rm -f ~/.zshrc ~/.zshenv
-    rm -rf $ZDOTDIR
-    rm -rf $XDG_CONFIG_HOME/fzf
-
-    mkdir -p $data_dir
-
-    git clone --depth=1 --recurse-submodules --remote-submodules \
-        https://github.com/alexandru-dinu/zsh-config.git $ZDOTDIR
-
-    ln -s $(realpath .config/zsh/.zshrc) $ZDOTDIR
-    ln -s $(realpath .config/zsh/.zshenv) ~/
-
-    exec zsh -i -c "echo Done!; exit"
-}
-
 config_vim() {
     show_func_info;
 
