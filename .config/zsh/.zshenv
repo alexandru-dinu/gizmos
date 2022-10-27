@@ -1,4 +1,7 @@
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
 export EDITOR=vim
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -12,8 +15,7 @@ export PATH=$HOME/miniconda3/bin:$PATH
 export PATH=$HOME/.node_modules/bin:$PATH
 # rust
 source "$XDG_DATA_HOME/cargo/env"
-
-# doom emacs
+# emacs
 if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
     export PATH="$XDG_CONFIG_HOME"/emacs/bin:$PATH
 fi
