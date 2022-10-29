@@ -1,18 +1,13 @@
 {
-    // Notebook
-    // @jupyterlab/notebook-extension:tracker
-    // Notebook settings.
-    // **************************************
-
-    // Code Cell Configuration
-    // The configuration for all code cells.
     "codeCellConfig": {
-        "lineNumbers": true,
         "autoClosingBrackets": true,
         "cursorBlinkRate": 530,
-        "fontFamily": null,
-        "fontSize": null,
+        "fontFamily": "monospace",
+        "fontSize": 14,
         "lineHeight": null,
+        "lineNumbers": true,
+        "lineWrap": "off",
+        "matchBrackets": true,
         "readOnly": false,
         "insertSpaces": true,
         "tabSize": 4,
@@ -22,16 +17,17 @@
         "lineWiseCopyCut": true,
         "showTrailingSpace": false
     },
-
-    // Markdown Cell Configuration
-    // The configuration for all markdown cells.
+    "defaultCell": "code",
+    "kernelShutdown": false,
     "markdownCellConfig": {
-        "lineNumbers": true,
         "autoClosingBrackets": true,
         "cursorBlinkRate": 530,
         "fontFamily": null,
         "fontSize": null,
         "lineHeight": null,
+        "lineNumbers": true,
+        "lineWrap": "on",
+        "matchBrackets": false,
         "readOnly": false,
         "insertSpaces": true,
         "tabSize": 4,
@@ -41,16 +37,15 @@
         "lineWiseCopyCut": true,
         "showTrailingSpace": false
     },
-
-    // Raw Cell Configuration
-    // The configuration for all raw cells.
     "rawCellConfig": {
-        "lineNumbers": true,
         "autoClosingBrackets": true,
         "cursorBlinkRate": 530,
         "fontFamily": null,
         "fontSize": null,
         "lineHeight": null,
+        "lineNumbers": true,
+        "lineWrap": "on",
+        "matchBrackets": false,
         "readOnly": false,
         "insertSpaces": true,
         "tabSize": 4,
@@ -59,5 +54,23 @@
         "codeFolding": false,
         "lineWiseCopyCut": true,
         "showTrailingSpace": false
-    }
+    },
+    "scrollPastEnd": true,
+    "recordTiming": false,
+    "numberCellsToRenderDirectly": 99999,
+    "remainingTimeBeforeRescheduling": 50,
+    "renderCellOnIdle": true,
+    "observedTopMargin": "1000px",
+    "observedBottomMargin": "1000px",
+    "maxNumberOutputs": 50,
+    "showEditorForReadOnlyMarkdown": true,
+    "kernelStatus": {
+        "showOnStatusBar": false,
+        "showProgress": true
+    },
+    "experimentalDisableDocumentWideUndoRedo": false,
+    "renderingLayout": "default",
+    "sideBySideLeftMarginOverride": "10px",
+    "sideBySideRightMarginOverride": "10px",
+    "sideBySideOutputRatio": 1
 }

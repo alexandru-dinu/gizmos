@@ -7,14 +7,15 @@
     // Theme CSS Overrides
     // Override theme CSS variables by setting key-value pairs here
     "overrides": {
-        "ui-font-size1": "12px",
+        "code-font-family": "monospace",
         "code-font-size": "14px",
-        "content-font-size1": "14px"
+        "content-font-size1": "14px",
+        "ui-font-size1": "12px"
     },
 
     // Selected Theme
     // Application-level visual styling theme
-    "theme": "JupyterLab Light",
+    "theme": "JupyterLab Dark",
 
     // Scrollbar Theming
     // Enable/disable styling of the application scrollbars
