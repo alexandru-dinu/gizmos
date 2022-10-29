@@ -11,6 +11,10 @@ subtitle-encoding='UTF-8'
 [Weather]
 locations=[<(uint32 2, <('Bucharest', 'LRBS', true, [(0.77667151713747673, 0.4561127053700873)], [(0.7755079584850495, 0.45553093477052004)])>)>]
 
+[baobab/ui]
+is-maximized=false
+window-size=(960, 600)
+
 [calendar]
 active-view='month'
 window-maximized=false
@@ -98,8 +102,8 @@ text-scaling-factor=1.0
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code']
-show-banners=false
+application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code', 'spotify', 'gnome-network-panel', 'org-gnome-baobab']
+show-banners=true
 
 [desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
@@ -110,11 +114,17 @@ application-id='discord.desktop'
 [desktop/notifications/application/firefox]
 application-id='firefox.desktop'
 
+[desktop/notifications/application/gnome-network-panel]
+application-id='gnome-network-panel.desktop'
+
 [desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
 [desktop/notifications/application/material-shell-papyelgringo]
 application-id='material-shell@papyelgringo.desktop'
+
+[desktop/notifications/application/org-gnome-baobab]
+application-id='org.gnome.baobab.desktop'
 
 [desktop/notifications/application/org-gnome-characters]
 application-id='org.gnome.Characters.desktop'
@@ -141,6 +151,9 @@ enable=false
 [desktop/notifications/application/skypeforlinux]
 application-id='skypeforlinux.desktop'
 
+[desktop/notifications/application/spotify]
+application-id='spotify.desktop'
+
 [desktop/notifications/application/visual-studio-code]
 application-id='visual-studio-code.desktop'
 
@@ -156,7 +169,7 @@ natural-scroll=false
 speed=0.1166666666666667
 
 [desktop/peripherals/touchpad]
-speed=0.39285714285714279
+speed=0.38864628820960689
 two-finger-scrolling-enabled=true
 
 [desktop/privacy]
@@ -191,11 +204,11 @@ move-to-monitor-down=@as []
 move-to-monitor-left=@as []
 move-to-monitor-right=@as []
 move-to-monitor-up=@as []
-move-to-workspace-1=['']
+move-to-workspace-1=['<Shift><Alt>exclam']
 move-to-workspace-10=['']
-move-to-workspace-2=['']
-move-to-workspace-3=['']
-move-to-workspace-4=['']
+move-to-workspace-2=['<Shift><Alt>at']
+move-to-workspace-3=['<Shift><Alt>numbersign']
+move-to-workspace-4=['<Shift><Alt>dollar']
 move-to-workspace-5=['']
 move-to-workspace-6=['']
 move-to-workspace-7=['']
@@ -203,8 +216,8 @@ move-to-workspace-8=['']
 move-to-workspace-9=['']
 move-to-workspace-down=['<Super><Alt><Shift>Down', '<Control><Alt><Shift>Down', '<Super><Shift>s']
 move-to-workspace-last=@as []
-move-to-workspace-left=@as []
-move-to-workspace-right=@as []
+move-to-workspace-left=['<Shift><Alt>Left']
+move-to-workspace-right=['<Shift><Alt>Right']
 move-to-workspace-up=['<Super><Alt><Shift>Up', '<Control><Alt><Shift>Up', '<Super><Shift>w']
 switch-applications=@as []
 switch-applications-backward=@as []
@@ -212,19 +225,19 @@ switch-group=@as []
 switch-group-backward=@as []
 switch-input-source=['<Super>space']
 switch-input-source-backward=['<Shift><Super>space']
-switch-to-workspace-1=['<Control><Alt>1']
+switch-to-workspace-1=['<Alt>1']
 switch-to-workspace-10=['']
-switch-to-workspace-2=['<Control><Alt>2']
-switch-to-workspace-3=['<Control><Alt>3']
-switch-to-workspace-4=['<Control><Alt>4']
+switch-to-workspace-2=['<Alt>2']
+switch-to-workspace-3=['<Alt>3']
+switch-to-workspace-4=['<Alt>4']
 switch-to-workspace-5=['']
 switch-to-workspace-6=['']
 switch-to-workspace-7=['']
 switch-to-workspace-8=['']
 switch-to-workspace-9=['']
 switch-to-workspace-down=['<Super><Alt>Down', '<Control><Alt>Down', '<Super>s']
-switch-to-workspace-left=@as []
-switch-to-workspace-right=@as []
+switch-to-workspace-left=['<Alt>Left']
+switch-to-workspace-right=['<Alt>Right']
 switch-to-workspace-up=['<Super><Alt>Up', '<Control><Alt>Up', '<Super>w']
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
@@ -241,7 +254,7 @@ titlebar-font='Noto Sans Bold 11'
 workspace-names=@as []
 
 [evince/default]
-window-ratio=(1.5688836104513064, 1.3277310924369747)
+window-ratio=(1.5686274509803921, 1.3282828282828283)
 
 [evolution-data-server]
 migrated=true
@@ -265,7 +278,7 @@ active-plugins=['filebrowser', 'docinfo', 'spell', 'sort', 'modelines']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/alex'
+virtual-root='file:///home/alex/workspace/nus-research/submissions/ppcheck-neurips-2022'
 
 [gedit/preferences/editor]
 editor-font='Iosevka Fixed SS09 12'
@@ -287,6 +300,12 @@ state=87168
 delay=0
 include-pointer=false
 last-save-directory='file:///home/alex'
+
+[gnome-system-log]
+height=647
+logfile='/var/log/Xorg.1.log'
+logfiles=['/var/log/pacman.log', '/var/log/Calamares.log', '/var/log/Xorg.1.log', '/var/log/Xorg.0.log', '/var/log/haskell-register.log']
+width=969
 
 [gnome-system-monitor]
 current-tab='processes'
@@ -315,8 +334,8 @@ sidebar-sections=['GthFileProperties:expanded', 'GthFileComment:expanded', 'GthF
 sidebar-visible=true
 sort-inverse=false
 sort-type='file::mtime'
-startup-current-file='file:///home/alex/Screenshot%20from%202022-02-12%2015-23-14.png'
-startup-location='file:///home/alex'
+startup-current-file='file:///home/alex/Downloads/signal-2022-10-19-202054_003.jpeg'
+startup-location='file:///home/alex/Downloads'
 statusbar-visible=true
 thumbnail-list-visible=true
 viewer-sidebar='hidden'
@@ -363,6 +382,7 @@ show-delete-permanently=true
 [nautilus/window-state]
 initial-size=(1282, 777)
 maximized=false
+sidebar-width=192
 
 [nm-applet/eap/a0a99cd6-0363-4a6e-b896-8c77393ca4b9]
 ignore-ca-cert=false
@@ -370,8 +390,8 @@ ignore-phase2-ca-cert=false
 
 [settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-schedule-automatic=true
-night-light-schedule-from=21.0
+night-light-schedule-automatic=false
+night-light-schedule-from=19.0
 night-light-schedule-to=7.0
 night-light-temperature=uint32 2700
 
@@ -441,7 +461,7 @@ override-menu-theme=false
 pinned-app-list=['Firefox', '', 'firefox.desktop', 'Files', '', 'org.gnome.Nautilus.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop']
 position-in-panel='Left'
 prefs-visible-page=0
-recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop']
+recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop', 'geeqie.desktop', 'electron19.desktop', 'nvtop.desktop', 'gvim.desktop', 'vim.desktop', 'nvim.desktop', 'cmake-gui.desktop', 'org.gnome.eog.desktop']
 runner-menu-height=400
 runner-menu-width=500
 runner-position='Centered'
@@ -604,6 +624,7 @@ locations=[<(uint32 2, <('New Delhi', 'VIDP', true, [(0.49858239547081096, 1.345
 
 [terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 font='Iosevka Fixed SS09 11'
+use-system-font=true
 
 [tweaks]
 show-extensions-notice=false
