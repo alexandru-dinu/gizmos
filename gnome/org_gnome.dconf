@@ -162,7 +162,7 @@ application-id='zotero.desktop'
 
 [desktop/peripherals/keyboard]
 delay=uint32 212
-numlock-state=true
+numlock-state=false
 
 [desktop/peripherals/mouse]
 natural-scroll=false
@@ -219,8 +219,8 @@ move-to-workspace-last=@as []
 move-to-workspace-left=['<Shift><Alt>Left']
 move-to-workspace-right=['<Shift><Alt>Right']
 move-to-workspace-up=['<Super><Alt><Shift>Up', '<Control><Alt><Shift>Up', '<Super><Shift>w']
-switch-applications=@as []
-switch-applications-backward=@as []
+switch-applications=['<Alt>Tab']
+switch-applications-backward=['<Shift><Alt>Tab']
 switch-group=@as []
 switch-group-backward=@as []
 switch-input-source=['<Super>space']
@@ -236,11 +236,11 @@ switch-to-workspace-7=['']
 switch-to-workspace-8=['']
 switch-to-workspace-9=['']
 switch-to-workspace-down=['<Super><Alt>Down', '<Control><Alt>Down', '<Super>s']
-switch-to-workspace-left=['<Alt>Left']
-switch-to-workspace-right=['<Alt>Right']
+switch-to-workspace-left=['<Control><Alt>Left']
+switch-to-workspace-right=['<Control><Alt>Right']
 switch-to-workspace-up=['<Super><Alt>Up', '<Control><Alt>Up', '<Super>w']
-switch-windows=['<Alt>Tab']
-switch-windows-backward=['<Shift><Alt>Tab']
+switch-windows=@as []
+switch-windows-backward=@as []
 toggle-fullscreen=['<Super>f']
 toggle-maximized=['<Super>Up']
 unmaximize=@as []
@@ -380,7 +380,7 @@ search-view='list-view'
 show-delete-permanently=true
 
 [nautilus/window-state]
-initial-size=(1282, 777)
+initial-size=(1433, 777)
 maximized=false
 sidebar-width=192
 
@@ -432,6 +432,9 @@ enabled-extensions=['x11gestures@joseexposito.github.io', 'workspace-indicator@g
 favorite-apps=@as []
 had-bluetooth-devices-setup=true
 welcome-dialog-last-shown-version='41.3'
+
+[shell/app-switcher]
+current-workspace-only=false
 
 [shell/extensions/arcmenu]
 application-shortcuts-list=[['Settings', '', 'org.gnome.Settings.desktop'], ['Tweaks', '', 'org.gnome.tweaks.desktop'], ['Activities Overview', 'view-fullscreen-symbolic', 'ArcMenu_ActivitiesOverview']]
