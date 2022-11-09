@@ -45,5 +45,5 @@
     "julia.enableTelemetry": false,
     "editor.scrollBeyondLastLine": false,
     "editor.fontSize": 15,
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "GitHub Dark"
 }
