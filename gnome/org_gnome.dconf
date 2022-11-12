@@ -102,8 +102,11 @@ text-scaling-factor=1.0
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code', 'spotify', 'gnome-network-panel', 'org-gnome-baobab']
+application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code', 'spotify', 'gnome-network-panel', 'org-gnome-baobab', 'brave-browser', 'org-gnome-shell-extensions']
 show-banners=true
+
+[desktop/notifications/application/brave-browser]
+application-id='brave-browser.desktop'
 
 [desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
@@ -143,6 +146,9 @@ application-id='org.gnome.seahorse.Application.desktop'
 
 [desktop/notifications/application/org-gnome-settings]
 application-id='org.gnome.Settings.desktop'
+
+[desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
 
 [desktop/notifications/application/signal-desktop]
 application-id='signal-desktop.desktop'
@@ -278,7 +284,7 @@ active-plugins=['filebrowser', 'docinfo', 'spell', 'sort', 'modelines']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/alex/workspace/nus-research/submissions/ppcheck-neurips-2022'
+virtual-root='file:///home/alex/Downloads/twitter-2022-11-06-e83bfc71560251679d769f08c50ab8c8bd5f48ef168b8ba4d27090e594ecbac9/data'
 
 [gedit/preferences/editor]
 editor-font='Iosevka Fixed SS09 12'
@@ -380,7 +386,7 @@ search-view='list-view'
 show-delete-permanently=true
 
 [nautilus/window-state]
-initial-size=(1433, 777)
+initial-size=(1433, 776)
 maximized=false
 sidebar-width=192
 
@@ -438,6 +444,7 @@ current-workspace-only=false
 
 [shell/extensions/arcmenu]
 application-shortcuts-list=[['Settings', '', 'org.gnome.Settings.desktop'], ['Tweaks', '', 'org.gnome.tweaks.desktop'], ['Activities Overview', 'view-fullscreen-symbolic', 'ArcMenu_ActivitiesOverview']]
+arcmenu-custom-hotkey=['<Super>d']
 avatar-style='Round'
 button-padding=-1
 category-icon-type='Full_Color'
@@ -452,6 +459,7 @@ menu-button-appearance='None'
 menu-foreground-color='rgb(211,218,227)'
 menu-height=1024
 menu-hotkey='Custom'
+menu-hotkey-type='Custom'
 menu-item-active-bg-color='rgba(228,228,226,0.15)'
 menu-item-active-fg-color='rgb(255,255,255)'
 menu-item-hover-bg-color='rgba(238,238,236,0.08)'
@@ -464,7 +472,7 @@ override-menu-theme=false
 pinned-app-list=['Firefox', '', 'firefox.desktop', 'Files', '', 'org.gnome.Nautilus.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop']
 position-in-panel='Left'
 prefs-visible-page=0
-recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop', 'geeqie.desktop', 'electron19.desktop', 'nvtop.desktop', 'gvim.desktop', 'vim.desktop', 'nvim.desktop', 'cmake-gui.desktop', 'org.gnome.eog.desktop']
+recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop', 'geeqie.desktop', 'electron19.desktop', 'nvtop.desktop', 'gvim.desktop', 'vim.desktop', 'nvim.desktop', 'cmake-gui.desktop', 'org.gnome.eog.desktop', 'com.github.GradienceTeam.Gradience.desktop', 'me.dusansimic.DynamicWallpaper.desktop']
 runner-menu-height=400
 runner-menu-width=500
 runner-position='Centered'
@@ -626,8 +634,12 @@ locations=[<(uint32 2, <('Bucharest', 'LRBS', true, [(0.77667151713747673, 0.456
 locations=[<(uint32 2, <('New Delhi', 'VIDP', true, [(0.49858239547081096, 1.345939747314058)], [(0.49916416607037828, 1.3473941825396225)])>)>, <(uint32 2, <('Singapore', 'WSAP', true, [(0.023852838928353343, 1.8136879868485383)], [(0.022568084612667797, 1.8126262332513803)])>)>]
 
 [terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+bold-is-bright=true
 font='Iosevka Fixed SS09 11'
+palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollbar-policy='never'
 use-system-font=true
+use-theme-colors=true
 
 [tweaks]
 show-extensions-notice=false
