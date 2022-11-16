@@ -1,14 +1,15 @@
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
 export EDITOR=vim
-export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export npm_config_prefix="$HOME/.node_modules"
+# zsh
+export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # PATH
 export PATH=$HOME/miniconda3/bin:$PATH
@@ -20,10 +21,9 @@ if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
     export PATH="$XDG_CONFIG_HOME"/emacs/bin:$PATH
 fi
 
-# ~/.config
-export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
+export npm_config_prefix="$HOME/.node_modules"
 
+# ~/.config
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export CONDARC="$XDG_CONFIG_HOME"/conda/condarc
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
