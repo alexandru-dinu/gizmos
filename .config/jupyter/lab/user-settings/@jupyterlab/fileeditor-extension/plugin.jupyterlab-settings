@@ -3,7 +3,7 @@
         "autoClosingBrackets": true,
         "codeFolding": true,
         "cursorBlinkRate": 530,
-        "fontFamily": "monospace",
+        "fontFamily": "Iosevka Fixed SS09 Medium",
         "fontSize": 14,
         "insertSpaces": true,
         "lineHeight": null,
