@@ -60,11 +60,11 @@
         "command": "-workbench.action.tasks.build"
     },
     {
-        "key": "ctrl+shift+b",
+        "key": "shift+alt+,",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
-        "key": "ctrl+b",
+        "key": "alt+,",
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
@@ -92,5 +92,24 @@
     {
         "key": "meta+]",
         "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+g ctrl+g",
+        "command": "github.copilot.toggleCopilot"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
     }
 ]

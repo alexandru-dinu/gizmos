@@ -7,7 +7,7 @@
     },
     "editor.autoClosingDelete": "always",
     "editor.cursorBlinking": "solid",
-    "editor.fontFamily": "Iosevka Fixed SS09",
+    "editor.fontFamily": "Iosevka Fixed SS09 Medium",
     "editor.fontLigatures": false,
     "editor.inlineSuggest.enabled": true,
     "editor.lineNumbers": "relative",
@@ -44,6 +44,18 @@
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
     "editor.scrollBeyondLastLine": false,
-    "editor.fontSize": 15,
-    "workbench.colorTheme": "GitHub Dark"
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "editor.rulers": [88],
+    "haskell.manageHLS": "PATH",
+    "editor.fontSize": 16,
+    "files.insertFinalNewline": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
+    "workbench.colorTheme": "GitHub Dark Default",
 }
