@@ -82,17 +82,11 @@ config_nvim() {
     data_dir=$XDG_DATA_HOME/nvim
 
     rm -rf $cfg_dir $data_dir
-
-    # remove packer-related stuff
-    rm -rf .config/nvim/plugin
+    rm -rf .config/nvim/plugin # packer-related stuff
 
     ln -s $(realpath .config/nvim) $cfg_dir
 
-    # install packer plugin manager
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-        $data_dir/site/pack/packer/start/packer.nvim
-
-    nvim +PackerSync
+    nvim # start to install plugins
 }
 
 config_gnu_emacs() {
