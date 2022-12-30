@@ -10,7 +10,6 @@
     "editor.fontFamily": "Iosevka Fixed SS09 Medium",
     "editor.fontLigatures": false,
     "editor.inlineSuggest.enabled": true,
-    "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "trailing",
     "editor.tabSize": 4,
@@ -50,7 +49,6 @@
     "editor.rulers": [88],
     "haskell.manageHLS": "PATH",
     "editor.fontSize": 16,
-    "files.insertFinalNewline": true,
     "github.copilot.enable": {
         "*": true,
         "yaml": false,
@@ -58,4 +56,5 @@
         "markdown": false
     },
     "workbench.colorTheme": "GitHub Dark Default",
+    "files.autoSave": "afterDelay",
 }
