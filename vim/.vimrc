@@ -91,6 +91,10 @@ autocmd BufNewFile,BufRead *.wppl setfiletype javascript
 call plug#begin('~/.vim/plugged')
 
 Plug 'alexandru-dinu/vim-dim' " colorscheme
+
+" language support
+Plug 'NoahTheDuke/vim-just'
+
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify' "{{{
