@@ -24,12 +24,13 @@ window-size=(1111, 730)
 world-clocks=[{'location': <(uint32 2, <('New Delhi', 'VIDP', true, [(0.49858239547081096, 1.345939747314058)], [(0.49916416607037828, 1.3473941825396225)])>)>}, {'location': <(uint32 2, <('Singapore', 'WSAP', true, [(0.023852838928353343, 1.8136879868485383)], [(0.022568084612667797, 1.8126262332513803)])>)>}]
 
 [clocks/state/window]
+maximized=false
 panel-id='world'
 size=(870, 690)
 state=87168
 
 [control-center]
-last-panel='keyboard'
+last-panel='info-overview'
 window-state=(1156, 637, false)
 
 [deja-dup]
@@ -94,7 +95,7 @@ enable-hot-corners=false
 font-antialiasing='rgba'
 font-hinting='slight'
 font-name='Noto Sans 10'
-gtk-theme='Adwaita-maia-compact-dark'
+gtk-theme='Adw-dark'
 icon-theme='Papirus-Dark'
 monospace-font-name='Iosevka Fixed SS09 Medium 11'
 show-battery-percentage=true
@@ -102,7 +103,7 @@ text-scaling-factor=1.0
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code', 'spotify', 'gnome-network-panel', 'org-gnome-baobab', 'brave-browser', 'org-gnome-shell-extensions', 'kitty', 'code']
+application-children=['firefox', 'org-gnome-gthumb', 'org-gnome-nautilus', 'signal-desktop', 'org-gnome-seahorse-application', 'gnome-power-panel', 'discord', 'org-gnome-dejadup', 'skypeforlinux', 'zotero', 'org-gnome-characters', 'org-gnome-settings', 'material-shell-papyelgringo', 'ca-desrt-dconf-editor', 'visual-studio-code', 'spotify', 'gnome-network-panel', 'org-gnome-baobab', 'brave-browser', 'org-gnome-shell-extensions', 'kitty', 'code', 'gimp']
 show-banners=true
 
 [desktop/notifications/application/brave-browser]
@@ -119,6 +120,9 @@ application-id='discord.desktop'
 
 [desktop/notifications/application/firefox]
 application-id='firefox.desktop'
+
+[desktop/notifications/application/gimp]
+application-id='gimp.desktop'
 
 [desktop/notifications/application/gnome-network-panel]
 application-id='gnome-network-panel.desktop'
@@ -265,8 +269,11 @@ resize-with-right-button=false
 titlebar-font='Noto Sans Bold 11'
 workspace-names=@as []
 
+[eog/ui]
+sidebar=false
+
 [evince/default]
-window-ratio=(1.5690200848009996, 1.24956942118329)
+window-ratio=(1.5689040924392919, 1.2495248361115148)
 
 [evolution-data-server]
 migrated=true
@@ -289,7 +296,7 @@ active-plugins=['filebrowser', 'docinfo', 'spell', 'sort', 'modelines']
 
 [gedit/plugins/filebrowser]
 root='file:///'
-tree-view=true
+tree-view=false
 virtual-root='file:///home/alex/Downloads/twitter-2022-11-06-e83bfc71560251679d769f08c50ab8c8bd5f48ef168b8ba4d27090e594ecbac9/data'
 
 [gedit/preferences/editor]
@@ -400,9 +407,13 @@ search-view='list-view'
 show-delete-permanently=true
 
 [nautilus/window-state]
-initial-size=(960, 512)
+initial-size=(1076, 666)
 maximized=false
 sidebar-width=192
+
+[nm-applet/eap/053748a7-618a-3347-8e6a-a2a15782d2ae]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
 
 [nm-applet/eap/a0a99cd6-0363-4a6e-b896-8c77393ca4b9]
 ignore-ca-cert=false
@@ -444,7 +455,7 @@ sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=1800
 
 [shell]
-app-picker-layout=[{'accessories': <{'position': <0>}>, 'f5559f37-677f-4211-8c54-fc0d9cd99b9c': <{'position': <1>}>, 'org.gnome.Maps.desktop': <{'position': <2>}>, 'org.gnome.gThumb.desktop': <{'position': <3>}>, 'gnome-layouts.desktop': <{'position': <4>}>, 'office': <{'position': <5>}>, 'signal-desktop.desktop': <{'position': <6>}>, 'spotify.desktop': <{'position': <7>}>, 'system-tools': <{'position': <8>}>, 'vlc.desktop': <{'position': <9>}>, 'gimp.desktop': <{'position': <10>}>, 'webapp-manager.desktop': <{'position': <11>}>, 'firefox.desktop': <{'position': <12>}>, 'assistant.desktop': <{'position': <13>}>, 'designer.desktop': <{'position': <14>}>, 'linguist.desktop': <{'position': <15>}>, 'qdbusviewer.desktop': <{'position': <16>}>, 'r.desktop': <{'position': <17>}>, 'skypeforlinux.desktop': <{'position': <18>}>}, {'me.dusansimic.DynamicWallpaper.desktop': <{'position': <0>}>, 'xdvi.desktop': <{'position': <1>}>, 'electron18.desktop': <{'position': <2>}>, 'wolfram-mathematica11.desktop': <{'position': <3>}>, 'jetbrains-pycharm.desktop': <{'position': <4>}>, 'com.github.GradienceTeam.Gradience.desktop': <{'position': <5>}>, 'org.gnome.eog.desktop': <{'position': <6>}>, 'code.desktop': <{'position': <7>}>}]
+app-picker-layout=[{'accessories': <{'position': <0>}>, 'f5559f37-677f-4211-8c54-fc0d9cd99b9c': <{'position': <1>}>, 'org.gnome.Maps.desktop': <{'position': <2>}>, 'org.gnome.gThumb.desktop': <{'position': <3>}>, 'gnome-layouts.desktop': <{'position': <4>}>, 'office': <{'position': <5>}>, 'signal-desktop.desktop': <{'position': <6>}>, 'spotify.desktop': <{'position': <7>}>, 'system-tools': <{'position': <8>}>, 'vlc.desktop': <{'position': <9>}>, 'gimp.desktop': <{'position': <10>}>, 'webapp-manager.desktop': <{'position': <11>}>, 'firefox.desktop': <{'position': <12>}>, 'assistant.desktop': <{'position': <13>}>, 'designer.desktop': <{'position': <14>}>, 'linguist.desktop': <{'position': <15>}>, 'qdbusviewer.desktop': <{'position': <16>}>, 'r.desktop': <{'position': <17>}>, 'skypeforlinux.desktop': <{'position': <18>}>}, {'me.dusansimic.DynamicWallpaper.desktop': <{'position': <0>}>, 'xdvi.desktop': <{'position': <1>}>, 'electron18.desktop': <{'position': <2>}>, 'wolfram-mathematica11.desktop': <{'position': <3>}>, 'jetbrains-pycharm.desktop': <{'position': <4>}>, 'com.github.GradienceTeam.Gradience.desktop': <{'position': <5>}>, 'org.gnome.eog.desktop': <{'position': <6>}>, 'code.desktop': <{'position': <7>}>, 'org.wireshark.Wireshark.desktop': <{'position': <8>}>, 'electron21.desktop': <{'position': <9>}>}]
 command-history=['4', 'r']
 disable-user-extensions=false
 disabled-extensions=['pamac-updates@manjaro.org', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'material-shell@papyelgringo', 'window-list@gnome-shell-extensions.gcampax.github.com', 'nightthemeswitcher@romainvigier.fr', 'dash-to-dock@micxgx.gmail.com']
@@ -486,7 +497,7 @@ override-menu-theme=false
 pinned-app-list=['Firefox', '', 'firefox.desktop', 'Files', '', 'org.gnome.Nautilus.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop']
 position-in-panel='Left'
 prefs-visible-page=0
-recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop', 'geeqie.desktop', 'electron19.desktop', 'nvtop.desktop', 'gvim.desktop', 'vim.desktop', 'nvim.desktop', 'cmake-gui.desktop', 'org.gnome.eog.desktop', 'com.github.GradienceTeam.Gradience.desktop', 'me.dusansimic.DynamicWallpaper.desktop', 'zotero.desktop', 'r.desktop', 'code.desktop', 'arandr.desktop']
+recently-installed-apps=['cups.desktop', 'gpsbabel.desktop', 'electron.desktop', 'nvidia-settings.desktop', 'nemo.desktop', 'electron18.desktop', 'jetbrains-pycharm.desktop', 'geeqie.desktop', 'electron19.desktop', 'nvtop.desktop', 'gvim.desktop', 'vim.desktop', 'nvim.desktop', 'cmake-gui.desktop', 'org.gnome.eog.desktop', 'me.dusansimic.DynamicWallpaper.desktop', 'r.desktop', 'code.desktop', 'arandr.desktop', 'com.github.GradienceTeam.Gradience.desktop', 'gnome-layouts.desktop', 'org.wireshark.Wireshark.desktop', 'electron21.desktop']
 runner-menu-height=400
 runner-menu-width=500
 runner-position='Centered'
