@@ -55,7 +55,7 @@
         "plaintext": false,
         "markdown": false
     },
-    "workbench.colorTheme": "GitHub Dark Default",
     "files.autoSave": "afterDelay",
     "terminal.integrated.fontSize": 16,
+    "workbench.colorTheme": "Default Dark+ Experimental",
 }
