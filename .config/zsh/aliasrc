@@ -5,7 +5,6 @@ alias :q="exit"
 alias ta="tmux attach"
 alias td="tmux detach"
 alias la="ls -a"
-alias x="exa --classify --git"
 
 j() {
     cd "$1" && ls
