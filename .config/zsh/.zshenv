@@ -11,24 +11,36 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# PATH
-export PATH=$HOME/miniconda3/bin:$PATH
-export PATH=$HOME/.node_modules/bin:$PATH
+# miniconda3
+export PATH="$HOME/miniconda3/bin:$PATH"
+
+# node & npm
+# main instalation
+if [[ -d "$HOME/.local/opt/node/bin" ]]; then
+    export PATH="$HOME/.local/opt/node/bin:$PATH"
+fi
+# this path can containe more recent npm / npx versions,
+# so search here first
+if [[ -d "$HOME/.node_modules/bin" ]]; then
+    export PATH="$HOME/.node_modules/bin:$PATH"
+    export npm_config_prefix="$HOME/.node_modules"
+fi
+
 # rust
 if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
     source "$XDG_DATA_HOME/cargo/env"
 fi
+
 # haskell
+export GHCUP_USE_XDG_DIRS=true
 if [[ -f "$XDG_DATA_HOME/ghcup/env" ]]; then
-    export GHCUP_USE_XDG_DIRS=true
     source "$XDG_DATA_HOME/ghcup/env"
 fi
+
 # emacs
 if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
-    export PATH="$XDG_CONFIG_HOME"/emacs/bin:$PATH
+    export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
 fi
-
-export npm_config_prefix="$HOME/.node_modules"
 
 # ~/.config
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
