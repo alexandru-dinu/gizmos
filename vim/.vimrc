@@ -10,6 +10,7 @@ set shortmess+=I
 set shortmess-=S
 set laststatus=2
 set noshowmode
+set noswapfile
 set nu rnu
 set scrolloff=10
 set autoindent
