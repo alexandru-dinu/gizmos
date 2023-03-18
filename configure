@@ -279,7 +279,10 @@ config_pycharm() {
 config_jupyter() {
     show_func_info;
 
-    ln -sf $(realpath ./.config/jupyter/lab/user-settings) $XDG_CONFIG_HOME/jupyter/lab
+    cfg_dir=$XDG_CONFIG_HOME/jupyter/lab/user-settings
+
+    rm -rf $cfg_dir
+    ln -sf $(realpath ./.config/jupyter/lab/user-settings) $cfg_dir
 }
 
 config_ptpython() {
