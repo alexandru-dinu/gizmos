@@ -1,0 +1,73 @@
+pip
+
+# notebooks and lab
+ipykernel
+ipympl
+ipython
+jupyter-client
+jupyter-packaging
+jupyter-server
+jupyter-server-mathjax
+jupyterlab
+jupyterlab-widgets
+nbclassic
+nbclient
+nbconvert
+nbdime
+notebook
+ptpython
+
+# scientific python
+Pillow
+hiplot
+matplotlib
+networkx
+nltk
+numba
+numpy
+omegaconf
+pandas
+plotly
+polars
+scikit-learn
+scipy
+seaborn
+spacy
+statsmodels
+umap-learn
+xgboost
+z3-solver
+
+# pytorch (latest cuda)
+torch
+torchvision
+torchaudio
+
+# probabilistic programming
+pymc3
+pyro-api
+pyro-ppl
+
+# tooling
+autoflake
+autopep8
+black[jupyter]
+flake8
+httpx
+isort
+more-itertools
+mypy
+poetry
+pylint
+rich
+ruff
+toolz
+typing-extensions
+
+# testing
+hypothesis
+pytest
+
+# misc
+pynvim
+memory-profiler

@@ -363,7 +363,10 @@ config_ipython() {
     show_func_info;
 
     cfg_dir=~/.ipython/profile_default
+
     mkdir -p $cfg_dir
+    rm -rf $cfg_dir/startup
+
     ln -sf $(realpath python/ipython_config.py) $cfg_dir
     ln -sf $(realpath python/startup) $cfg_dir
 }
