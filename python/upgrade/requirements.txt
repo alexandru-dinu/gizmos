@@ -26,7 +26,7 @@ nltk
 numba
 numpy
 omegaconf
-pandas
+pandas[all]
 plotly
 polars
 scikit-learn
