@@ -1,5 +1,3 @@
-#!/bin/sh
-
 alias :e="${EDITOR}"
 alias :q="exit"
 alias ta="tmux attach"
@@ -10,7 +8,7 @@ j() {
     cd "$1" && ls
 }
 rs() {
-    (redshift -x && ([ "$1" = "x" ] && return || redshift -O "$1" -g 0.9)) &>/dev/null
+    if [[ "$1" = "x" ]]; then redshift -x; else redshift -P -O "$1" -g 0.9; fi
 }
 o() {
     xdg-open "$1" &>/dev/null & disown
