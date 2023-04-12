@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # enable extended globbing
 # especially useful for !(pattern)
@@ -285,6 +285,19 @@ config_jupyter() {
     ln -sf $(realpath ./.config/jupyter/lab/user-settings) $cfg_dir
 }
 
+config_ipython() {
+    show_func_info;
+
+    rm -rf ~/.ipython
+    cfg_dir=$XDG_CONFIG_HOME/ipython/profile_default
+
+    mkdir -p $cfg_dir
+    rm -rf $cfg_dir/startup
+
+    ln -sf $(realpath python/ipython_config.py) $cfg_dir
+    ln -sf $(realpath python/startup) $cfg_dir
+}
+
 config_ptpython() {
     show_func_info;
 
@@ -357,18 +370,6 @@ config_mxmaster() {
 
     sudo ln -sf $(realpath mxmaster/logid.cfg) /etc/
     sudo systemctl restart logid.service
-}
-
-config_ipython() {
-    show_func_info;
-
-    cfg_dir=~/.ipython/profile_default
-
-    mkdir -p $cfg_dir
-    rm -rf $cfg_dir/startup
-
-    ln -sf $(realpath python/ipython_config.py) $cfg_dir
-    ln -sf $(realpath python/startup) $cfg_dir
 }
 
 config_gnome() {
