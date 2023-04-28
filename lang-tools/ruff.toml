@@ -1,0 +1,18 @@
+# settings inspired from FastAPI
+
+cache-dir = "~/.cache/ruff"
+
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "C",   # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
+
+ignore = [
+    "E501",  # line too long, handled by black
+    # "B008",  # do not perform function calls in argument defaults
+    # "C901",  # too complex
+]
