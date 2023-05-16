@@ -9,10 +9,13 @@ select = [
     "C",   # flake8-comprehensions
     "B",   # flake8-bugbear
     "SIM", # flake8-simplify
+    "PD",  # pandas-vet
+    "NPY", # NumPy-specific rules
 ]
 
 ignore = [
     "E501",  # line too long, handled by black
+    "PD901", # allow `df` variable name
     # "B008",  # do not perform function calls in argument defaults
     # "C901",  # too complex
 ]
