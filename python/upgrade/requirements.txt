@@ -55,6 +55,7 @@ black[jupyter]
 flake8
 httpx
 isort
+loguru
 more-itertools
 mypy
 poetry
