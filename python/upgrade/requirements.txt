@@ -21,6 +21,7 @@ ptpython
 Pillow
 hiplot
 matplotlib
+mlflow
 networkx
 nltk
 numba
