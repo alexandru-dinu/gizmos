@@ -250,17 +250,17 @@ config_vscode() {
     show_func_info;
 
     cfg_dir=$XDG_CONFIG_HOME/Code
-    ext_dir=~/.vscode/extensions
+    # ext_dir=~/.vscode/extensions
 
-    rm -rf ~/.vscode*
-    rm -rf $cfg_dir
+    # rm -rf ~/.vscode*
+    # rm -rf $cfg_dir
 
     mkdir -p $cfg_dir/User
 
-    declare -a configs=("keybindings.json" "settings.json" "snippets")
+    declare -a configs=("keybindings.json" "settings.json" "tasks.json" "snippets")
 
     for c in "${configs[@]}"; do
-        ln -s $(realpath ./.config/vscode/$c) $cfg_dir/User/
+        ln -sf $(realpath ./.config/vscode/$c) $cfg_dir/User/
     done
 }
 

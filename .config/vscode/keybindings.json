@@ -60,10 +60,6 @@
         "command": "-workbench.action.tasks.build"
     },
     {
-        "key": "shift+alt+,",
-        "command": "workbench.action.toggleActivityBarVisibility"
-    },
-    {
         "key": "alt+,",
         "command": "workbench.action.toggleSidebarVisibility"
     },
@@ -126,5 +122,26 @@
         "key": "ctrl+shift+5",
         "command": "-workbench.action.terminal.splitInstance",
         "when": "terminalProcessSupported && terminalTabsFocus"
-    }
+    },
+    {
+        "key": "alt+.",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "shift+alt+,",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.runTask",
+    },
 ]
