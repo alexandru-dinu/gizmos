@@ -19,6 +19,7 @@ ptpython
 
 # scientific python
 Pillow
+altair
 hiplot
 matplotlib
 mlflow
