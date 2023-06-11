@@ -89,10 +89,15 @@ config_nvim() {
     cfg_dir=$XDG_CONFIG_HOME/nvim
     data_dir=$XDG_DATA_HOME/nvim
 
+    rm -rf .config/nvim/plugin
     rm -rf $cfg_dir $data_dir
     ln -s $(realpath .config/nvim) $cfg_dir
 
-    nvim # start to install plugins
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+        $XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim
+
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    nvim
 }
 
 config_gnu_emacs() {
