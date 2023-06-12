@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- colorscheme
-    use {'ellisonleao/gruvbox.nvim', as = "gruvbox"}
+    use("rebelot/kanagawa.nvim")
 
     -- utils
     use {

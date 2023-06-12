@@ -1,18 +1,24 @@
 vim.opt.background = "dark"
 vim.opt.termguicolors = true
 
-require("gruvbox").setup({
-    bold = true,
-    italic = {
-        strings = false,
-        comments = false,
-        operators = false,
-        folds = false,
+require('kanagawa').setup({
+    compile = false,
+    undercurl = true,
+    commentStyle = { italic = false },
+    functionStyle = {},
+    keywordStyle = { italic = false },
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = true,
+    dimInactive = false,
+    terminalColors = true,
+    theme = "dragon",
+    background = {
+        dark = "dragon",
+        light = "lotus"
     },
-    contrast = "soft",
-    transparent_mode = true,
 })
-vim.cmd('colorscheme gruvbox')
+vim.cmd("colorscheme kanagawa")
 
 -- make bg transparent (currently handled by the theme)
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
