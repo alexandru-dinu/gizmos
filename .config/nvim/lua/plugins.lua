@@ -6,12 +6,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- colorscheme
-    use({
-        'ellisonleao/gruvbox.nvim',
-        config = function()
-            vim.cmd('colorscheme gruvbox')
-        end
-    })
+    use {'ellisonleao/gruvbox.nvim', as = "gruvbox"}
 
     -- utils
     use {
@@ -23,18 +18,25 @@ return require('packer').startup(function(use)
         config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
-            require("which-key").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            require("which-key").setup {}
         end
     }
-    use('tpope/vim-eunuch')
-    use('tpope/vim-fugitive')
     use('tpope/vim-commentary')
     use('tpope/vim-surround')
     use('junegunn/vim-easy-align')
+
+    -- file-related
+    use('tpope/vim-eunuch')
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
+
+    -- git
+    use('tpope/vim-fugitive')
+    use{'mhinz/vim-signify', as = "signify"}
 
     -- status line
     use ('nvim-lualine/lualine.nvim')
