@@ -5,7 +5,7 @@ require('kanagawa').setup({
     compile = false,
     undercurl = true,
     commentStyle = { italic = false },
-    functionStyle = {},
+    functionStyle = { bold = true },
     keywordStyle = { italic = false },
     statementStyle = { bold = true },
     typeStyle = {},
@@ -17,6 +17,15 @@ require('kanagawa').setup({
         dark = "dragon",
         light = "lotus"
     },
+    colors = {
+        theme = {
+            all = {
+                ui = {
+                    bg_gutter = "none"
+                }
+            }
+        }
+    }
 })
 vim.cmd("colorscheme kanagawa")
 

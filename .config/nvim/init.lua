@@ -1,6 +1,7 @@
 require('plugins')
 
 -- GENERAL
+vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 
