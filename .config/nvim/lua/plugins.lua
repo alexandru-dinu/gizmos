@@ -27,12 +27,7 @@ return require('packer').startup(function(use)
 
     -- file-related
     use('tpope/vim-eunuch')
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
-    }
+    use('nvim-tree/nvim-tree.lua')
 
     -- git
     use('tpope/vim-fugitive')

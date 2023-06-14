@@ -1,8 +1,8 @@
 configuration {
     dpi:        177;
-    font:       "Iosevka NFM Medium 14";
+    font:       "Iosevka Fixed SS09 Medium 14";
     modi:       "combi";
     combi-modi: "window,drun,run";
 }
 
-@theme "gruvbox-dark-hard"
+@theme "Arc-Dark"

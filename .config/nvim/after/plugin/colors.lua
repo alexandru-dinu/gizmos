@@ -1,10 +1,10 @@
 vim.opt.background = "dark"
 vim.opt.termguicolors = true
 
-require('kanagawa').setup({
+require('kanagawa').setup{
     compile = false,
     undercurl = true,
-    commentStyle = { italic = false },
+    commentStyle = { italic = false, fg = "#5e5e5e" },
     functionStyle = { bold = true },
     keywordStyle = { italic = false },
     statementStyle = { bold = true },
@@ -26,7 +26,7 @@ require('kanagawa').setup({
             }
         }
     }
-})
+}
 vim.cmd("colorscheme kanagawa")
 
 -- make bg transparent (currently handled by the theme)
