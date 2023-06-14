@@ -83,6 +83,12 @@ config_nushell() {
     for f in .config/nushell/*.nu; do ln -sf $(realpath $f) $cfg_dir; done
 }
 
+config_starship() {
+    show_func_info;
+
+    ln -sf $(realpath ./.config/starship/starship.toml) $XDG_CONFIG_HOME/
+}
+
 config_nvim() {
     show_func_info;
 
