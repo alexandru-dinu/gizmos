@@ -30,6 +30,11 @@ lspconfig.pylsp.setup{
 
 local cmp = require('cmp')
 cmp.setup({
+    sources = cmp.config.sources({
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+    }),
     mapping = {
         ['<C-y>'] = cmp.mapping.confirm({select = true}),
     }
