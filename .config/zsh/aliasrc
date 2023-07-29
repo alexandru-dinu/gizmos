@@ -11,7 +11,7 @@ rs() {
     if [[ "$1" = "x" ]]; then redshift -x; else redshift -P -O "$1" -g 0.9; fi
 }
 o() {
-    xdg-open "$1" &>/dev/null & disown
+    $@ &>/dev/null & disown
 }
 sp() {
     local scratchpad="$HOME/.local/share/scratchpad"
