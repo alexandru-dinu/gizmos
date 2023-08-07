@@ -48,12 +48,6 @@
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.chainingHints.enable": false,
     "editor.rulers": [88],
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": false,
-        "plaintext": false,
-        "markdown": false
-    },
     "terminal.integrated.fontSize": 15,
     "editor.fontSize": 15,
     "editor.multiCursorModifier": "ctrlCmd",
