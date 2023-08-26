@@ -75,14 +75,6 @@ config_zsh() {
     exec zsh -i -c "echo Done!; exit"
 }
 
-config_nushell() {
-    show_func_info;
-
-    cfg_dir=$XDG_CONFIG_HOME/nushell
-
-    for f in .config/nushell/*.nu; do ln -sf $(realpath $f) $cfg_dir; done
-}
-
 config_starship() {
     show_func_info;
 
