@@ -2,7 +2,7 @@
     "codeCellConfig": {
         "autoClosingBrackets": true,
         "cursorBlinkRate": 530,
-        "fontFamily": "Iosevka Fixed SS09 Medium",
+        "fontFamily": "Iosevka Fixed SS09",
         "fontSize": 14,
         "lineHeight": null,
         "lineNumbers": true,

@@ -8,8 +8,9 @@ jupyter-client
 jupyter-packaging
 jupyter-server
 jupyter-server-mathjax
-jupyterlab==3.6.3 # 4 is not fully compatible with current setup
+jupyterlab-code-formatter
 jupyterlab-widgets
+jupyterlab==3.6.3 # 4 is not fully compatible with current setup
 nbclassic
 nbclient
 nbconvert
