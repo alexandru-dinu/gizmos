@@ -2,9 +2,7 @@
 
 set -ex
 
-conda update --all -c conda-forge
-
-pip install --upgrade -r requirements.txt
+conda env update -f environment.yaml
 
 conda clean --all
 
