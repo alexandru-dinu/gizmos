@@ -2,8 +2,11 @@
 
 set -ex
 
-conda env update -f environment.yaml
+# also remove any dependencies that are no longer required
+conda env update --file environment.yaml --prune
 
+# remove index cache, lock files, unused cache packages, tarballs, and logfiles
 conda clean --all
 
-rm -rf ~/.cache/pip
+# remove all items from the cache
+pip cache purge
