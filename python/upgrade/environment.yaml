@@ -1,6 +1,7 @@
 name: base
 channels:
   - conda-forge
+  - defaults
 dependencies:
   - conda
   - python~=3.11
