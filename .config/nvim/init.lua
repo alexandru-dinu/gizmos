@@ -1,4 +1,5 @@
 require('plugins')
+require('keymaps')
 
 -- GENERAL
 vim.opt.shortmess:append({ I = true })
@@ -34,6 +35,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*" },
     command = [[%s/\s\+$//e]],
 })
-
--- KEYMAPS
-vim.g.mapleader = " "
