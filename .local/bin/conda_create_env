@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ENV_NAME="$1"
+
+conda create -n ${ENV_NAME} -c conda-forge python=3.11
+
+source activate ${ENV_NAME}
+
+pip3 install -U pip ipykernel
+
+python3 -m install --user --name ${ENV_NAME}
+
+source deactivate
