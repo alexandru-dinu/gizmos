@@ -1,7 +1,0 @@
-#!/bin/bash
-
-i3lock -c 0f0f23
-
-# sleep 1 adds a small delay to prevent possible race conditions with suspend
-sleep 1
-exit 0
