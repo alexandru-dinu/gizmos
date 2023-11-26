@@ -5,11 +5,11 @@ channels:
 dependencies:
   - conda
   - python==3.11.*
+  - ipython
+  - ipykernel
   - pip
   - pip:
-    - ipykernel
     - ipympl
-    - ipython
     - jupyter-client
     - jupyter-packaging
     - jupyter-server
