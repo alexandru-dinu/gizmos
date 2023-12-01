@@ -83,6 +83,10 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sc z=
 
+" replace selection
+set nomagic
+vnoremap <leader>rs y:%s/<C-r><C-r>"//g<Left><Left>
+
 " separate configs for specific extensions
 autocmd BufNewFile,BufRead *.tex  setfiletype tex
 autocmd BufNewFile,BufRead *.wppl setfiletype javascript
@@ -157,7 +161,6 @@ Plug 'itchyny/lightline.vim' "{{{
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'junegunn/vim-easy-align' "{{{
     xmap ga <Plug>(EasyAlign)
 "}}}
