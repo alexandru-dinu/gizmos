@@ -105,21 +105,6 @@ config_gnu_emacs() {
     ln -s $(realpath ./.config/emacs) $XDG_CONFIG_HOME
 }
 
-config_doom_emacs() {
-    show_func_info;
-
-    rm -rf $XDG_CONFIG_HOME/emacs
-    rm -rf $XDG_CONFIG_HOME/doom
-
-    git clone --depth 1 https://github.com/hlissner/doom-emacs $XDG_CONFIG_HOME/emacs
-    $XDG_CONFIG_HOME/emacs/bin/doom install
-
-    rm -rf $XDG_CONFIG_HOME/doom
-    ln -s $(realpath .config/doom) $XDG_CONFIG_HOME
-
-    $XDG_CONFIG_HOME/emacs/bin/doom sync
-}
-
 config_irb() {
     show_func_info;
 
