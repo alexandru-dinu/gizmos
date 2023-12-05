@@ -367,12 +367,6 @@ config_mxmaster() {
     sudo ln -sf $(realpath mxmaster/logid.cfg) /etc/
     sudo systemctl restart logid.service
 }
-
-config_gnome() {
-    show_func_info;
-
-    cat ./gnome/org_gnome.dconf | dconf load /org/gnome/
-}
 # }}}
 
 # Entrypoint {{{
