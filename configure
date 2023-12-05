@@ -172,13 +172,6 @@ config_kitty() {
     ln -s $(realpath ./.config/kitty) $XDG_CONFIG_HOME
 }
 
-config_alacritty() {
-    show_func_info;
-
-    rm -rf $XDG_CONFIG_HOME/alacritty
-    ln -s $(realpath ./.config/alacritty) $XDG_CONFIG_HOME
-}
-
 config_i3() {
     show_func_info;
 
