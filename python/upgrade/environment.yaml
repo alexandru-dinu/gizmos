@@ -9,6 +9,7 @@ dependencies:
   - ipykernel
   - pip
   - pip:
+    - coconut
     - ipympl
     - jupyter-client
     - jupyter-packaging
