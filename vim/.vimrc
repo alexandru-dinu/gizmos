@@ -95,8 +95,6 @@ autocmd BufNewFile,BufRead *.wppl setfiletype javascript
 """ PLUGINS
 call plug#begin('~/.vim/plugged')
 
-Plug 'alexandru-dinu/vim-dim' " colorscheme
-
 " language support
 Plug 'NoahTheDuke/vim-just'
 
@@ -170,4 +168,4 @@ call plug#end()
 " colorscheme
 if &diff | syntax off | else | syntax enable | endif
 set background=dark
-colorscheme dim
+colorscheme habamax
