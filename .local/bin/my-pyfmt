@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ -z "$@" ]]
+then
+    echo "Empty input..."
+    exit 1
+fi
+autoflake --in-place --remove-all-unused-imports $@ \
+    && isort $@ \
+    && black --line-length 100 $@
