@@ -65,4 +65,12 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lsp'},
         }
     }
+
+    -- code formatting
+    use({
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup()
+        end,
+    })
 end)
