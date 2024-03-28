@@ -1,56 +1,22 @@
 {
-    "[haskell]": {
-        "editor.fontLigatures": true
-    },
-    "[python]": {
-        "editor.semanticHighlighting.enabled": false,
-        "editor.defaultFormatter": "ms-python.python",
-        "editor.formatOnType": false,
-        "editor.formatOnSave": false,
-    },
-    "editor.autoClosingDelete": "always",
-    "editor.cursorBlinking": "solid",
-    "editor.fontFamily": "Iosevka Fixed SS09 Medium",
-    "editor.fontLigatures": false,
-    "editor.inlineSuggest.enabled": true,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "trailing",
-    "editor.tabSize": 4,
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off",
-    "extensions.ignoreRecommendations": true,
-    "files.associations": {
-        "*.wppl": "javascript"
-    },
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "files.watcherExclude": {
-        "**/.ammonite": true,
-        "**/.bloop": true,
-        "**/.metals": true
-    },
+    "editor.fontFamily": "'Iosevka Fixed SS09 Medium',monospace",
+    "editor.fontSize": 16,
     "python.defaultInterpreterPath": "/home/alex/miniconda3/bin/python",
-    "telemetry.telemetryLevel": "off",
-    "terminal.integrated.tabs.enabled": true,
+    "settingsSync.keybindingsPerPlatform": false,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "workbench.startupEditor": "none",
+    "files.trimTrailingWhitespace": true,
     "window.menuBarVisibility": "toggle",
-    "workbench.editor.untitled.hint": "hidden",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+    "terminal.integrated.inheritEnv": false,
+
+    // languages
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": false,
+        "editor.wordBasedSuggestions": "off",
+        "editor.defaultFormatter": "charliermarsh.ruff"
     },
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.tips.enabled": false,
-    "python.pythonPath": "/home/alex/miniconda3/bin/python",
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "editor.scrollBeyondLastLine": false,
-    "rust-analyzer.inlayHints.parameterHints.enable": false,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.inlayHints.chainingHints.enable": false,
-    "editor.rulers": [88],
-    "terminal.integrated.fontSize": 15,
-    "editor.fontSize": 15,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "window.titleBarStyle": "custom",
-    "window.dialogStyle": "custom",
+    "editor.rulers": [100],
+    "ruff.format.args": ["--config", "line-length=100"]
 }

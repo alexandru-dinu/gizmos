@@ -1,14 +1,16 @@
+// Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "ctrl+numpad0",
-        "command": "-workbench.action.zoomReset"
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
     },
     {
-        "key": "ctrl+0",
-        "command": "-workbench.action.focusSideBar"
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
-        "key": "ctrl+numpad_subtract",
+        "key": "ctrl+shift+-",
         "command": "-workbench.action.zoomOut"
     },
     {
@@ -16,16 +18,24 @@
         "command": "-workbench.action.zoomIn"
     },
     {
-        "key": "ctrl+numpad_add",
-        "command": "-workbench.action.zoomIn"
+        "key": "ctrl+numpad0",
+        "command": "-workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "-workbench.action.zoomOut"
     },
     {
         "key": "ctrl+=",
         "command": "-workbench.action.zoomIn"
     },
     {
-        "key": "ctrl+-",
-        "command": "-workbench.action.zoomOut"
+        "key": "ctrl+numpad_add",
+        "command": "-workbench.action.zoomIn"
     },
     {
         "key": "ctrl+=",
@@ -40,108 +50,22 @@
         "command": "editor.action.fontZoomReset"
     },
     {
-        "key": "ctrl+shift+0",
-        "command": "workbench.action.zoomReset"
+        "key": "ctrl+t v",
+        "command": "toggleVim"
     },
     {
-        "key": "ctrl+shift+=",
-        "command": "workbench.action.zoomIn"
+        "key": "ctrl+shift+i",
+        "command": "-notebook.formatCell",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
     },
     {
-        "key": "ctrl+shift+-",
-        "command": "-workbench.action.navigateForward"
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     },
     {
-        "key": "ctrl+shift+-",
-        "command": "workbench.action.zoomOut"
-    },
-    {
-        "key": "ctrl+shift+b",
-        "command": "-workbench.action.tasks.build"
-    },
-    {
-        "key": "alt+,",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "alt+d",
-        "command": "editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "meta+[",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        "key": "ctrl+alt+-",
-        "command": "-workbench.action.navigateBack"
-    },
-    {
-        "key": "meta+]",
-        "command": "workbench.action.navigateForward"
-    },
-    {
-        "key": "ctrl+g ctrl+g",
-        "command": "github.copilot.toggleCopilot"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "-workbench.view.debug",
-        "when": "viewContainer.workbench.view.debug.enabled"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+space -",
-        "command": "workbench.action.terminal.split",
-        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-    },
-    {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.split",
-        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-    },
-    {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.splitInstance",
-        "when": "terminalProcessSupported && terminalTabsFocus"
-    },
-    {
-        "key": "alt+.",
-        "command": "workbench.action.toggleAuxiliaryBar"
-    },
-    {
-        "key": "ctrl+alt+b",
-        "command": "-workbench.action.toggleAuxiliaryBar"
-    },
-    {
-        "key": "shift+alt+,",
-        "command": "workbench.action.toggleActivityBarVisibility"
-    },
-    {
-        "key": "alt+j",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.tasks.runTask",
-    },
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    }
 ]
