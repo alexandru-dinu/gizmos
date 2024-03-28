@@ -67,3 +67,4 @@ dependencies:
     - pytest
     - memory-profiler
     - pynvim
+    - ollama
