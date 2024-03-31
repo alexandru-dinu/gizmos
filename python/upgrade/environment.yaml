@@ -9,8 +9,17 @@ dependencies:
   - ipykernel
   - pip
   - pip:
+    - altair
+    - autoflake
+    - autopep8
+    - black[jupyter]
     - coconut
+    - flake8
+    - hiplot
+    - httpx
+    - hypothesis
     - ipympl
+    - isort
     - jupyter-client
     - jupyter-packaging
     - jupyter-server
@@ -18,53 +27,44 @@ dependencies:
     - jupyterlab-code-formatter
     - jupyterlab-widgets
     - jupyterlab==3.6.3 # 4 is not fully compatible with current setup
+    - loguru
+    - matplotlib
+    - memory-profiler
+    - mlflow
+    - more-itertools
+    - mypy
     - nbclassic
     - nbclient
     - nbconvert
     - nbdime
-    - notebook
-    - ptpython
-    - Pillow
-    - altair
-    - hiplot
-    - matplotlib
-    - mlflow
     - networkx
     - nltk
+    - notebook
     - numba
     - numpy
+    - ollama
     - omegaconf
     - pandas[all]
+    - Pillow
     - plotly
+    - poetry
     - polars
+    - ptpython
+    - pylint
+    - pynvim
+    - pytest
+    - rich
+    - ruff
     - scikit-learn
     - scipy
     - seaborn
     - spacy
     - statsmodels
+    - toolz
+    - torch
+    - torchaudio
+    - torchvision
+    - typing-extensions
     - umap-learn
     - xgboost
     - z3-solver
-    - torch
-    - torchvision
-    - torchaudio
-    - autoflake
-    - autopep8
-    - black[jupyter]
-    - flake8
-    - httpx
-    - isort
-    - loguru
-    - more-itertools
-    - mypy
-    - poetry
-    - pylint
-    - rich
-    - ruff
-    - toolz
-    - typing-extensions
-    - hypothesis
-    - pytest
-    - memory-profiler
-    - pynvim
-    - ollama
