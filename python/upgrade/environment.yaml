@@ -26,7 +26,7 @@ dependencies:
     - jupyter-server-mathjax
     - jupyterlab-code-formatter
     - jupyterlab-widgets
-    - jupyterlab==3.6.3 # 4 is not fully compatible with current setup
+    - jupyterlab==4.*
     - loguru
     - matplotlib
     - memory-profiler

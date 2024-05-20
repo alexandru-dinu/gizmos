@@ -1,20 +1,11 @@
 {
     "editorConfig": {
-        "autoClosingBrackets": true,
-        "codeFolding": true,
-        "cursorBlinkRate": 530,
-        "fontFamily": "Iosevka Fixed SS09",
-        "fontSize": 14,
-        "insertSpaces": true,
-        "lineHeight": null,
-        "lineNumbers": true,
-        "lineWrap": "on",
-        "matchBrackets": true,
-        "readOnly": false,
-        "rulers": [],
-        "showTrailingSpace": false,
-        "tabSize": 4,
-        "wordWrapColumn": 80
+        "customStyles": {
+            "fontFamily": "Iosevka Fixed SS09 Medium",
+            "fontSize": 15,
+            "lineHeight": null
+        }
     },
+    "scrollPastEnd": true,
     "toolbar": []
 }
