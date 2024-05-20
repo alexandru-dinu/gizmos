@@ -27,7 +27,12 @@ return require('packer').startup(function(use)
 
     -- file-related
     use('tpope/vim-eunuch')
-    use('nvim-tree/nvim-tree.lua')
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    })
 
     -- git
     use('tpope/vim-fugitive')

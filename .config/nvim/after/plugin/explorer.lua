@@ -2,26 +2,12 @@
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
-require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-        width = 30,
-    },
-    renderer = {
-        group_empty = true,
-        icons = {
-            show = {
-                file = false,
-                folder = false,
-                folder_arrow = false,
-                git = false,
-            }
-        }
-    },
-    filters = {
-        dotfiles = false,
+require("oil").setup({
+    default_file_explorer = true,
+    columns = {
+        "permissions",
+        "size",
+        "mtime",
     },
 })
-
-vim.keymap.set('n', '<leader>et', ":NvimTreeToggle<CR>", { desc = "[E]xplorer [T]oggle" })
-vim.keymap.set('n', '<leader>er', ":NvimTreeFindFile<CR>", { desc = "[E]xplorer [R]eveal" })
+vim.keymap.set('n', '<leader>o', ":Oil<CR>", { desc = "[O]il" })
