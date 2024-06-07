@@ -1,7 +1,7 @@
 vim.opt.background = "dark"
 vim.opt.termguicolors = true
 
-require('kanagawa').setup{
+require("kanagawa").setup {
     compile = false,
     undercurl = true,
     commentStyle = { italic = false, fg = "#5e5e5e" },
@@ -15,19 +15,19 @@ require('kanagawa').setup{
     theme = "dragon",
     background = {
         dark = "dragon",
-        light = "lotus"
+        light = "lotus",
     },
     colors = {
         theme = {
             all = {
                 ui = {
-                    bg_gutter = "none"
-                }
-            }
-        }
-    }
+                    bg_gutter = "none",
+                },
+            },
+        },
+    },
 }
-vim.cmd("colorscheme kanagawa")
+vim.cmd "colorscheme kanagawa"
 
 -- make bg transparent (currently handled by the theme)
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
