@@ -9,5 +9,9 @@ require("oil").setup({
         "size",
         "mtime",
     },
+    view_options = {
+        show_hidden = true,
+    },
 })
-vim.keymap.set('n', '<leader>o', ":Oil<CR>", { desc = "[O]il" })
+vim.keymap.set('n', '-', "<CMD>Oil<CR>", { desc = "Open parent dir" })
+vim.keymap.set('n', '<leader>-', require("oil").toggle_float, { desc = "Open parent dir (float)" })
