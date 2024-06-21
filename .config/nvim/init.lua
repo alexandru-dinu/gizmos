@@ -43,6 +43,10 @@ vim.keymap.set("n", "<leader>ss", ":setlocal spell!<CR>", { silent = true, desc 
 vim.keymap.set("n", "<leader>sn", "]s", { desc = "Spell Next" })
 vim.keymap.set("n", "<leader>sp", "[s", { desc = "Spell Prev" })
 vim.keymap.set("n", "<leader>sc", "z=", { desc = "Spell Correct" })
+
+-- buffers
+vim.keymap.set("n", "grb", "<CMD>buffer #<CR>", { desc = "[g]o to [r]ecent [b]uffer" })
+vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "[b]uffer [d]elete" })
 -- }}}
 
 -- PLUGINS {{{

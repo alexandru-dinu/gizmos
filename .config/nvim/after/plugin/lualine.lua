@@ -28,19 +28,37 @@ require("lualine").setup {
         lualine_z = { "location" },
     },
     inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
         lualine_c = { "filename" },
         lualine_x = { "location" },
-        lualine_y = {},
-        lualine_z = {},
     },
     tabline = {
         lualine_a = {
-            { "tabs", mode = 2, path = 0 },
+            {
+                "buffers",
+                mode = 2,
+                symbols = { modified = " [+]" },
+            },
+        },
+        lualine_z = {
+            { "tabs", mode = 0, path = 0 },
         },
     },
     winbar = {},
     inactive_winbar = {},
     extensions = {},
 }
+
+-- this option is set here b/c it's tied to tabline config in lualine
+function jump_to_buffer(idx)
+    -- retrieve all valid buffers (ignore [scratch])
+    local buffers = vim.tbl_filter(function(buf)
+        return vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_get_option(buf, "buftype") ~= "nofile"
+    end, vim.api.nvim_list_bufs())
+
+    -- only jump if valid index
+    if idx > 0 and idx <= #buffers then
+        vim.api.nvim_set_current_buf(buffers[idx])
+    end
+end
+
+vim.api.nvim_set_keymap("n", "gb", "<CMD>lua jump_to_buffer(vim.v.count1)<CR>", { noremap = true, silent = true })
