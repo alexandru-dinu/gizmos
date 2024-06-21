@@ -37,6 +37,7 @@ require("lualine").setup {
                 "buffers",
                 mode = 2,
                 symbols = { modified = " [+]" },
+                filetype_names = { fugitive = "(git)", oil = "(dir)" },
             },
         },
         lualine_z = {
