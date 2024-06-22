@@ -1,11 +1,8 @@
 {
-    "editorConfig": {
-        "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09 Medium",
-            "fontSize": 15,
-            "lineHeight": null
-        }
-    },
-    "scrollPastEnd": true,
-    "toolbar": []
+    // Text Editor
+    // @jupyterlab/fileeditor-extension:plugin
+    // Text editor settings.
+    // ***************************************
+
+
 }

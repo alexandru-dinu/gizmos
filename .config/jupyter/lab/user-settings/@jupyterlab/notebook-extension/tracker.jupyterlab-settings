@@ -3,10 +3,8 @@
     "codeCellConfig": {
         "autoClosingBrackets": true,
         "codeFolding": true,
-        "lineNumbers": false,
-        "lineWrap": false,
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09 Medium",
+            "fontFamily": "Iosevka Fixed SS09",
             "fontSize": 15,
             "lineHeight": null
         }
@@ -17,10 +15,9 @@
     "kernelShutdown": false,
     "markdownCellConfig": {
         "autoClosingBrackets": true,
-        "lineNumbers": false,
-        "matchBrackets": false,
+        "codeFolding": true,
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09 Medium",
+            "fontFamily": "Iosevka Fixed SS09",
             "fontSize": 15,
             "lineHeight": null
         }
@@ -28,10 +25,8 @@
     "rawCellConfig": {
         "autoClosingBrackets": true,
         "codeFolding": true,
-        "lineNumbers": false,
-        "matchBrackets": false,
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09 Medium",
+            "fontFamily": "Iosevka Fixed SS09",
             "fontSize": 15,
             "lineHeight": null
         }
