@@ -42,6 +42,6 @@ require("conform").formatters = {
 vim.keymap.set(
     "n",
     "<leader>cf",
-    [[:lua require("conform").format()<CR>]],
-    { noremap = true, silent = true, desc = "Code Format" }
+    [[:lua require("conform").format({ async = true })<CR>]],
+    { noremap = true, silent = false, desc = "Code Format" }
 )
