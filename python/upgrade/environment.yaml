@@ -50,6 +50,7 @@ dependencies:
     - poetry
     - polars
     - ptpython
+    - pydantic
     - pylint
     - pynvim
     - pytest
@@ -58,13 +59,16 @@ dependencies:
     - scikit-learn
     - scipy
     - seaborn
+    - simple-parsing
     - spacy
     - statsmodels
     - toolz
     - torch
     - torchaudio
     - torchvision
+    - transformers
     - typing-extensions
     - umap-learn
+    - wat-inspector
     - xgboost
     - z3-solver
