@@ -11,7 +11,8 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# miniconda3
+# main PATHs
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/miniconda3/bin:$PATH"
 
 # node & npm
@@ -19,7 +20,7 @@ export PATH="$HOME/miniconda3/bin:$PATH"
 if [[ -d "$HOME/.local/opt/node/bin" ]]; then
     export PATH="$HOME/.local/opt/node/bin:$PATH"
 fi
-# this path can containe more recent npm / npx versions,
+# this path can contain more recent npm / npx versions,
 # so search here first
 if [[ -d "$HOME/.node_modules/bin" ]]; then
     export PATH="$HOME/.node_modules/bin:$PATH"

@@ -324,10 +324,6 @@ config_symlinks() {
     for f in ./.local/bin/*; do
         ln -sf $(realpath "$f") ~/.local/bin
     done
-
-    for f in ./.local/share/*; do
-        ln -sf $(realpath "$f") $XDG_DATA_HOME
-    done
 }
 # }}}
 

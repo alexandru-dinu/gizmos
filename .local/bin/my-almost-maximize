@@ -8,7 +8,7 @@ MAX_H=1440
 
 wid=$(xdotool getactivewindow)
 
-dx=70
+dx=120
 dy=90
 xdotool windowmove $wid $dx $dy
 
