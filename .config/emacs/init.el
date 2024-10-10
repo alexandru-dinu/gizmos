@@ -16,12 +16,17 @@
 
 (setq create-lockfiles nil)
 (setq make-backup-files nil)
+(set-face-attribute 'default nil :height 140)
 
 ;; packages
 (defun rc/lazy-install (pkg)
   "Install package if it does not already exist."
   (unless (package-installed-p pkg)
     (package-install pkg)))
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 
 ;; theme
 (rc/lazy-install 'gruber-darker-theme)
