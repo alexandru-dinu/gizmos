@@ -4,14 +4,11 @@ alias ta="tmux attach"
 alias td="tmux detach"
 alias la="ls -a"
 
-j() {
-    cd "$1" && ls
+cm() {
+    mkdir -p "$1" && cd "$1"
 }
 rs() {
     if [[ "$1" = "x" ]]; then redshift -x; else redshift -P -O "$1" -g 0.9; fi
-}
-o() {
-    $@ &>/dev/null & disown
 }
 sp() {
     local scratchpad="$HOME/.local/share/scratchpad"
@@ -21,12 +18,22 @@ sp() {
 
     ${EDITOR:-vim} -c ${startup_cmd} ${scratchpad}
 }
+
+# git diff vs current branch
 gdc() {
-    # git diff vs current branch
     local branch=$(git branch --show-current)
     git diff origin/$branch "$1"
 }
+
+# syntax highlighting
 ccat() {
-    # syntax highlighting
-    $(which python3) -m rich.syntax "$@"
+    $HOME/miniconda3/bin/python3 -m rich.syntax "$@"
+}
+
+# conda
+conda-activate() {
+    source activate $(conda env list | awk '$1 !~ /^#/ {print $1}' | fzf)
+}
+conda-deactivate() {
+    source deactivate
 }
