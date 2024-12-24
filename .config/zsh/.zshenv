@@ -26,6 +26,9 @@ if [[ -d "$HOME/.node_modules/bin" ]]; then
     export PATH="$HOME/.node_modules/bin:$PATH"
     export npm_config_prefix="$HOME/.node_modules"
 fi
+# node version manager
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # rust
 if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
