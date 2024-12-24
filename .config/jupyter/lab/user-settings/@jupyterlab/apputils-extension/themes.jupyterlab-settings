@@ -1,14 +1,14 @@
 {
-    "theme": "JupyterLab Light",
     "adaptive-theme": false,
-    "preferred-light-theme": "JupyterLab Light",
-    "preferred-dark-theme": "JupyterLab Dark",
-    "theme-scrollbars": true,
     "overrides": {
         "code-font-family": "Iosevka Fixed SS09",
-        "code-font-size": "15",
+        "code-font-size": "16",
         "content-font-family": null,
         "ui-font-family": null,
         "ui-font-size1": null
-    }
+    },
+    "preferred-dark-theme": "JupyterLab Dark",
+    "preferred-light-theme": "JupyterLab Light",
+    "theme": "JupyterLab Dark",
+    "theme-scrollbars": true
 }
