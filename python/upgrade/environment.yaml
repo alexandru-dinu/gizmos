@@ -1,7 +1,6 @@
 name: base
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - conda
   - python==3.12.*
@@ -13,7 +12,6 @@ dependencies:
     - autoflake
     - autopep8
     - black[jupyter]
-    - coconut
     - flake8
     - hiplot
     - httpx
