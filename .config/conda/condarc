@@ -1,6 +1,5 @@
-{
-    changeps1: false,
-    channels: [conda-forge, defaults],
-    show_channel_urls: True,
-    use_pip: True
-}
+channels:
+  - conda-forge
+channel_priority: strict
+show_channel_urls: true
+changeps1: false

@@ -13,7 +13,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # main PATHs
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/miniconda3/bin:$PATH"
+export PATH="$HOME/miniforge3/bin:$PATH"
 
 # node & npm
 # main instalation
