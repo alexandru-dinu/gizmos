@@ -2,16 +2,14 @@
 
 set -euo pipefail
 
-# TODO: read from xrandr
-MAX_W=2560
-MAX_H=1440
+read width height <<< $(xrandr | grep '*' | awk '{print $1}' | awk -Fx '{print $1, $2}')
 
 wid=$(xdotool getactivewindow)
 
-dx=120
-dy=90
+dx=60
+dy=80
 xdotool windowmove $wid $dx $dy
 
-w=$(( $MAX_W - 2 * $dx ))
-h=$(( $MAX_H - 2 * $dy ))
+w=$(( $width - 2 * $dx ))
+h=$(( $height - 2 * $dy ))
 xdotool windowsize $wid $w $h
