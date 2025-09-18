@@ -1,7 +1,7 @@
 {
     "editorConfig": {
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09",
+            "fontFamily": "monospace",
             "fontSize": 15,
             "lineHeight": null
         }

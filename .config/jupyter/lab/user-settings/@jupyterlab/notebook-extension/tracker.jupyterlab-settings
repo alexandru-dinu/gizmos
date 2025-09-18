@@ -4,7 +4,7 @@
         "autoClosingBrackets": true,
         "codeFolding": true,
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09",
+            "fontFamily": "monospace",
             "fontSize": 15,
             "lineHeight": null
         }
@@ -17,7 +17,7 @@
         "autoClosingBrackets": true,
         "codeFolding": true,
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09",
+            "fontFamily": "monospace",
             "fontSize": 15,
             "lineHeight": null
         }
@@ -26,7 +26,7 @@
         "autoClosingBrackets": true,
         "codeFolding": true,
         "customStyles": {
-            "fontFamily": "Iosevka Fixed SS09",
+            "fontFamily": "monospace",
             "fontSize": 15,
             "lineHeight": null
         }
@@ -48,5 +48,7 @@
     "sideBySideRightMarginOverride": "10px",
     "sideBySideOutputRatio": 1,
     "windowingMode": "full",
-    "accessKernelHistory": false
+    "accessKernelHistory": false,
+    "showInputPlaceholder": true,
+    "autoRenderMarkdownCells": false
 }

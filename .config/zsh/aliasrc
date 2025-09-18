@@ -7,9 +7,6 @@ alias la="ls -a"
 cm() {
     mkdir -p "$1" && cd "$1"
 }
-rs() {
-    if [[ "$1" = "x" ]]; then redshift -x; else redshift -P -O "$1" -g 0.9; fi
-}
 sp() {
     local scratchpad="$HOME/.local/share/scratchpad"
     local sep=$(perl -E 'say "=" x 32')
@@ -23,11 +20,6 @@ sp() {
 gdc() {
     local branch=$(git branch --show-current)
     git diff origin/$branch "$1"
-}
-
-# syntax highlighting
-ccat() {
-    $HOME/miniconda3/bin/python3 -m rich.syntax "$@"
 }
 
 # conda

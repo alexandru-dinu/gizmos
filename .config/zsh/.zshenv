@@ -1,5 +1,5 @@
-export LANG=en_US.UTF-8
-export LC_ALL=$LANG
+#export LANG=en_US.UTF-8
+#export LC_ALL=$LANG
 export EDITOR=nvim
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -15,36 +15,36 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/miniforge3/bin:$PATH"
 
-# node & npm
-# main instalation
-if [[ -d "$HOME/.local/opt/node/bin" ]]; then
-    export PATH="$HOME/.local/opt/node/bin:$PATH"
-fi
-# this path can contain more recent npm / npx versions,
-# so search here first
-if [[ -d "$HOME/.node_modules/bin" ]]; then
-    export PATH="$HOME/.node_modules/bin:$PATH"
-    export npm_config_prefix="$HOME/.node_modules"
-fi
-# node version manager
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# # node & npm
+# # main instalation
+# if [[ -d "$HOME/.local/opt/node/bin" ]]; then
+#     export PATH="$HOME/.local/opt/node/bin:$PATH"
+# fi
+# # this path can contain more recent npm / npx versions,
+# # so search here first
+# if [[ -d "$HOME/.node_modules/bin" ]]; then
+#     export PATH="$HOME/.node_modules/bin:$PATH"
+#     export npm_config_prefix="$HOME/.node_modules"
+# fi
+# # node version manager
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# rust
-if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
-    source "$XDG_DATA_HOME/cargo/env"
-fi
+# # rust
+# if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
+#     source "$XDG_DATA_HOME/cargo/env"
+# fi
 
-# haskell
-export GHCUP_USE_XDG_DIRS=true
-if [[ -f "$XDG_DATA_HOME/ghcup/env" ]]; then
-    source "$XDG_DATA_HOME/ghcup/env"
-fi
+# # haskell
+# export GHCUP_USE_XDG_DIRS=true
+# if [[ -f "$XDG_DATA_HOME/ghcup/env" ]]; then
+#     source "$XDG_DATA_HOME/ghcup/env"
+# fi
 
-# emacs
-if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
-    export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
-fi
+# # emacs
+# if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
+#     export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
+# fi
 
 # ~/.config
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel

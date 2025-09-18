@@ -6,12 +6,12 @@
 
     // Adaptive Theme
     // Synchronize visual styling theme with system settings
-    "adaptive-theme": false,
+    "adaptive-theme": true,
 
     // Theme CSS Overrides
     // Override theme CSS variables by setting key-value pairs here
     "overrides": {
-        "code-font-family": "Iosevka Fixed SS09",
+        "code-font-family": "monospace",
         "code-font-size": "15px"
     },
 
