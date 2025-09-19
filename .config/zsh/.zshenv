@@ -35,11 +35,11 @@ export PATH="$HOME/miniforge3/bin:$PATH"
 #     source "$XDG_DATA_HOME/cargo/env"
 # fi
 
-# # haskell
-# export GHCUP_USE_XDG_DIRS=true
-# if [[ -f "$XDG_DATA_HOME/ghcup/env" ]]; then
-#     source "$XDG_DATA_HOME/ghcup/env"
-# fi
+# haskell
+export GHCUP_USE_XDG_DIRS=true
+if [[ -f "$XDG_DATA_HOME/ghcup/env" ]]; then
+    source "$XDG_DATA_HOME/ghcup/env"
+fi
 
 # # emacs
 # if [[ -d "$XDG_CONFIG_HOME"/emacs/bin ]]; then
