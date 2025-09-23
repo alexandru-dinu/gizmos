@@ -30,10 +30,10 @@ export PATH="$HOME/miniforge3/bin:$PATH"
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# # rust
-# if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
-#     source "$XDG_DATA_HOME/cargo/env"
-# fi
+# rust
+if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
+    source "$XDG_DATA_HOME/cargo/env"
+fi
 
 # haskell
 export GHCUP_USE_XDG_DIRS=true
