@@ -3,6 +3,7 @@
     "codeCellConfig": {
         "autoClosingBrackets": true,
         "codeFolding": true,
+        "lineNumbers": true,
         "customStyles": {
             "fontFamily": "monospace",
             "fontSize": 15,
@@ -16,6 +17,7 @@
     "markdownCellConfig": {
         "autoClosingBrackets": true,
         "codeFolding": true,
+        "lineNumbers": true,
         "customStyles": {
             "fontFamily": "monospace",
             "fontSize": 15,
@@ -25,6 +27,7 @@
     "rawCellConfig": {
         "autoClosingBrackets": true,
         "codeFolding": true,
+        "lineNumbers": true,
         "customStyles": {
             "fontFamily": "monospace",
             "fontSize": 15,

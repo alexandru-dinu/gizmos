@@ -1,5 +1,7 @@
 {
     "editorConfig": {
+        "autoClosingBrackets": true,
+        "codeFolding": true,
         "customStyles": {
             "fontFamily": "monospace",
             "fontSize": 15,
