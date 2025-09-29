@@ -3,21 +3,17 @@ channels:
   - conda-forge
 dependencies:
   - conda
-  - python==3.12.*
+  - python==3.13.*
   - ipython
   - ipykernel
   - pip
   - pip:
-    - altair
     - autoflake
     - autopep8
     - black[jupyter]
     - flake8
-    - hiplot
-    - httpx
-    - hypothesis
-    - ipympl
     - isort
+    - ruff
     - jupyter-client
     - jupyter-packaging
     - jupyter-server
@@ -27,46 +23,51 @@ dependencies:
     - jupyterlab==4.*
     - loguru
     - matplotlib
-    - memory-profiler
-    - mlflow
-    - more-itertools
+    - seaborn
+    - plotnine
+    - plotly
     - mypy
     - nbclassic
     - nbclient
     - nbconvert
     - nbdime
-    - networkx
-    - nltk
     - notebook
     - numba
     - numpy
-    - ollama
-    - omegaconf
     - pandas[all]
-    - Pillow
-    - plotly
-    - poetry
-    - polars
     - ptpython
-    - pydantic
-    - pylint
     - pynvim
     - pytest
     - rich
-    - ruff
     - scikit-learn
     - scipy
-    - seaborn
-    - simple-parsing
-    - spacy
-    - statsmodels
-    - toolz
-    - torch
-    - torchaudio
-    - torchvision
-    - transformers
     - typing-extensions
-    - umap-learn
-    - wat-inspector
-    - xgboost
-    - z3-solver
+    - toolz
+    # - altair
+    # - hiplot
+    # - httpx
+    # - hypothesis
+    # - ipympl
+    # - memory-profiler
+    # - mlflow
+    # - more-itertools
+    # - networkx
+    # - nltk
+    # - omegaconf
+    # - Pillow
+    # - plotly
+    # - poetry
+    # - polars
+    # - pydantic
+    # - pylint
+    # - simple-parsing
+    # - spacy
+    # - statsmodels
+    # - torch
+    # - torchaudio
+    # - torchvision
+    # - transformers
+    # - umap-learn
+    # - wat-inspector
+    # - xgboost
+    # - z3-solver
