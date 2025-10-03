@@ -64,11 +64,9 @@ config_zsh() {
     rm -rf $ZDOTDIR
     rm -rf $XDG_CONFIG_HOME/fzf
 
-    mkdir -p $data_dir
+    mkdir -p $data_dir $ZDOTDIR
 
-    git clone --depth=1 --recurse-submodules --remote-submodules \
-        https://github.com/alexandru-dinu/zsh-config.git $ZDOTDIR
-
+    ln -s $(realpath .config/zsh/plugins) $ZDOTDIR
     ln -s $(realpath .config/zsh/.zshrc) $ZDOTDIR
     ln -s $(realpath .config/zsh/.zshenv) ~/
 
