@@ -10,44 +10,45 @@ disabled = true
 [hostname]
 disabled = true
 
+[cmd_duration]
+disabled = true
+
 [directory]
 style             = "cyan"
 truncate_to_repo  = true
 truncation_length = 3
 truncation_symbol = "…/"
-read_only         = " (ro) "
 
 [git_branch]
-format = "[$symbol$branch]($style) "
-style = "fg:247"
+format = "[$symbol$branch]($style)"
+style = "247"
 symbol = ""
 
 [git_status]
-format     = '([$all_status$ahead_behind]($style))'
-style      = "red"
-conflicted = "c "
-ahead      = "${count}↑ "
-behind     = "${count}↓ "
+format     = '([$all_status$ahead_behind]($style)) '
+style      = "bold red"
+conflicted = "c"
 diverged   = "${ahead_count}:${behind_count}↕ "
-untracked  = "${count}u "
-stashed    = "${count}↴ "
-modified   = "${count}m "
-staged     = "${count}+ "
-renamed    = "${count}r "
-deleted    = "${count}d "
-
-[cmd_duration]
-disabled = true
-
-# languages
-[nodejs]
-symbol = "node "
+ahead      = "↑"
+behind     = "↓"
+untracked  = "?"
+stashed    = "↴"
+modified   = "!"
+staged     = "+"
+renamed    = "r"
+deleted    = "d"
 
 [python]
-symbol = "py "
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+symbol = "py"
+version_format = '${major}.${minor}'
+style = "green"
 
 [rust]
-symbol = "rs "
+format = '[$symbol($version )]($style)'
+symbol = "rs"
+version_format = '${major}.${minor}'
+style = "green"
 
 [package]
-symbol = ""
+disabled = true
