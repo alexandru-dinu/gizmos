@@ -39,14 +39,32 @@ renamed    = "r"
 deleted    = "d"
 
 [python]
-format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
 symbol = "py"
 version_format = '${major}.${minor}'
 style = "green"
 
 [rust]
-format = '[$symbol($version )]($style)'
+format = '[$symbol($version)]($style) '
 symbol = "rs"
+version_format = '${major}.${minor}'
+style = "green"
+
+[ruby]
+format = '[$symbol($version)]($style) '
+symbol = "rb"
+version_format = '${major}.${minor}'
+style = "green"
+
+[golang]
+format = '[$symbol($version)]($style) '
+symbol = "go"
+version_format = '${major}.${minor}'
+style = "green"
+
+[nodejs]
+format = '[$symbol($version)]($style) '
+symbol = "node"
 version_format = '${major}.${minor}'
 style = "green"
 
