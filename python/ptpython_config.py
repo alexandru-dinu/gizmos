@@ -20,7 +20,7 @@ def configure(repl):
 
     repl.vi_mode = True
     repl.prompt_style = "ipython"
-    repl.enable_mouse_support = False
+    repl.enable_mouse_support = True
 
     repl.complete_while_typing = False
     # complete while typing must be disabled
@@ -46,6 +46,3 @@ def configure(repl):
 
     # Don't try to execute when the input contains syntax errors.
     repl.enable_input_validation = True
-
-
-print(f"Python: {sys.executable}\n")
