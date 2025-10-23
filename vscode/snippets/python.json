@@ -1,0 +1,21 @@
+{
+    "main": {
+        "prefix": "main",
+        "description": "defines main func",
+        "body": [
+            "def main():",
+            "\t$0",
+            "\n",
+            "if __name__ == \"__main__\":",
+            "\tmain()"
+        ]
+    },
+    "ipy": {
+        "prefix": "ipy",
+        "description": "embed ipython",
+        "body": [
+            "import IPython",
+            "IPython.embed(using=False)"
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "editor.fontFamily": "'Iosevka Fixed SS09',monospace",
+    "editor.fontSize": 15,
+    "terminal.integrated.fontFamily": "'Iosevka Fixed SS09',monospace",
+    "terminal.integrated.fontSize": 15,
+    "notebook.markup.fontSize": 15,
+    "settingsSync.keybindingsPerPlatform": false,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "workbench.startupEditor": "none",
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.inheritEnv": false,
+    "vim.handleKeys": {
+        "<C-p>": false,
+    },
+    "window.dialogStyle": "custom",
+    "window.titleBarStyle": "custom",
+    "git.openRepositoryInParentFolders": "never",
+    "notebook.lineNumbers": "on",
+    "editor.rulers": [120],
+    "black-formatter.args": [
+        "--line-length=120"
+    ],
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "manual",
+}
