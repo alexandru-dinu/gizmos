@@ -2,15 +2,15 @@ vim.opt.background = "dark"
 vim.opt.termguicolors = true
 
 require("kanagawa").setup {
-    compile = false,
+    compile = true,
     undercurl = true,
-    commentStyle = { italic = false, fg = "#5e5e5e" },
+    commentStyle = { italic = false },
     functionStyle = { bold = true },
     keywordStyle = { italic = false },
     statementStyle = { bold = true },
     typeStyle = {},
     transparent = true,
-    dimInactive = false,
+    dimInactive = true,
     terminalColors = true,
     theme = "dragon",
     background = {
@@ -26,6 +26,11 @@ require("kanagawa").setup {
             },
         },
     },
+    overrides = function(colors)
+        return {
+            WinSeparator = { fg = colors.palette.dragonAsh },
+        }
+    end,
 }
 vim.cmd "colorscheme kanagawa"
 
