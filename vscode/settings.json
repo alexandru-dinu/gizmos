@@ -24,4 +24,11 @@
     "extensions.autoUpdate": false,
     "extensions.autoCheckUpdates": false,
     "update.mode": "manual",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "python.analysis.typeCheckingMode": "standard",
 }
