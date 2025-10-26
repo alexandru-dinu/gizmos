@@ -68,5 +68,11 @@ symbol = "node"
 version_format = '${major}.${minor}'
 style = "green"
 
+[lua]
+format = '[$symbol($version)]($style) '
+symbol = "lua"
+version_format = '${major}.${minor}'
+style = "green"
+
 [package]
 disabled = true
