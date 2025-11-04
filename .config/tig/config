@@ -1,2 +1,3 @@
-# color area fg bg
 color cursor black white
+set line-graphics = utf-8
+set main-view-line-number-display = yes
