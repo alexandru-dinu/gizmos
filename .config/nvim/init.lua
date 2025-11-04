@@ -108,6 +108,7 @@ return require("packer").startup(function(use)
 
     -- languages
     use "manicmaniac/coconut.vim"
+    use "factor/factor.vim"
 
     -- lsp
     use {
