@@ -31,4 +31,5 @@
         "scminput": false
     },
     "python.analysis.typeCheckingMode": "standard",
+    "editor.renderWhitespace": "none",
 }

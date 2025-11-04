@@ -98,8 +98,8 @@
     },
     {
         "key": "cmd+[",
-        "command": "-editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly"
+            "command": "-editor.action.outdentLines",
+            "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "cmd+]",
@@ -108,8 +108,8 @@
     },
     {
         "key": "cmd+[",
-        "command": "workbench.action.navigateBack",
-        "when": "canNavigateBack"
+            "command": "workbench.action.navigateBack",
+            "when": "canNavigateBack"
     },
     {
         "key": "browserback",
@@ -137,5 +137,23 @@
     {
         "key": "cmd+numpad0",
         "command": "-workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
     }
 ]
