@@ -50,6 +50,12 @@ symbol = "rs"
 version_format = '${major}.${minor}'
 style = "green"
 
+[julia]
+format = '[$symbol($version)]($style) '
+symbol = "jl"
+version_format = '${major}.${minor}'
+style = "green"
+
 [haskell]
 format = '[$symbol($version)]($style) '
 symbol = "hs"

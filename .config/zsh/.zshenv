@@ -35,6 +35,11 @@ if [[ -f "$XDG_DATA_HOME/cargo/env" ]]; then
     source "$XDG_DATA_HOME/cargo/env"
 fi
 
+# julia
+if [[ -d "$XDG_DATA_HOME/juliaup/bin" ]]; then
+    export PATH="$XDG_DATA_HOME/juliaup/bin:$PATH"
+fi
+
 # haskell
 export GHCUP_USE_XDG_DIRS=true
 if [[ -f "$XDG_DATA_HOME/ghcup/env" ]]; then
