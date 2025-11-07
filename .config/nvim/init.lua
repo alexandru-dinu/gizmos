@@ -47,6 +47,18 @@ vim.keymap.set("n", "<leader>sc", "z=", { desc = "Spell Correct" })
 -- buffers
 vim.keymap.set("n", "grb", "<CMD>buffer #<CR>", { desc = "[g]o to [r]ecent [b]uffer" })
 vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "[b]uffer [d]elete" })
+
+-- repl/compilation mode
+vim.keymap.set("n", "<leader>p", function()
+    local mp = vim.fn.input("Set makeprg: ", vim.bo.makeprg or "")
+    if mp ~= "" then
+        vim.bo.makeprg = mp
+    end
+end, { desc = "Set makeprg" })
+
+vim.keymap.set("n", "<leader>m", function()
+    vim.cmd "silent make | copen | wincmd p"
+end, { desc = "Make" })
 -- }}}
 
 -- PLUGINS {{{
