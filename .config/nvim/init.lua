@@ -123,27 +123,10 @@ return require("packer").startup(function(use)
     use "factor/factor.vim"
 
     -- lsp
-    use {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
-        requires = {
-            -- LSP Support
-            { "neovim/nvim-lspconfig" },
-            {
-                "williamboman/mason.nvim",
-                run = function()
-                    pcall(vim.cmd, "MasonUpdate")
-                end,
-            },
-            { "williamboman/mason-lspconfig.nvim" },
-
-            -- Autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "hrsh7th/cmp-nvim-lsp" },
-        },
-    }
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-nvim-lsp"
 
     -- code formatting
     use {
