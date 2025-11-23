@@ -4,6 +4,7 @@
 
 set -euo pipefail
 
-tr ' ' '+' \
+fzf \
+    | tr ' ' '+' \
     | awk '{print "https://music.youtube.com/search?q=" $0}' \
     | xargs -I "{}" "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser" --app="{}"
