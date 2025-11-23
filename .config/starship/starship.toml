@@ -85,5 +85,11 @@ symbol = "lua"
 version_format = '${major}.${minor}'
 style = "green"
 
+[c]
+format = '[$name($version)]($style) '
+symbol = "c"
+version_format = '${major}.${minor}'
+style = "green"
+
 [package]
 disabled = true
