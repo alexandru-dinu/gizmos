@@ -43,9 +43,13 @@ dependencies:
     - scipy
     - typing-extensions
     - toolz
+    - httpx
+    - plotly
+    - polars
+    - pydantic
+    - simple-parsing
     # - altair
     # - hiplot
-    # - httpx
     # - hypothesis
     # - ipympl
     # - memory-profiler
@@ -55,12 +59,7 @@ dependencies:
     # - nltk
     # - omegaconf
     # - Pillow
-    # - plotly
-    # - poetry
-    # - polars
-    # - pydantic
     # - pylint
-    # - simple-parsing
     # - spacy
     # - statsmodels
     # - torch
