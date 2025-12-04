@@ -24,7 +24,7 @@ require("conform").formatters = {
         prepend_args = { "--remove-all-unused-imports" },
     },
     black = {
-        prepend_args = { "--line-length=100" },
+        prepend_args = { "--line-length=88" },
     },
     stylua = {
         prepend_args = { "--indent-type", "Spaces" },
