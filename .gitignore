@@ -1,8 +1,6 @@
 .vscode/
 .ipynb_checkpoints/
 
-.config/nvim/plugin/
-
 emacs/auto-save-list/
 emacs/elpa/
 emacs/transient/

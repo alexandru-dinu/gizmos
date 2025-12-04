@@ -1,3 +1,21 @@
+-- Bootstrap lazy.nvim {{{
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out, "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+    end
+end
+vim.opt.rtp:prepend(lazypath)
+-- }}}
+
 -- GENERAL {{{
 vim.opt.shortmess:append { I = true }
 vim.opt.showmode = false
@@ -62,80 +80,76 @@ end, { desc = "Make" })
 -- }}}
 
 -- PLUGINS {{{
+require("lazy").setup {
+    spec = {
+        -- Colorscheme
+        "rebelot/kanagawa.nvim",
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+        -- Utils
+        {
+            "nvim-telescope/telescope.nvim",
+            tag = "v0.2.0",
+            dependencies = { "nvim-lua/plenary.nvim" },
+        },
+        {
+            "folke/which-key.nvim",
+            config = function()
+                vim.o.timeout = true
+                vim.o.timeoutlen = 300
+                require("which-key").setup {}
+            end,
+        },
+        {
+            "folke/todo-comments.nvim",
+            dependencies = "nvim-lua/plenary.nvim",
+            config = function()
+                require("todo-comments").setup {}
+            end,
+        },
+        "tpope/vim-commentary",
+        "tpope/vim-surround",
+        "junegunn/vim-easy-align",
 
-return require("packer").startup(function(use)
-    -- Packer can manage itself
-    use "wbthomason/packer.nvim"
-
-    -- colorscheme
-    use "rebelot/kanagawa.nvim"
-
-    -- utils
-    use {
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
-        requires = { { "nvim-lua/plenary.nvim" } },
-    }
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup {}
-        end,
-    }
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {}
-        end,
-    }
-    use "tpope/vim-commentary"
-    use "tpope/vim-surround"
-    use "junegunn/vim-easy-align"
-
-    -- file-related
-    use "tpope/vim-eunuch"
-    use {
+        -- File-related
+        "tpope/vim-eunuch",
         "stevearc/oil.nvim",
-        config = function()
-            require("oil").setup()
-        end,
-    }
+        "nvim-tree/nvim-tree.lua",
 
-    -- git
-    use "tpope/vim-fugitive"
-    use { "mhinz/vim-signify", as = "signify" }
+        -- Git
+        "tpope/vim-fugitive",
+        { "mhinz/vim-signify", name = "signify" },
 
-    -- status line
-    use "nvim-lualine/lualine.nvim"
+        -- Status line
+        "nvim-lualine/lualine.nvim",
 
-    -- treesitter
-    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-    use "nvim-treesitter/playground"
+        -- Treesitter
+        {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate",
+        },
+        "nvim-treesitter/playground",
 
-    -- languages
-    use "manicmaniac/coconut.vim"
-    use "factor/factor.vim"
+        -- Languages
+        "manicmaniac/coconut.vim",
+        "factor/factor.vim",
 
-    -- lsp
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-buffer"
-    use "hrsh7th/cmp-path"
-    use "hrsh7th/cmp-nvim-lsp"
+        -- LSP/Completion
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-nvim-lsp",
 
-    -- code formatting
-    use {
-        "stevearc/conform.nvim",
-        config = function()
-            require("conform").setup()
-        end,
-    }
-end)
+        -- Code formatting
+        {
+            "stevearc/conform.nvim",
+            config = function()
+                require("conform").setup()
+            end,
+        },
+    },
+    install = {},
+    checker = { enabled = true },
+}
 -- }}}
 
 -- vim:foldmethod=marker:foldlevel=0
