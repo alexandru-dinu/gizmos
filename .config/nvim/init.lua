@@ -130,8 +130,8 @@ require("lazy").setup {
         "nvim-treesitter/playground",
 
         -- Languages
-        "manicmaniac/coconut.vim",
-        "factor/factor.vim",
+        { "manicmaniac/coconut.vim", ft = "coco" },
+        { "factor/factor.vim", ft = "factor" },
 
         -- LSP/Completion
         "hrsh7th/nvim-cmp",
