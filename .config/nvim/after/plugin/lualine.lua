@@ -61,5 +61,4 @@ function jump_to_buffer(idx)
         vim.api.nvim_set_current_buf(buffers[idx])
     end
 end
-
 vim.api.nvim_set_keymap("n", "gb", "<CMD>lua jump_to_buffer(vim.v.count1)<CR>", { noremap = true, silent = true })

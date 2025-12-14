@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup {
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "rust" },
+    -- A list of parser names, or "all"
+    ensure_installed = { "vim", "vimdoc", "query", "lua" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -25,6 +25,9 @@ require("nvim-treesitter.configs").setup {
 
 -- NOTE: this will automatically close all folds when opening a file,
 --       so we use foldlevel to circumvent it
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99
+
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"

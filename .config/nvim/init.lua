@@ -123,10 +123,7 @@ require("lazy").setup {
         "nvim-lualine/lualine.nvim",
 
         -- Treesitter
-        {
-            "nvim-treesitter/nvim-treesitter",
-            build = ":TSUpdate",
-        },
+        { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
         "nvim-treesitter/playground",
 
         -- Languages
@@ -140,12 +137,7 @@ require("lazy").setup {
         "hrsh7th/cmp-nvim-lsp",
 
         -- Code formatting
-        {
-            "stevearc/conform.nvim",
-            config = function()
-                require("conform").setup()
-            end,
-        },
+        "stevearc/conform.nvim",
     },
     install = {},
     checker = { enabled = true },

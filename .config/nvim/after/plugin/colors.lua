@@ -32,7 +32,7 @@ require("kanagawa").setup {
         }
     end,
 }
-vim.cmd "colorscheme kanagawa"
+vim.cmd.colorscheme("kanagawa")
 
 -- make bg transparent (currently handled by the theme)
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
