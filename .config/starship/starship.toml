@@ -91,5 +91,10 @@ symbol = "c"
 version_format = '${major}.${minor}'
 style = "green"
 
+[docker_context]
+format = '[$symbol]($style) '
+symbol = "docker"
+style = "blue"
+
 [package]
 disabled = true
