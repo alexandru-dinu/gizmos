@@ -15,6 +15,11 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/miniforge3/bin:$PATH"
 
+# Obsidian
+if [[ -d "/Applications/Obsidian.app/Contents/MacOS" ]]; then
+    export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+fi
+
 # # node & npm
 # # main instalation
 # if [[ -d "$HOME/.local/opt/node/bin" ]]; then
