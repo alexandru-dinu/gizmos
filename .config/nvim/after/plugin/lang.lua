@@ -17,6 +17,8 @@ require("conform").setup {
         -- formatters are run sequentially
         lua = { "stylua" },
         python = { "autoflake", "isort", "black" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
     },
 }
 require("conform").formatters = {
@@ -28,6 +30,9 @@ require("conform").formatters = {
     },
     stylua = {
         prepend_args = { "--indent-type", "Spaces" },
+    },
+    prettier = {
+        prepend_args = { "--tab-width=4" },
     },
 }
 vim.keymap.set(
