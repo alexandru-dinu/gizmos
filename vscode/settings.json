@@ -32,4 +32,5 @@
     },
     "python.analysis.typeCheckingMode": "standard",
     "editor.renderWhitespace": "none",
+    "workbench.activityBar.location": "top",
 }
