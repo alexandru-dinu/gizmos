@@ -18,19 +18,15 @@
     "git.openRepositoryInParentFolders": "never",
     "notebook.lineNumbers": "on",
     "editor.rulers": [120],
-    "black-formatter.args": [
-        "--line-length=120"
-    ],
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "off",
     "extensions.autoCheckUpdates": false,
     "update.mode": "manual",
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
-    },
     "python.analysis.typeCheckingMode": "standard",
     "editor.renderWhitespace": "none",
     "workbench.activityBar.location": "top",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "notebook.defaultFormatter": "charliermarsh.ruff",
+    "chat.disableAIFeatures": true,
 }
