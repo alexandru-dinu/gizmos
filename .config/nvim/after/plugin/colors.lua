@@ -29,6 +29,8 @@ require("kanagawa").setup {
     overrides = function(colors)
         return {
             WinSeparator = { fg = colors.palette.dragonAsh },
+            EndOfBuffer = { fg = colors.palette.dragonBlack6 },
+            ColorColumn = { bg = colors.palette.dragonBlack4 },
         }
     end,
 }
