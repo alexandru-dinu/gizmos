@@ -9,4 +9,4 @@ then
 fi
 autoflake --in-place --remove-all-unused-imports $@ \
     && isort $@ \
-    && black --line-length 100 $@
+    && black $@
