@@ -3,7 +3,5 @@ if (interactive()) {
     .Last  <- function() try(utils::savehistory(Sys.getenv("R_HISTFILE")))
 }
 
-options(repos=structure(c(CRAN="https://cran.rapporter.net/")))
-
 options(prompt="> ")
 options(continue="+ ")
