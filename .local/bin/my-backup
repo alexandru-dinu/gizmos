@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+RSYNC="/opt/homebrew/bin/rsync"
+SSD="/Volumes/T5"
+HDD="/Volumes/Seagate"
+
+[[ -d "$SSD" ]] || { echo "SSD not mounted, aborting"; exit 1; }
+[[ -d "$HDD" ]] || { echo "HDD not mounted, aborting"; exit 1; }
+
+echo "Backing up local to ${SSD}..."
+(cd "${SSD}" && ./backup.sh)
+
+echo "Mirroring changes to ${HDD}..."
+"${RSYNC}" \
+    -ah \
+    --partial \
+    --info=progress2 \
+    --delete \
+    --exclude-from="${SSD}/exclude.txt" --delete-excluded -- \
+    "${SSD}/" \
+    "${HDD}"
